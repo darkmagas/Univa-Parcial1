@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<linker>
+
+    <assembly fullname="System.Text.Json">
+
+        <namespace fullname="System.Text.Json" preserve="all"/>
+
+        <namespace fullname="System.Text.Json.Serialization" preserve="all"/>
+
+        <namespace fullname="System.Text.Json.Serialization.Converters" preserve="all"/>
+
+        <type fullname="System.Text.Json.Serialization.Converters.*" preserve="all"/>
+
+    </assembly>
+
+</linker>
