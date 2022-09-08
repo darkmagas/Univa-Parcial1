@@ -13,7 +13,7 @@ public class SimpleMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Input.GetAxis("Horizontal") * Time.deltaTime * 5, 
-            0, Input.GetAxis("Vertical") * Time.deltaTime * 5);
+        transform.Translate(Input.GetAxis("Horizontal")*1*Time.deltaTime,
+            Input.GetAxis("Vertical")*1*Time.deltaTime,0);
     }
 }
