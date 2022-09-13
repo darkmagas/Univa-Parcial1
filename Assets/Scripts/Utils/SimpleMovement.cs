@@ -23,7 +23,7 @@ public class SimpleMovement : MonoBehaviour
     {
 
         transform.Translate(Input.GetAxis("Horizontal") * speed * Time.deltaTime, Input.GetAxis("Vertical") * speed * Time.deltaTime,0);
-        jump = 0
+        jump = 0;
 if (Input.GetButtonDown("Jump")) 
         {
             transform.position += new Vector3(0, 5, 0);
