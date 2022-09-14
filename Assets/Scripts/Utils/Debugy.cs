@@ -7,13 +7,14 @@ public class Debugy : MonoBehaviour
 {
     private void Awake()
     {
-       Debug.Log("Awake"); 
+       Debug.Log("Awake");
+      
     }
 
     // Start is called before the first frame update
     private void Start()
     {
-        Debug.Log("Start");
+       Debug.Log("Start");
     }
 
     // Update is called once per frame
@@ -24,6 +25,6 @@ public class Debugy : MonoBehaviour
 
     private void LateUpdate()
     {
-        Debug.Log("LateUpdate");
+       Debug.Log("LateUpdate");
     }
 }
