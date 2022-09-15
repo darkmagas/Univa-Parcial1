@@ -41,7 +41,7 @@ public class FollowPathMovement : MonoBehaviour
 
 
         {
-            transform.position = Vector3.MoveTowards(transform.position, _waypoints[_currentWayPoint].position, Time.deltaTime * mainDistance);
+            transform.position = Vector3.MoveTowards(transform.position, _waypoints[_currentWayPoint].position, Time.deltaTime * speed);
 
             distance = Vector3.Distance(transform.position,
           _waypoints[_currentWayPoint].position);
