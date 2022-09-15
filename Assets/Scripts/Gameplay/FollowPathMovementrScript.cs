@@ -23,7 +23,7 @@ public class FollowPathMovementrScript : MonoBehaviour
 
 
 
-    private IEnumerable MoveToNextwaypoint()
+    private IEnumerator MoveToNextwaypoint()
     {
         var distance = Vector3.Distance(a: transform.position,
             b: _waypoints[_currentwaypoint].position);
@@ -33,14 +33,14 @@ public class FollowPathMovementrScript : MonoBehaviour
                 _waypoints[_currentwaypoint].position, Time.deltaTime * speed);
 
             yield return null;
-  }
-    }
+        }
 
-    if (_currentwaypoint <_waypoints.Count - 1)
-{
-        _currentwaypoint++;
-        StartCoroutime(MoveToNextWaypoint());
-    }
 
+        if (_currentwaypoint < _waypoints.Count - 1)
+        {
+            _currentwaypoint++;
+            StartCoroutine(MoveToNextwaypoint());
+        }
+
+    }
 }
-    
