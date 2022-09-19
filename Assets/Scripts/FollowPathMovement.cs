@@ -17,7 +17,7 @@ public class FollowPathMovement : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    public void Start()
     {
         var path = GameObject.Find(this.Path);
 
@@ -43,6 +43,7 @@ public class FollowPathMovement : MonoBehaviour
             yield return null;
         }
         
+
         
         if (_currentWayPoint < _wayPoints.Count - 1)
         {
