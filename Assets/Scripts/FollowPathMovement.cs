@@ -5,16 +5,16 @@ using UnityEngine;
 public class FollowPathMovement : MonoBehaviour
 {
 
-    [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
-    public string Path = "Path";
+    // [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
+    // public string Path = "Path";
 
-    public float stoppingDistance = 0.2f;
+    // public float stoppingDistance = 0.2f;
 
-    public float speed = 5f;
+    // public float speed = 5f;
 
-    private int _currentWayPoint = 0;
+    //private int _currentWayPoint = 0;
 
-    
+
 
     // Start is called before the first frame update
     public void Start()
@@ -28,7 +28,7 @@ public class FollowPathMovement : MonoBehaviour
         StartCoroutine(MovetoWaypoint());
     }
 
-     public IEnumerator MoveToWaypoint()
+    private IEnumerator MoveToWayPoints()
     {
         var distance = Vector3.Distance(a: transform.position, b: _wayPoints[_currentWayPoint].position);
 
@@ -42,23 +42,23 @@ public class FollowPathMovement : MonoBehaviour
 
             yield return null;
         }
-        
 
-        
+
+
         if (_currentWayPoint < _wayPoints.Count - 1)
         {
             _currentWayPoint++;
             StartCoroutine(MoveToWaypoint());
 
         }
-        
-
 
 
     }
-    
-        
- }
+
+    }
+
+
+
 
 
 
