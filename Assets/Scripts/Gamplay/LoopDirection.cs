@@ -16,8 +16,8 @@ public class LoopDirection : MonoBehaviour
     void Update()
     {
         var direction = transform.position - _lastPosition;
-        var targetDirection = Vector3.RotateTowards(transform.forward, LoopDirection, 30, Time.deltaTime);
-        transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(targetDirection),Time.deltaTime;
+        var targetDirection = Vector3.RotateTowards(transform.forward, direction, 30, Time.deltaTime);
+        transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(targetDirection),Time.deltaTime*rotationSpeed);
         _lastPosition = transform.position;
     }
 }
