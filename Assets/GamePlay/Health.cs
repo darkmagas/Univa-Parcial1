@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-public class Health : MonoBehaviour {
+using UnityEngine.UI;
 
+public class Health : MonoBehaviour {
+   
+    public Slider _slider;
 
     [SerializeField]private int _health = 100;
 
@@ -21,7 +24,11 @@ public class Health : MonoBehaviour {
     }
     public void ReciveDamage(int damage)
     {
+       
+        
         _currentHealth -= damage;
         onHealthChange?.Invoke((float)_currentHealth / _health);
+
     }
 }
+
