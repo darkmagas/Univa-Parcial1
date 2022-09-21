@@ -6,7 +6,8 @@ public class LookDirection : MonoBehaviour
 {
     private Vector3 _LastPosition = Vector3.zero;
     [Header("Settings")]
-   [SerializeField] private float _rotationSpeed = 10.0f;
+   
+    [SerializeField] private float _rotationSpeed = 10.0f;
     void Start()
     {
         _LastPosition = transform.position;  

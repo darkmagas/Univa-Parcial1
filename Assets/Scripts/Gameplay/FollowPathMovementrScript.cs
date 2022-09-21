@@ -17,7 +17,7 @@ public class FollowPathMovementrScript : MonoBehaviour
         {
             _waypoints.Add(item: waypointParent.transform.GetChild(i));
         }
-
+        
         StartCoroutine(MoveToNextwaypoint());
     }
 
