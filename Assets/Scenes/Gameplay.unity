@@ -1496,7 +1496,6 @@ GameObject:
   - component: {fileID: 1955491436}
   - component: {fileID: 1955491435}
   - component: {fileID: 1955491439}
-  - component: {fileID: 1955491440}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1598,22 +1597,19 @@ MonoBehaviour:
   _health: 100
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls: []
---- !u!114 &1955491440
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1955491434}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 556d08b1416c61647b06d2b512f3d091, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 10
-  vidaEnemigo: 100
-  BarraVidaEnamigo: {fileID: 1137809476}
+      m_Calls:
+      - m_Target: {fileID: 1137809476}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &2034908496
 GameObject:
   m_ObjectHideFlags: 0
