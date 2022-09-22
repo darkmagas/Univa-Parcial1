@@ -19,7 +19,7 @@ public class Health : MonoBehaviour
     {
         _currentHealth -= damage;
 
-        _onHealthChanged?.Invoke((float)_currentHealth / _currentHealth);
+        _onHealthChanged?.Invoke((float)_currentHealth / _health);
 
     }
 }
