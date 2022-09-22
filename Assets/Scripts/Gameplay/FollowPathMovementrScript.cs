@@ -9,6 +9,8 @@ public class FollowPathMovementrScript : MonoBehaviour
     public float speed = 5f;
     public float minDistance = 0.2f;
     public string pathName = "Path";
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,7 @@ public class FollowPathMovementrScript : MonoBehaviour
         {
             _waypoints.Add(item: waypointParent.transform.GetChild(i));
         }
-        
+
         StartCoroutine(MoveToNextwaypoint());
     }
 
@@ -25,12 +27,13 @@ public class FollowPathMovementrScript : MonoBehaviour
 
     private IEnumerator MoveToNextwaypoint()
     {
-        var distance = Vector3.Distance(a: transform.position,
-            b: _waypoints[_currentwaypoint].position);
-        while (Mathf.Abs(distance) > 0.2f)
+        var distance = Vector3.Distance(transform.position, _waypoints[_currentwaypoint].position);
+
+        while (Mathf.Abs(distance) > minDistance)
         {
-            transform.position = Vector3.MoveTowards(current: transform.position,
-                _waypoints[_currentwaypoint].position, Time.deltaTime * speed);
+            transform.position = Vector3.MoveTowards(transform.position,_waypoints[_currentwaypoint].position, Time.deltaTime * speed);
+            distance = Vector3.Distance(transform.position, _waypoints[_currentwaypoint].position);
+
 
             yield return null;
         }
