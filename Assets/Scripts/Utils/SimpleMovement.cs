@@ -26,7 +26,7 @@ public class SimpleMovement : MonoBehaviour
         jump = 0;
 if (Input.GetButtonDown("Jump")) 
         {
-            transform.position += new Vector3(0, 5, 0);
+            transform.position += new Vector3(0, 0, 5);
         }
 
 
