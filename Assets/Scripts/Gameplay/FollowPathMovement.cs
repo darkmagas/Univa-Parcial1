@@ -6,7 +6,7 @@ public class FollowPathMovement : MonoBehaviour
 {
 
     [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
-    public string Path = "Path";
+    public string name_path = "Path";
 
     public float stoppingDistance = 0.2f;
    
@@ -19,22 +19,22 @@ public class FollowPathMovement : MonoBehaviour
     // Start is called before the first frame update
     public void Start()
     {
-        var path = GameObject.Find(this.Path);
-
-        for (int i = 0; i < path.transform.childCount; i++)
+        var waypointparent = GameObject.Find("Path");
+        
+        for (int i = 0; i < waypointparent.transform.childCount; i++)
         {
-            _wayPoints.Add(item: path.transform.GetChild(i));
+            _wayPoints.Add(item: waypointparent.transform.GetChild(i));
         }
-        StartCoroutine(MovetoWaypoint());
+        StartCoroutine(MoveToWayPoints());
     }
 
-      private IEnumerator MoveToWayPoints()
-    
-        var distance = Vector3.Distance( transform.position, _wayPoints[_currentWayPoint].position);
+    private IEnumerator MoveToWayPoints()
+    {
+        var distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
 
         while (Mathf.Abs(distance) > stoppingDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, maxDistanceDelta: speed * Time.deltaTime);
+            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, speed * Time.deltaTime);
 
             distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
 
@@ -42,20 +42,27 @@ public class FollowPathMovement : MonoBehaviour
 
             yield return null;
         }
-        
 
-        
+
+
+
         if (_currentWayPoint < _wayPoints.Count - 1)
         {
             _currentWayPoint++;
-            StartCoroutine(MoveToWaypoint());
+            StartCoroutine(MoveToWayPoints());
 
         }
+
+
+    }
+
+
+}
         
 
 
 
-    }
+
     
         
  

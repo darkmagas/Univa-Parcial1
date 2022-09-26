@@ -6,6 +6,9 @@ public class LookDirection : MonoBehaviour
 {
     private Vector3 _lastPosition = Vector3.zero;
 
+    [Header("settings")]
+    [SerializeField] private float _rotationSpeed = 10.0f;
+
     void Start()
     {
         _lastPosition = transform.position;
@@ -16,9 +19,9 @@ public class LookDirection : MonoBehaviour
     {
          var direction = transform.position - _lastPosition;
 
-         var targetDirection = Vector3.RotateTowards(transform.forward,direction, maxRadiantDelta: 30, Time.deltaTime);
+         var targetDirection = Vector3.RotateTowards(transform.forward,direction, 30, Time.deltaTime);
 
-         transform.rotation = Quartenion.RotateTowards(transform.rotation,Quartenion.lookRotation(targetDirection),Time.deltaTime);
+         transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(targetDirection),Time.deltaTime * _rotationSpeed);
 
          _lastPosition = transform.position;
     }
