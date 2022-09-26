@@ -12,12 +12,15 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _currentHealth = _health; 
+        _currentHealth = _health;
+
     }
 
-    public void ReceiveDamage (int Damage)
+
+    public void ReceiveDamage(int damage)
     {
-        //_currentHealth = _currentHealth - Damage; 
-        _currentHealth -= Damage;
+        _currentHealth -= damage;
+        _onHealthChanged?.Invoke((float)_currentHealth / _health);
+
     }
 }
