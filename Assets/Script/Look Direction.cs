@@ -17,9 +17,9 @@ public class LookDirection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        var direction:Vector3 = transform.position - lastposition;
+        var direction = transform.position - _lastposition;
 
-        var targetDirection:Vector3 = Vector3.RotateTowards(current:transform.forward, target:direction, maxRadiansDelta:30, maxMagnitudeDelta:Time.deltaTime);
+        var targetDirection = Vector3.RotateTowards(current:transform.forward, target:direction, maxRadiansDelta:30, maxMagnitudeDelta:Time.deltaTime);
 
 
         transform.rotation = Quaternion.RotateTowards(from: transform.rotation, to: Quaternion.LookRotation(targetDirection), Time.deltaTime);
