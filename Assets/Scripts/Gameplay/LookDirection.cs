@@ -14,12 +14,12 @@ public class LookDirection : MonoBehaviour
 
     void Update()
     {
-         var direction:Vector3 = transform.position - _lastPosition;
+         var direction = transform.position - _lastPosition;
 
-         var targetDirection:Vector3 = Vector3.RotateTowards(current: transform.forward, target: direction, maxRadiantDelta: 30, maxMagnitudeDelta: Time.deltaTime);
+         var targetDirection = Vector3.RotateTowards(transform.forward,direction, maxRadiantDelta: 30, Time.deltaTime);
 
-         transform.rotation = Quartenion.RotateTowards(from: transform.rotation, to: Quartenion.lookRotation(targetDirection), maxDegreesDelta: Time.deltaTime);
+         transform.rotation = Quartenion.RotateTowards(transform.rotation,Quartenion.lookRotation(targetDirection),Time.deltaTime);
 
-            _lastPosition = transform.position;
+         _lastPosition = transform.position;
     }
 }
