@@ -8,7 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 namespace Smores
+=======
+namespace Univa
+>>>>>>> Stashed changes
 {
     
     /// <summary>
@@ -30,6 +34,9 @@ namespace Smores
         public const string MainCamera = "MainCamera";
         public const string Player = "Player";
         public const string GameController = "GameController";
+<<<<<<< Updated upstream
         public const string Enemy = "Enemy";
+=======
+>>>>>>> Stashed changes
     }
 }

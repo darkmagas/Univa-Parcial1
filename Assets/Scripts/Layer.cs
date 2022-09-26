@@ -8,7 +8,11 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+<<<<<<< Updated upstream
 namespace Smores
+=======
+namespace Univa
+>>>>>>> Stashed changes
 {
     
     /// <summary>
