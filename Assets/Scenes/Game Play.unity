@@ -132,6 +132,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 244932180}
+  - component: {fileID: 244932181}
   m_Layer: 0
   m_Name: Path
   m_TagString: Untagged
@@ -157,6 +158,22 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &244932181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 244932179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cc7f493f90dfa47ba248f6570965f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wayPoints: []
+  path: 
+  stoppingDistance: 0.2
+  speed: 5
 --- !u!1 &386927565
 GameObject:
   m_ObjectHideFlags: 0
@@ -635,7 +652,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: a49d15a8b2b768849926885e9d5b541e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -754,9 +771,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f7e00d4d51c7d49a241c18e92787ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waveConfig: {fileID: 11400000, guid: d832ee3a9a852b34db2fa64a62a3b506, type: 2}
-  _pathNames: []
-  _spamPoints: []
 --- !u!4 &1324150645
 Transform:
   m_ObjectHideFlags: 0
@@ -975,8 +989,6 @@ GameObject:
   - component: {fileID: 2085917819}
   - component: {fileID: 2085917818}
   - component: {fileID: 2085917817}
-  - component: {fileID: 2085917816}
-  - component: {fileID: 2085917820}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -999,19 +1011,6 @@ Transform:
   m_Father: {fileID: 650402893}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2085917816
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085917814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c8b9b4205da8d4f98bb14f052bc780, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _rotationSpeed: 150
 --- !u!136 &2085917817
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1076,16 +1075,3 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085917814}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &2085917820
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2085917814}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2edc44855ee7584e8d81d27b6d0a3e1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  damage: 1
