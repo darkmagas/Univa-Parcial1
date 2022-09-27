@@ -4,41 +4,40 @@ using UnityEngine;
 
 public class Followpathmovement : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
-    public string path = "";
-    public float stoppingDistance = 0.2f;
-
+    private List<Transform> _wayPoints = new List<Transform>();
     private int _currentWayPoint = 0;
+    public float speed = 5f;
+    public float minDistance = 0.2f;
+    public string pathName = "Path";
     // Start is called before the first frame update
     void Start()
     {
-        var path = GameObject.Find(this.path);
-        for (int i = 0; i < path.transform.childCount; i++)
+        var waypointParent = GameObject.Find(pathName);
+        for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
-            _wayPoints.Add(path.transform.GetChild(i));
+            _wayPoints.Add(waypointParent.transform.GetChild(i));
         }
-        StartCoroutine(MoveToWayPoints());
+
+        StartCoroutine(MoveToNextWaypoint());
     }
-    IEnumerator MoveToWayPoints()
+
+    private IEnumerator MoveToNextWaypoint()
     {
         var distance = Vector3.Distance(transform.position,
             _wayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > stoppingDistance)
+        while (Mathf.Abs(distance) > minDistance)
         {
-
-            float speed = 0;
             transform.position = Vector3.MoveTowards(transform.position,
-                _wayPoints[_currentWayPoint].position,
-                speed * Time.deltaTime);
+                _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
             distance = Vector3.Distance(transform.position,
                 _wayPoints[_currentWayPoint].position);
             yield return null;
         }
+
         if (_currentWayPoint < _wayPoints.Count - 1)
         {
             _currentWayPoint++;
-            StartCoroutine(MoveToWayPoints());
+            StartCoroutine(MoveToNextWaypoint());
         }
-
     }
-    }
+}
