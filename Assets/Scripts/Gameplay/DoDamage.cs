@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class DoDamage : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private int _damage = 10;
+    private void OnTriggerEnter(Collider other)
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (other.GetComponent<Health>() != null)
+        {
+            other.GetComponent<Health>().ReceiveDamage(_damage);
+        }
     }
 }

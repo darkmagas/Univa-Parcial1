@@ -16,7 +16,7 @@ public class FollowPathMovement : MonoBehaviour
     {
 
         var wayPointParent = GameObject.Find("Path");
-        for (int i = 0; i > wayPointParent.transform.childCount; i++)
+        for (int i = 0; i < wayPointParent.transform.childCount; i++)
         {
             _wayPoint.Add(wayPointParent.transform.GetChild(i));
         }
