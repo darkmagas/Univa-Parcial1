@@ -8,5 +8,5 @@ using UnityEngine;
     public int weakEnemy = 0;
     public int mediumEnemy = 0;
     public int strongEnemy = 0;
-    public int exampleEnemy = 0; 
+ 
 }
