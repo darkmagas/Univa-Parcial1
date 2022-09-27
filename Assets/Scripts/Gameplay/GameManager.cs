@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-
-    //este codigo controla la velocidad del juego
 {
-    ­[SerializeField] [Range(0, 6)] private float timeStep = 1; // este se modifica para controlar el tiempo
 
+    [SerializeField][Range(0,6)]private float timeStep = 1f; //para controlar la velocidad del juego y dar pausa.
+                                                             //serialized para modificar desde unity
+                                                             //range para establecer un rango, igual se ve en unity
     private void Update()
     {
         Time.timeScale = timeStep;

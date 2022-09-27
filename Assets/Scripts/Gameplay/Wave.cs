@@ -1,4 +1,4 @@
-using System;
+using System; //se agrega para que se pueda ver en el editable
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
