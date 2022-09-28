@@ -52,7 +52,14 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            EventDispatcher.Dispatch( new SpawnObject (prefab, null, _spawnPoints[randomPathID].position, Quaternion.identity, null);
+            EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randomPathID].position, Quaternion.identity, (gameObjectSpawned) =>
+                {
+                    int rs = randomPathID;
+                    string path = _pathNames[rs];
+                    gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
+                })
+            );
+            
             yield return new WaitForSeconds(.5f);
         }
     }
