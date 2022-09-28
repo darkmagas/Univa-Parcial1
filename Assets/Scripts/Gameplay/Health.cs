@@ -18,7 +18,7 @@ public class Health : MonoBehaviour
     public void ReceiveDamage(int damage)
     {
         _currentHealth -= damage;
-        _onHealthChanged?.Invoke(arg0: (float)_currentHealth / _health);
+        _onHealthChanged?.Invoke((float)_currentHealth / _health);
     }
 
 
