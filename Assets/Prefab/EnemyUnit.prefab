@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 1394359864515777902}
   - component: {fileID: 1394359864515777900}
   - component: {fileID: 1394359864515777901}
-  m_Layer: 0
+  - component: {fileID: 4166143437838510495}
+  m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -33,7 +34,7 @@ Transform:
   m_Children:
   - {fileID: 1394359865394286575}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394359864515777902
 MonoBehaviour:
@@ -48,7 +49,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wayPoints: []
-  path: Path
   stoppingDistance: 0.2
   speed: 5
 --- !u!136 &1394359864515777900
@@ -81,6 +81,18 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 4
   m_CollisionDetection: 0
+--- !u!114 &4166143437838510495
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1394359864515777896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5f7ff4b31765e749bc247451ddaddda, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1394359865362535230
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +105,7 @@ GameObject:
   - component: {fileID: 1394359865362535219}
   - component: {fileID: 1394359865362535228}
   - component: {fileID: 1394359865362535229}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +203,7 @@ GameObject:
   - component: {fileID: 1394359865394286573}
   - component: {fileID: 1394359865394286574}
   - component: {fileID: 1394359865394286563}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}

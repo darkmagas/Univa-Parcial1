@@ -6,15 +6,22 @@ public class FollowPathMovement : MonoBehaviour
 {
 
     [SerializeField]private List<Transform> _wayPoints = new List<Transform>();
-    public string path = "";
+    
     public float stoppingDistance = 0.2f;
     public float speed = 5f;
 
     // Start is called before the first frame update
     private int _currentWayPoint = 0;
-    void Start()
+
+    private void OnEnable()
     {
-        var path = GameObject.Find(this.path);
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
+    }
+
+    public void InitEnemy(string pathName)
+    {
+        var path = GameObject.Find(pathName);
         for (int i = 0; i < path.transform.childCount; i++)
         {
             _wayPoints.Add(item: path.transform.GetChild(i));
