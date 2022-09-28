@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Magas.Utilities;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private WaveConfiguration waveConfig;
@@ -26,26 +26,32 @@ public class EnemyManager : MonoBehaviour
         StartCoroutine(routine: SpawnEnemies(_currentWave));
     }
 
-    private IEnumerable SpawnEnemies(int waveID)
+    private IEnumerable CreateWave ()
     {
         if (waveConfig._waves.Count <= waveID) yield break;
-        var wave = waveConfig._waves[waveID];
+        var wave = waveConfig._waves[_currentWave];
         yield return StartCoroutine(routine: SpawnEnemy(wave.weakEnemyCount, _weakEnemyPrefab));
         yield return StartCoroutine(routine: SpawnEnemy(wave.midEnemyCount, _midEnemyPrefab));
         yield return StartCoroutine(routine: SpawnEnemy(wave.strongEnemyCount, _strongEnemyPrefab));
-
-        yield return new WaitForSeconds(10f);
         _currentWave++;
-        StartCoroutine(routine: SpawnEnemies(_currentWave));
+        yield return new WaitForSeconds(10f);
+        StartCoroutine(routine: CreateWave());
     }
 
-    private IEnumerable SpawnEnemy(int enemyCount, GameCount, GameObject prefab)
+    private IEnumerable SpawnEnemy(int amont, GameObject, GameObject prefab)
     {
-        for(int i=0;i<enemyCount;i++)
+        for (int i = 0; i < amont; i++)
         {
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(original: prefab, _spawnPoints[randomPathID].position,Quaternion.identity);
-            yield return new WaitForSeconds(.5f);
+            EventDispatcher.Dispatch(
+                signal: new SpawnObject(prefab, Parent: null, _spawnpoints[randomSpawn].position, Quaternion.identity, OnSpawned: (gameObjectSpawned) =>
+                {
+                    int rs = randomSpawn;
+                    string path = _pathNames[rs];
+                    gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
+                })
+                );
+            yield return new WaitForSeconds(1f);
         }
     }
 }
