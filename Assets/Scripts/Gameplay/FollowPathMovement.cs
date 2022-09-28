@@ -8,11 +8,18 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
-    public string pathName = "Path";
-    // Start is called before the first frame update
-    void Start()
+    
+
+    private void OnEnable()
     {
-        var waypointParent = GameObject.Find(pathName);
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
+    }
+
+    // Start is called before the first frame update
+    public void InitEnemy(string pathname)
+    {
+        var waypointParent = GameObject.Find(pathname);
         for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
             _wayPoints.Add(waypointParent.transform.GetChild(i));
