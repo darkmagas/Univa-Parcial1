@@ -5,15 +5,7 @@ using UnityEngine;
 
 [SerializeField] public class Wave 
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    public int weakEnemyCount;
+    public int midEnemyCount;
+    public int strongEnemyCount;
 }
