@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
+
+
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private WaveConfiguration waveConfig;
@@ -37,7 +40,11 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var RandomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(prefab, _spawnPoints[RandomPathID].position, Quaternion.identity);
+            // Instantiate(prefab,_spawnPoints[RandomPathID].position,Quaternion.identity);
+            EventDispatcher.Dispatch(
+                signal: new SpawnObject(prefab, Parent: null, _spawnPoints [randomSpawn].position
+                ,Quaternion.identity
+                OnSpawned: randomSpawn.
             yield return new WaitForSeconds(.5f);
         }
     }

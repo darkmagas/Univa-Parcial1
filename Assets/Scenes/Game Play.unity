@@ -980,6 +980,7 @@ GameObject:
   - component: {fileID: 1195268908}
   - component: {fileID: 1195268907}
   - component: {fileID: 1195268906}
+  - component: {fileID: 1195268910}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -1059,13 +1060,29 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1195268905}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.81, y: 0.78, z: 0.18}
+  m_LocalPosition: {x: 13.81, y: 0.96, z: 0.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1195268910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1195268905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6db265fdcb878b946b2283a5ab4e8dcc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1244854438
 GameObject:
   m_ObjectHideFlags: 0
@@ -1095,7 +1112,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cf0fe8cce7b6484bb0f385193da8349, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameSpeed: 1
 --- !u!4 &1244854440
 Transform:
   m_ObjectHideFlags: 0
@@ -1140,6 +1156,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40f7e00d4d51c7d49a241c18e92787ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  waveConfig: {fileID: 0}
+  _pathNames: []
+  _spawnPoints: []
+  _weakEnemyPrefab: {fileID: 0}
+  _midEnemyPrefab: {fileID: 0}
+  _strongEnemyPrefab: {fileID: 0}
 --- !u!4 &1324150645
 Transform:
   m_ObjectHideFlags: 0
@@ -1473,6 +1495,7 @@ GameObject:
   - component: {fileID: 2085917819}
   - component: {fileID: 2085917818}
   - component: {fileID: 2085917817}
+  - component: {fileID: 2085917820}
   m_Layer: 0
   m_Name: Capsule
   m_TagString: Untagged
@@ -1488,7 +1511,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085917814}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.061252594, y: 9.335345, z: -6.325694}
+  m_LocalPosition: {x: -0.061252594, y: 9.4, z: -6.325694}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1559,6 +1582,22 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2085917814}
   m_Mesh: {fileID: 10208, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2085917820
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085917814}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6cc7f493f90dfa47ba248f6570965f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _wayPoints: []
+  path: 
+  stoppingDistance: 0.2
+  speed: 5
 --- !u!1 &2132514254
 GameObject:
   m_ObjectHideFlags: 0
