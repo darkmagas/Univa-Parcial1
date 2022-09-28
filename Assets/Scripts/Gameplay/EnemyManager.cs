@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -29,8 +30,8 @@ public class EnemyManager : MonoBehaviour
         if(waveConfig._waves.Count <= waveID) yield break;
         var wave = waveConfig._waves[waveID];
         yield return StartCoroutine(SpawnEnemy(wave.weakEnemyCount, _weakEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemy(wave.midEnemyCount, _weakEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemy(wave.strongEnemyCount, _weakEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemy(wave.midEnemyCount, _midEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemy(wave.strongEnemyCount, _strongEnemyPrefab));
 
         yield return new WaitForSeconds(10f);
         _currentWave++;
@@ -41,9 +42,18 @@ public class EnemyManager : MonoBehaviour
     {
         for (int i = 0; i < EnemyCount; i++)
         {
+            var randomSpawn = UnityEngine.Random.Range(0, _pathNames.Length);
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(prefab, _spawnPoints[randomPathID].position, Quaternion.identity);
-            yield return new WaitForSeconds(.5f);
+            // Instantiate(prefab, _spawnPoints[randomPathID].position, Quaternion.identity);
+            EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randomSpawn].position, Quaternion.identity,
+               (gameObjectSpawned) =>
+               {
+                   int rs = randomSpawn;
+                   string path = _pathNames[rs];
+                   gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
+               })
+               );
+            yield return new WaitForSeconds(1);
         }
     }
 }
