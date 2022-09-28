@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Xml.XPath;
 using UnityEditor;
 using UnityEngine;
+using Magas.Utilities;
 
 public class NewBehaviourScript : MonoBehaviour
-{ 
+{
 
-    [SerializeField]private WaveConfiguration waveConfig;
+    [SerializeField] private WaveConfiguration waveConfig;
     private int _currentWave = 0;
     [SerializeField] private string[] _pathNames;
     [SerializeField] private Transform[] _spawnPoints;
@@ -24,20 +25,20 @@ public class NewBehaviourScript : MonoBehaviour
         }
         StartCoroutine(SpawnEnemies(_currentWave));
     }
-        
-        private IEnumerable SpawnEnemies(int waveID)
 
-        {
-        
-        if(waveConfig.waves.Count <= waveID)yield break;
-            var Wave = WaveConfig._Waves[waveID];
-            yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _WeakEnemyPrefab));
-            yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _MidEnemyPrefab));
-            yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _HardEnemyPrefab));
-        }
+    private IEnumerable SpawnEnemies(int waveID)
 
-    
-     private IEnumerable SpwanEnemy(int enemyCount, GameObject prefab)
+    {
+
+        if (waveConfig.waves.Count <= waveID) yield break;
+        var Wave = WaveConfig._Waves[waveID];
+        yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _WeakEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _MidEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemies(Wave.WeakEnemyCount, _HardEnemyPrefab));
+    }
+
+
+    private IEnumerable SpwanEnemy(int enemyCount, GameObject prefab)
 
 
     {
@@ -46,8 +47,17 @@ public class NewBehaviourScript : MonoBehaviour
     }
     {
         var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-        Instantiate(Prefab, _spawnPoints[randomPathID].position, Quaternion.identity);
-        yield return new WaitForSeconds(.5f);
+    Instantiate(Prefab, _spawnPoints[randomPathID].position, Quaternion.identity);
+
+    EventDispatcher.Dispatch(
+        .new SpwanObjects(Prefab, Parent:null._spawnPoints[RandomSpawn].position.Quaternion.identity(GameObjectSpawn)=>{
+        int rs = randomSpawn;
+        string path =_pathNames[rs];
+        gameObjectSpawn.GetComponent<FollowPathMovement>().InitEnemy(path);    
+    
+    
+    }));
+    yield return new WaitForSeconds(.5f);
         
         
         
