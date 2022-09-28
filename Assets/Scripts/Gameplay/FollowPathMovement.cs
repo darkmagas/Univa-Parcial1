@@ -5,11 +5,18 @@ using UnityEngine;
 public class FollowPathMovement : MonoBehaviour
 {
     [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
+    private int _currentWayPoint = 0;
     public string path = ""; /*esto ayuda a poder crear varios paths*/
     public float stoppingDistance = 0.2f;
     public float speed = 5f;
 
-    private int _currentWayPoint = 0;
+    
+
+    private void OnEnable()
+    {
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
+    }
 
     //private int d; (solo yo tengo acceso) ameno que le pongas [SerializeField]
     //public int a; (Todo el mundo tiene acceso)
@@ -17,7 +24,7 @@ public class FollowPathMovement : MonoBehaviour
     //internal int c; (sabe alch)
 
     // Start is called before the first frame update
-    void Start()
+    public void InitEnemy(string pathname)
     {
         var path = GameObject.Find(this.path); 
         for (int i = 0; i < path.transform.childCount; i++)

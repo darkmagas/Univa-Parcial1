@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
+using Random = UnityEngine.Random;
+using Magas.Utilities;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -13,6 +16,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
     [SerializeField] private GameObject _bossEnemyPrefab;
+    
 
     private void Start()
     {
@@ -45,7 +49,14 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var randonPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(prefab, _spawnPoints[randonPathID].position, Quaternion.identity );
+            //Instantiate(prefab, _spawnPoints[randonPathID].position, Quaternion.identity );
+            EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randonPathID].position, Quaternion.identity, (  gameObjectSpawned ) =>
+                {
+                 int rs = randonPathID;
+                 string path = _pathNames[rs];
+                 gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy( path);
+                })
+            );
             yield return new WaitForSeconds(.5f);  // tiempo en que cada enemigo spawnea
         }
     }
