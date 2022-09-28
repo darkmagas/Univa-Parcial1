@@ -20,9 +20,5 @@ public class Health : MonoBehaviour
         _onHealthChanged?.Invoke((float)_currentHealth / _health);
 
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

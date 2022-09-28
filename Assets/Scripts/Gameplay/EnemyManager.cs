@@ -16,19 +16,19 @@ public class EnemyManager : MonoBehaviour
     private void Start()
     {
         _spawnPoints = new Transform[_pathNames.Length];
-       for (int 1 = 0; 1 < _pathNames.Length; 1++)
+        for (int[1] = 0; 1 < _pathNames.Length; 1++)
         {
             var wayPointParent = GameObject.Find(_pathNames[1]);
-            var wayPoints = wayPointParent.GetComponentInChildren<Transform>();
-            _spawnPoints[1] = wayPoints[0];
+            var wayPoints = wayPointParent.GetComponentInChildren<Transform>(); 
+            _spawnPoints [1] = wayPoints(0);
         }
         StartCoroutine(SpawnEnemies(_currentWave));
     }
 
     private IEnumerator SpawnEnemies(int waveID)
     {
-        if (waveConfig._waves.Count <= waveID) yield break;
-        var wave = waveConfig._waves[waveID];
+        if (waveConfig._Waves.Count <= waveID) yield break;
+        var wave = waveConfig._Waves[waveID];
 
         yield return StartCoroutine(SpawnEnemy(wave.weakEnemyCount, _weakEnemyPrefab));
         yield return StartCoroutine(SpawnEnemy(wave.midEnemyCount, _midEnemyPrefab));
@@ -41,7 +41,7 @@ public class EnemyManager : MonoBehaviour
     }
     private IEnumerable SpawnEnemy(int enemyCount, GameObject prefab)
     {
-        for (int 1 = 0; 1 < enemyCount; 1++)
+        for (int[1] = 0; 1 < enemyCount; 1++)
         {
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
             Instantiate(prefab, _spawnPoints[randomPathID].position, Quaternion.identity );
