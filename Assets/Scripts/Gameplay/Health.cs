@@ -22,5 +22,6 @@ public class Health : MonoBehaviour
         _currentHealth -= damage; 
         _onHealthChanged?.Invoke((float)_currentHealth/_health); 
         //el simbolo de pregunta ? es para preguntarle si ya tiene esa acción para qeu realice el codigo
+        
     }
 }
