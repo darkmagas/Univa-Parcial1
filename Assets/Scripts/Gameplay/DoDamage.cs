@@ -4,13 +4,16 @@ using UnityEngine;
 
 public class DoDamage : MonoBehaviour
 {
-    public int damage = 1;
+    [SerializeField] private int damage = 1;
     private void OntriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != null)
         {
-            var otherHealth = other.GetComponent<Health>();
-            otherHealth.ReceiveDamage(damage);
+            other.GetComponent<Health>().ReceiveDamage(damage);
+            
+
+            //var otherHealth = other.GetComponent<Health>();
+            //otherHealth.ReceiveDamage(damage);
         }
     }
 }

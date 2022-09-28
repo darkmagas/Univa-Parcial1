@@ -17,6 +17,18 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6258079290902769944, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.3801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258079290902769944, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.3801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258079290902769944, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.3801
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258079290902769944, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -60,9 +72,17 @@ PrefabInstance:
       propertyPath: m_Name
       value: StrongEnemyUnit
       objectReference: {fileID: 0}
+    - target: {fileID: 6258079290902769945, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
+      propertyPath: m_TagString
+      value: Enemy
+      objectReference: {fileID: 0}
     - target: {fileID: 6258079290902769949, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
       propertyPath: damage
       value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 6258079290902769950, guid: 2a4ed5653b6457745845722c8c48c465, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
