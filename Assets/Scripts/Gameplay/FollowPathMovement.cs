@@ -17,7 +17,13 @@ public class FollowPathMovement : MonoBehaviour
 
     //internal
     // Start is called before the first frame update
-    void Start()
+    private void OnEnable()
+    {
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
+
+    }
+    public void InitEnemy(string pathName)
     {
         var path = GameObject.Find(this.path);
         for (int i = 0; i < path.transform.childCount; i++)

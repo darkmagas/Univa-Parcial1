@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 3657153509482520253}
   - component: {fileID: 3657153509482520250}
   - component: {fileID: 3657153509482520252}
-  - component: {fileID: 3657153509482520255}
-  m_Layer: 0
+  - component: {fileID: 8149193645051076719}
+  m_Layer: 8
   m_Name: EnemyUnit
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -35,7 +35,7 @@ Transform:
   m_Children:
   - {fileID: 3657153510612656952}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3657153509482520251
 MonoBehaviour:
@@ -96,7 +96,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 20
---- !u!114 &3657153509482520255
+--- !u!114 &8149193645051076719
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -105,13 +105,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 3657153509482520249}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5506a4d338e13f43ba4600ea17aaedc, type: 3}
+  m_Script: {fileID: 11500000, guid: a384bd4391749174eaf6ee6b8f6b99dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
-  _onHealthChanged:
-    m_PersistentCalls:
-      m_Calls: []
 --- !u!1 &3657153509904797426
 GameObject:
   m_ObjectHideFlags: 0
@@ -123,7 +119,7 @@ GameObject:
   - component: {fileID: 3657153509904797429}
   - component: {fileID: 3657153509904797430}
   - component: {fileID: 3657153509904797431}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -207,7 +203,7 @@ GameObject:
   - component: {fileID: 3657153510612656957}
   - component: {fileID: 3657153510612656954}
   - component: {fileID: 3657153510612656956}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Enemy
   m_Icon: {fileID: 0}
