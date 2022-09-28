@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -43,7 +44,15 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(prefab, _spawnPoints[randomPathID].position,Quaternion.identity);
+            // Instantiate(prefab, _spawnPoints[randomPathID].position,Quaternion.identity);
+            EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randomPathID].position, Quaternion.identity, (gameObjectSpawned) =>
+            {
+                int rs = randomPathID;
+                string path = _pathNames[rs];
+                gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
+
+            }));
+
             yield return new WaitForSeconds(.5f);
         }
 

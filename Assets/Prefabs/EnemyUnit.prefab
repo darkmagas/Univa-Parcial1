@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2994494782069714057}
   - component: {fileID: 2994494782069714056}
   - component: {fileID: 2994494782069714058}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -111,7 +111,8 @@ GameObject:
   - component: {fileID: 2994494782165682405}
   - component: {fileID: 2994494782165682404}
   - component: {fileID: 2994494782165682406}
-  m_Layer: 0
+  - component: {fileID: 3985495861923536835}
+  m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +133,7 @@ Transform:
   m_Children:
   - {fileID: 2994494782069714054}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2994494782165682403
 MonoBehaviour:
@@ -193,6 +194,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Damage: 10
+--- !u!114 &3985495861923536835
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2994494782165682401}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fb2f8f2304fc75f4e80ac217583f12cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2994494783543186031
 GameObject:
   m_ObjectHideFlags: 0
@@ -205,7 +218,7 @@ GameObject:
   - component: {fileID: 2994494783543186035}
   - component: {fileID: 2994494783543186034}
   - component: {fileID: 2994494783543186033}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
