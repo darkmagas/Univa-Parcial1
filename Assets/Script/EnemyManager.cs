@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class EnemyManager : MonoBehaviour
 
@@ -12,7 +13,7 @@ public class EnemyManager : MonoBehaviour
 
     [SerializeField] private GameObject _weakEnemyPrefab;
     [SerializeField] private GameObject _midEnemyPrefab;
-    [SerializeField] private GameObject _strongEnemyPrefab;
+    [SerializeField] private GameObject strongEnemyPrefab;
 
     private void Start()
     { _spawnPoints = new Transform[_pathNames.Length];
@@ -31,7 +32,7 @@ public class EnemyManager : MonoBehaviour
 
         yield return StartCoroutine(routine: SpawnEnemy(wave.weakEnemyCount, _weakEnemyPrefab));
         yield return StartCoroutine(routine: SpawnEnemy(wave.midEnemyCount, _midEnemyPrefab));
-        yield return StartCoroutine(routine: SpawnEnemy(wave.strongEnemyCount, _strongEnemyPrefab));
+        yield return StartCoroutine(routine: SpawnEnemy(wave.strongEnemyCount, _StrongEnemyPrefab));
 
         yield return new WaitForSeconds(10f);
     }
@@ -42,6 +43,7 @@ public class EnemyManager : MonoBehaviour
         {
             var randomPathID:int = UnityEngine.Random.Range(0, _pathNames.Length);
             Instantiate(prefab,_spawnPoints[randomPathID].position,Quaternion.identity);
+            EventDispatcher.Dispatch(signal: new SpawnObject(prefab, null, _spawnPoints[randomSpawn].position, Quaternion.identity, null));
             yield return new WaitForSeconds(.5f);
         }
     }
