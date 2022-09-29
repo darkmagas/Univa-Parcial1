@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Magas.Utilities;
 
 public class EnemyManger : MonoBehaviour
 {
@@ -46,8 +47,15 @@ public class EnemyManger : MonoBehaviour
         for(int i =0; i<amount; i++)
         {
             var randomSpawn = Random.Range(0, _pathName.Count);
-            Instantiate(prefab,_spawnpoints[randomSpawn].position,Quaternion.identity);
-            yield return new WaitForSeconds(1); //esperate ese cantyidad de segundos
+            //Instantiate(prefab,_spawnpoints[randomSpawn].position,Quaternion.identity);
+            EventDispatcher.Dispatch(
+                new SpawnObject(prefab,null,_spawnpoints[randomSpawn].position,Quaternion.identity,
+                (gameObjectSpawn)=> {
+                    int rs = randomSpawn;
+                    string pathName = _pathName[rs];
+                    gameObjectSpawn.GetComponent<FollowPathMovement>().InitEnemy(pathName);
+                }));
+            yield return new WaitForSeconds(1); //esperate ese cantidad de segundos
         }
     }
 }
