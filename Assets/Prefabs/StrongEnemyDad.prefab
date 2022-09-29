@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 6887053228104415083}
   - component: {fileID: 6887053228104415082}
   - component: {fileID: 6887053228104415080}
+  - component: {fileID: 2985291993251078027}
   m_Layer: 8
   m_Name: StrongEnemyDad
   m_TagString: Enemy
@@ -274,4 +275,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 671db304d5d5a3043a7c24e0d04d1fc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 10
+  _damage: 30
+--- !u!114 &2985291993251078027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6887053228104415087}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83c15a0808e768d4bbd96ce296eec1e0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
