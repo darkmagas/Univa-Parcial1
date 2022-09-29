@@ -8,25 +8,34 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistanse = 0.2f;
-    public string patName = "Path";
+    //public string patName = "Path"; al reiniciar el siclo ya no se ejecutta el start. se cambia por los codigos de abajo.
 
     // Start is called before the first frame update
-    void Start()
+    //void Start()
+    //{var waypointParent = GameObject.Find(patName);
+    //for (int i = 0; i < waypointParent.transform.childCount; i++)
+    //{_wayPoints.Add(waypointParent.transform.GetChild(i));
+
+    private void OnEnable() //se agrega este
     {
-        var waypointParent = GameObject.Find(patName);
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
+    }
+    public void InitEnemy(string pathName) //el start se cambia por IntEnemy
+    {
+        var waypointParent = GameObject.Find(pathName);
         for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
             _wayPoints.Add(waypointParent.transform.GetChild(i));
         }
-
         StartCoroutine(MoveToNextWayPoinyt());
     }
-    private IEnumerator MoveToNextWayPoinyt()
+         private IEnumerator MoveToNextWayPoinyt()
     {
         var distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
         while (Mathf.Abs(distance) > minDistanse)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, Time.deltaTime*speed);
+            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
             distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
             yield return null;
         }
@@ -38,5 +47,11 @@ public class FollowPathMovement : MonoBehaviour
         }
     }
 
-   
+
 }
+
+
+
+
+
+   

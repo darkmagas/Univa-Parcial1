@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Magas.Utilities;
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private WaveConfiguration _waveConfiguration;
@@ -47,7 +48,14 @@ public class EnemyManager : MonoBehaviour
         for(int i = 0; i < amount;i++ )
         {
         var randomSpawn = Random.Range(0, _pathWaves.Count);
-        Instantiate(prefab, _spawpoints[randomSpawn].position, Quaternion.identity);
+            //Instantiate(prefab, _spawpoints[randomSpawn].position, Quaternion.identity);
+            EventDispatcher.Dispatch(new SpawnObject(prefab,null, _spawpoints[randomSpawn].position, Quaternion.identity, 
+                (gameObjectSpawn) => { //apartir de aqui 
+                    int rs = randomSpawn;
+                    string pathName = _pathWaves[rs];
+                    gameObjectSpawn.GetComponent<FollowPathMovement>().InitEnemy(pathName); //mandamos llamar para que se inicialice al reusar los enemigos.
+                })); 
+            //usams el codigo que instalamos, le pasamos los prefabs y le decimos que identifique la posicion qe se le asigno.
         yield return new WaitForSeconds(1);
         }
     }
