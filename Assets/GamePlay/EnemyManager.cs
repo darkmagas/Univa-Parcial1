@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using Magas.Utilities;
 
 public class EnemyManager : MonoBehaviour
 {
@@ -46,10 +47,21 @@ public class EnemyManager : MonoBehaviour
 
     private IEnumerator SpawnEnemies(int amount, GameObject prefab) //para spawnear a todos tus enemigos
     {
-        for (int i = 0; i<amount; i++)
+        for (int i = 0; i < amount; i++)
         {
             var randomSpawn = Random.Range(0, _pathnames.Count);
-            Instantiate(prefab, _spawnpoints[randomSpawn].position, Quaternion.identity);
+            // Instantiate(prefab, _spawnpoints[randomSpawn].position, Quaternion.identity);
+            EventDispatcher.Dispatch(
+                new SpawnObject(prefab,
+                null, _spawnpoints[randomSpawn].position,
+                Quaternion.identity,
+                (gameObjectspawn) =>
+                {
+                    int rs = randomSpawn;
+                    string pathName = _pathnames[rs];
+                    gameObjectspawn.GetComponent<FollowPathMovement>().InitEnemy(pathName);
+                    }));
+        
             yield return new WaitForSeconds(1); //para esperarse unos segundos antes del siguiente
           
         }
