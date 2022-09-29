@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 8822731309528405102}
   - component: {fileID: 8822731309528405103}
   - component: {fileID: 8822731309528405072}
+  - component: {fileID: -9076604384471470465}
   m_Layer: 8
   m_Name: EnemyUnit_Base
   m_TagString: Untagged
@@ -150,7 +151,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   minDistance: 0.2
-  pathName: Path
 --- !u!114 &8822731309528405073
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -206,7 +206,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0fd9cd1a9356ae4a8816893a0db5015, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 75
+  _rotationSpeed: 500
+--- !u!114 &-9076604384471470465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8822731309528405098}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3bce47aa9ba1d4babd5aebd6425132, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8822731309783074317
 GameObject:
   m_ObjectHideFlags: 0
