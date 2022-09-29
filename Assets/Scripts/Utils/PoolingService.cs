@@ -5,6 +5,7 @@ using UnityEngine.PlayerLoop;
 using Object = UnityEngine.Object;
 using UnityEngine.SceneManagement;
 
+
 namespace Magas.Utilities
 {
     public class PoolingService : IDisposable
