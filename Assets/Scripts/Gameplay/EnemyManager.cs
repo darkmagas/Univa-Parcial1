@@ -27,6 +27,7 @@ public class EnemyManager : MonoBehaviour
                 }
             }
         }
+        StartCoroutine(CreateWave());
     }
 
     private IEnumerator CreateWave()
