@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 2229673940110350976}
   - component: {fileID: 2229673940110350979}
   - component: {fileID: 2229673940110350977}
+  - component: {fileID: 1599716546770605449}
+  - component: {fileID: -1795784288463737822}
   m_Layer: 0
   m_Name: enemyUnity
   m_TagString: Enemy
@@ -78,6 +80,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 100
+--- !u!114 &1599716546770605449
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229673940110350981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 522b8b7d05ccb0547b9cbf79ce093fb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-1795784288463737822
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229673940110350981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 15d540417bef43b47afbeaa1a5e0e7f9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  minDistance: 0.2
 --- !u!1 &2229673940967326373
 GameObject:
   m_ObjectHideFlags: 0
