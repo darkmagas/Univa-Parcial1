@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 3352811271382735974}
   - component: {fileID: 3352811271382735975}
   - component: {fileID: 3352811271382735973}
+  - component: {fileID: -1696921383413189453}
   m_Layer: 8
   m_Name: enemyunit
   m_TagString: Enemy
@@ -215,7 +216,7 @@ Transform:
   m_Children:
   - {fileID: 3352811271076091746}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3352811271382735968
 MonoBehaviour:
@@ -229,7 +230,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e97e035a392e99a469421b3b4dfa3ac6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
+  speed: 10
   mintDistance: 0.2
   pathName: Path
 --- !u!136 &3352811271382735974
@@ -274,4 +275,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d267b763b728d4a44a4c5f1550e86654, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 40
+  _damage: 25
+--- !u!114 &-1696921383413189453
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3352811271382735970}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 935008dd13b76db4cbec04975aa7a38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
