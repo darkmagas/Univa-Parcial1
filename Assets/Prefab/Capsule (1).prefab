@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 92713312549672576}
   - component: {fileID: 92713312549672577}
   - component: {fileID: 92713312549672578}
+  - component: {fileID: 8658316323046477489}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Untagged
@@ -34,7 +35,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &92713312549672582
 MeshFilter:
@@ -109,10 +110,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 92713312549672588}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e4c8b9b4205da8d4f98bb14f052bc780, type: 3}
+  m_Script: {fileID: 11500000, guid: a6cc7f493f90dfa47ba248f6570965f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _rotationSpeed: 150
+  _wayPoints: []
+  path: Path
+  stoppingDistance: 0.2
+  speed: 5
 --- !u!114 &92713312549672578
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,3 +130,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 50
+--- !u!114 &8658316323046477489
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 92713312549672588}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d1f7c87752a7b5488fd661bc99751fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

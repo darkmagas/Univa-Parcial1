@@ -2,8 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Magas.Utilities;
-
-
 public class EnemyManager : MonoBehaviour
 {
     [SerializeField] private WaveConfiguration waveConfig;
@@ -41,12 +39,15 @@ public class EnemyManager : MonoBehaviour
         {
             var RandomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
             // Instantiate(prefab,_spawnPoints[RandomPathID].position,Quaternion.identity);
-            EventDispatcher.Dispatch(
-                signal: new SpawnObject(prefab, Parent: null, _spawnPoints [randomSpawn].position
-                ,Quaternion.identity
-                OnSpawned: randomSpawn.
+            EventDispatcher.Dispatch
+            (new SpawnObject(prefab, null, _spawnPoints[RandomPathID].position, Quaternion.identity,
+            (gameObjectSpawned) =>
+            {
+                int rs = RandomPathID;
+                string path = _pathNames[rs];
+                gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
+            }));
             yield return new WaitForSeconds(.5f);
         }
     }
 }
-

@@ -5,11 +5,11 @@ using Magas.Utilities;
 
 public class OnTriggerEnterDespawn : MonoBehaviour
 {
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider Other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (Other.gameObject.CompareTag("Player"))
         {
-            EventDispatcher.Dispatch(Signal:new DespawnObject((gameObject)); 
+            EventDispatcher.Dispatch(new DespawnObject(gameObject));
         }
     } 
 
