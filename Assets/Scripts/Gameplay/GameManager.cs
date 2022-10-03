@@ -3,7 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
-{
+{   
+    
+    
+    //variable de clase cuando es static
+    private static GameManager _instance;
+
+    public static GameManager Instance
+    {
+        get 
+        { 
+            if(_instance == null)
+            {
+                var obj = FindObjectOfType<GameManager>();
+                if(obj != null)
+                {
+                    _instance = obj;
+                }
+                else
+                {
+                    GameObject newSingleton = new GameObject(name: "GameManager");
+                    _instance = newSingleton.AddComponent<GameManager>();
+                }
+            }
+            return _instance; 
+        }
+    }
+
     [SerializeField][Range (0,6)] private float _gameSpeed = 1f;
 
     // Start is called before the first frame update
@@ -13,8 +39,9 @@ public class GameManager : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    public void ChangeSpeed(float speed)
     {
+        _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
     }
 }
