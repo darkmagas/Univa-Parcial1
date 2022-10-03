@@ -11,7 +11,7 @@ public class Health : MonoBehaviour
     [SerializeField] private UnityEvent<float> _onHealthChanged = new UnityEvent<float>();
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _currentHealth = _health;
     }
