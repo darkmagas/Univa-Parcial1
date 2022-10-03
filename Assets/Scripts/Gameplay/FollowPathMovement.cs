@@ -12,7 +12,7 @@ public class FollowPathMovement : MonoBehaviour
 
     
 
-    private void OnEnable()
+    private void OnEnable()  // on enebale sirve para que cuando se vuela a activar del pool se reseté 
     {
         _wayPoints.Clear();
         _currentWayPoint = 0;
