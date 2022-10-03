@@ -6,12 +6,13 @@ using UnityEngine.Events;
 public class Health : MonoBehaviour
 {
     [SerializeField] private int _health = 100;
+
     private int _currentHealth = 100;
     [SerializeField] private UnityEvent<float> _onHealthChanged = new UnityEvent<float>();
     [SerializeField] private UnityEvent _onDeath = new UnityEvent();
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
         _currentHealth = _health;
 
