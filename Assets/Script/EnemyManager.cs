@@ -17,6 +17,7 @@ public class EnemyManager : MonoBehaviour
 
     private void Start()
     { _spawnPoints = new Transform[_pathNames.Length];
+        for (int i = 0; i < _pathNames.Length;i++)
         {
             var wayPointParent = GameObject.Find(_pathNames[i]);
             var wayPoints = wayPointParent.GetComponentsInChildren<Transform>();
@@ -32,18 +33,24 @@ public class EnemyManager : MonoBehaviour
 
         yield return StartCoroutine(routine: SpawnEnemy(wave.weakEnemyCount, _weakEnemyPrefab));
         yield return StartCoroutine(routine: SpawnEnemy(wave.midEnemyCount, _midEnemyPrefab));
-        yield return StartCoroutine(routine: SpawnEnemy(wave.strongEnemyCount, _StrongEnemyPrefab));
+        yield return StartCoroutine(routine: SpawnEnemy(wave.strongEnemyCount, strongEnemyPrefab));
 
         yield return new WaitForSeconds(10f);
     }
 
     private IEnumerator SpawnEnemy(int enemyCount, GameObject prefab)
     {
-        for (int i = 0; i < enemyCount; i++) 
+        for (int i = 0; i < enemyCount; i++)
         {
-            var randomPathID:int = UnityEngine.Random.Range(0, _pathNames.Length);
+            var randomPathID = Random.Range(0, _pathNames.Length);
             Instantiate(prefab,_spawnPoints[randomPathID].position,Quaternion.identity);
-            EventDispatcher.Dispatch(signal: new SpawnObject(prefab, null, _spawnPoints[randomSpawn].position, Quaternion.identity, null));
+
+            EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randomPathID].position, Quaternion.identity, (x) =>
+             {
+                 int rs = randomPathID;
+                 string s = _pathNames[rs];
+                 //x.GetComponent<FollowPath>
+             }));
             yield return new WaitForSeconds(.5f);
         }
     }
