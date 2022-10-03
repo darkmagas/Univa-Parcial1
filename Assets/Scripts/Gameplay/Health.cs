@@ -9,8 +9,9 @@ public class Health : MonoBehaviour
 
     private int _currentHealth = 100;
     [SerializeField]private UnityEvent<float> _onHealthChanged = new ();
+    [SerializeField]private UnityEvent _onDeath = new ();
     // Start is called before the first frame update
-    void Start()
+    void OneEneable()
     {
        _currentHealth = _health;
     }

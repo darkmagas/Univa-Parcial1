@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class lookdirection : MonoBehaviour
+public class OnEnemyDeath : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
