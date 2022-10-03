@@ -13,7 +13,7 @@ public class EnemyManager : MonoBehaviour
     private int _currentWave = 0;
     [SerializeField] private string[] _pathNames;
     [SerializeField] private Transform[] _spawnPoints;
-
+   
     [SerializeField] private GameObject _weakEnemyPrefab;
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;

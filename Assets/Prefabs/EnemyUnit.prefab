@@ -194,6 +194,7 @@ GameObject:
   - component: {fileID: 6258079290902769949}
   - component: {fileID: 6258079290902769950}
   - component: {fileID: 6258079290902769951}
+  - component: {fileID: 2618029302631517261}
   m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Untagged
@@ -215,7 +216,7 @@ Transform:
   m_Children:
   - {fileID: 6258079290201895818}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6258079290902769948
 MonoBehaviour:
@@ -230,7 +231,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wayPoints: []
-  name_path: Path
   stoppingDistance: 0.2
   speed: 5
 --- !u!114 &6258079290902769949
@@ -276,3 +276,15 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &2618029302631517261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6258079290902769945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d465888fd00229c4ead4c20a7a13823c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

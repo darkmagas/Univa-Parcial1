@@ -5,7 +5,7 @@ using UnityEngine;
 public class DoDamage : MonoBehaviour
 {
     [SerializeField] private int damage = 1;
-    private void OntriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.GetComponent<Health>() != null)
         {
