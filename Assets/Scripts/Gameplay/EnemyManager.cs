@@ -9,7 +9,7 @@ public class EnemyManager : MonoBehaviour
     private int _currentWave = 0;
     [SerializeField] private string[] _pathNames;
     [SerializeField] private Transform[] _spawnPoints;
-
+    
     [SerializeField] private GameObject _weakEnemyPrefab;
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
@@ -43,7 +43,7 @@ public class EnemyManager : MonoBehaviour
         for (int i = 0; i < enemyCount; i++)
         {
             var randomPathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            Instantiate(prefab,_spawnPoints[randomPathID].position,Quaternion.identity);
+            //Instantiate(prefab,_spawnPoints[randomPathID].position,Quaternion.identity);
 
             EventDispatcher.Dispatch(new SpawnObject(prefab, null, _spawnPoints[randomPathID].position, Quaternion.identity, (gameObjectSpawned) =>
             {
