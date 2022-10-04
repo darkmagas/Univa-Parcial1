@@ -182,6 +182,8 @@ GameObject:
   - component: {fileID: 7647298893488124076}
   - component: {fileID: 1933152967280530325}
   - component: {fileID: 7303111967899252202}
+  - component: {fileID: -2077233211519128633}
+  - component: {fileID: 5877398093012349089}
   m_Layer: 8
   m_Name: enemyUnity
   m_TagString: Enemy
@@ -287,3 +289,46 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 10
+--- !u!114 &-2077233211519128633
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491388390670318121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3fa8ad6bcf6cd3340ae72bb4eb99eb7e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 5877398093012349089}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &5877398093012349089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1491388390670318121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8fc1188b9ea0ec844af8538d55ce47b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
