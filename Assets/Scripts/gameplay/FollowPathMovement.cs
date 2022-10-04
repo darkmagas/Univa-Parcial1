@@ -8,7 +8,7 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
-    public string pathName = "Path";
+    public string pathName ="path";
 
     private void OnEnable()
     {
