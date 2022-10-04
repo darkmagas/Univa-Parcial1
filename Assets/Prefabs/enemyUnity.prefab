@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 2229673940110350977}
   - component: {fileID: 1599716546770605449}
   - component: {fileID: -1795784288463737822}
+  - component: {fileID: 1206738743523153585}
+  - component: {fileID: 7428642650759674178}
   m_Layer: 0
   m_Name: enemyUnity
   m_TagString: Enemy
@@ -35,7 +37,7 @@ Transform:
   m_Children:
   - {fileID: 2229673940967326370}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!136 &2229673940110350976
 CapsuleCollider:
@@ -106,6 +108,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   minDistance: 0.2
+--- !u!114 &1206738743523153585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229673940110350981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5bc5f525f5a6fa246b6b3af70a2a2b53, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7428642650759674178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2229673940110350981}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: add6311741c7ef345a628f20737b157f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &2229673940967326373
 GameObject:
   m_ObjectHideFlags: 0

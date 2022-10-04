@@ -9,9 +9,10 @@ public class Health : MonoBehaviour
 
     private int _currentHealth = 100;
     [SerializeField] private UnityEvent<float> _onHealthChanged = new ();
+    [SerializeField] private UnityEvent _onDeath = new ();
 
     // Start is called before the first frame update
-    void Start()
+    void OnEnable()
     {
 
         _currentHealth = _health;
@@ -22,7 +23,14 @@ public class Health : MonoBehaviour
     {
         
         _currentHealth -= damage;
+
+        if (_currentHealth < 0)
+        {
+            _currentHealth = 0;
+        }
         _onHealthChanged?.Invoke(arg0:(float) _currentHealth / _health);
+        if (_currentHealth == 0)
+            _onDeath?.Invoke();
 
 
     }
