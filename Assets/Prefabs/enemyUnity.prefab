@@ -106,6 +106,7 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
+<<<<<<< Updated upstream:Assets/Prefabs/enemyUnity.prefab
   - component: {fileID: 1394499205874898888}
   - component: {fileID: 1394499205874898889}
   - component: {fileID: 1394499205874898884}
@@ -114,6 +115,16 @@ GameObject:
   - component: {fileID: -290216054007698724}
   m_Layer: 0
   m_Name: enemyUnity
+=======
+  - component: {fileID: 3409152813022600941}
+  - component: {fileID: 3409152813022600940}
+  - component: {fileID: 3409152813022600942}
+  - component: {fileID: 3409152813022600943}
+  - component: {fileID: 3409152813022600937}
+  - component: {fileID: 8170937495618311612}
+  m_Layer: 8
+  m_Name: EnemyUnit
+>>>>>>> Stashed changes:Assets/Prefab/EnemyUnit.prefab
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -205,7 +216,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8beffecd99920e048a879d51a045f635, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< Updated upstream:Assets/Prefabs/enemyUnity.prefab
 --- !u!1 &1394499206191334322
+=======
+  _damage: 20
+--- !u!114 &8170937495618311612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409152813022600946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ed357236dcf70184182f63be71930a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3409152813547955914
+>>>>>>> Stashed changes:Assets/Prefab/EnemyUnit.prefab
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
