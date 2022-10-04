@@ -18,7 +18,7 @@ public class FollowPathMovement : MonoBehaviour
 
     public void InitEnemy(string pathName)
     {
-        var waypointParent = GameObject.Find("Path");
+        var waypointParent = GameObject.Find(pathName);
 
         for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
