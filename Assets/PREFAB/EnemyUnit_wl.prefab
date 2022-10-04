@@ -139,9 +139,9 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7377068788024778458}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 9.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7377068788224686178}
@@ -150,9 +150,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 550.5, y: 259.5}
+  m_SizeDelta: {x: 1101, y: 519}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!223 &7377068788024778455
 Canvas:
   m_ObjectHideFlags: 0
@@ -162,7 +162,7 @@ Canvas:
   m_GameObject: {fileID: 7377068788024778458}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
+  m_RenderMode: 2
   m_Camera: {fileID: 0}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
@@ -197,7 +197,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 0
+  m_PresetInfoIsWorld: 1
 --- !u!114 &7377068788024778457
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -691,6 +691,8 @@ GameObject:
   - component: {fileID: 9097395298537643167}
   - component: {fileID: 9097395298537643165}
   - component: {fileID: 5632432677212545599}
+  - component: {fileID: 1756314130101947674}
+  - component: {fileID: 3641812927262904251}
   m_Layer: 8
   m_Name: EnemyUnit_wl
   m_TagString: Enemy
@@ -772,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1165d1a2404721d45bbee719ae5c9457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 20
 --- !u!114 &5632432677212545599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +785,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa36308b2f330cf48bb6ad77ff5a9f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1756314130101947674
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097395298537643162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86122a0b0a5a7ad4fa30e843622f7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3641812927262904251}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3641812927262904251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097395298537643162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cfdbd85e6ca064c88f14042c9e5ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9097395298560195944

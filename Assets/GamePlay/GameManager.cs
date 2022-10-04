@@ -4,11 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    [SerializeField][Range(0,6)]private float timeStep = 1;
-
-    private void Update()
+    private static GameManager _instance;
+        public static GameManager Instance
     {
+        get
+        { if (_instance ==null)
+            {
+                var obj= FindObjectOfType<GameManager>();
+                if(obj != null)
+                {
+                    _instance = obj;
+                    
+                }
+                else
+                {
+                    GameObject newSingleton = new GameObject("GameManager");
+                    _instance = newSingleton.AddComponent<GameManager>();
+                }
+            }
+            return _instance;
+                    }
+      }
+    [SerializeField] [Range(0, 6)] private float   timeStep = 1f;
 
+    //private void Update()
+    public void ChangeSpeed (float speed)
+        
+    {
+        timeStep = speed;
         Time.timeScale = timeStep;
     }
 

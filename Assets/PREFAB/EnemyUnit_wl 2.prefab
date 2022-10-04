@@ -691,6 +691,8 @@ GameObject:
   - component: {fileID: 9097395298537643167}
   - component: {fileID: 9097395298537643165}
   - component: {fileID: 5632432677212545599}
+  - component: {fileID: -2599668476272730168}
+  - component: {fileID: -2705993660019496539}
   m_Layer: 8
   m_Name: EnemyUnit_wl 2
   m_TagString: Enemy
@@ -772,7 +774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1165d1a2404721d45bbee719ae5c9457, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _damage: 5
+  _damage: 20
 --- !u!114 &5632432677212545599
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +785,49 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fa36308b2f330cf48bb6ad77ff5a9f59, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &-2599668476272730168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097395298537643162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86122a0b0a5a7ad4fa30e843622f7e03, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  onHealthChange:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2705993660019496539}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &-2705993660019496539
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9097395298537643162}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39cfdbd85e6ca064c88f14042c9e5ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &9097395298560195944
