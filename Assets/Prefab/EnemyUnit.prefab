@@ -111,6 +111,8 @@ GameObject:
   - component: {fileID: 3409152813022600942}
   - component: {fileID: 3409152813022600943}
   - component: {fileID: 3409152813022600937}
+  - component: {fileID: 4329003469205123576}
+  - component: {fileID: 8416297689024836621}
   m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Enemy
@@ -148,7 +150,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   minDistance: 0.2
-  pathName: Path
 --- !u!136 &3409152813022600942
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -192,6 +193,37 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _damage: 20
+--- !u!114 &4329003469205123576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409152813022600946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1496ade93099641c8ae3c3d3d363fa96, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8416297689024836621
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409152813022600946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f80279797151408f8d5518f401c7703, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3409152813547955914
 GameObject:
   m_ObjectHideFlags: 0
