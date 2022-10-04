@@ -4,12 +4,34 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   [SerializeField][Range(0,6)] private float timeStep = 1;
-    // Start is called before the first frame update
-    
+    private static GameManager _instance;
+    public static GameManager Instance 
+    {
+        get 
+        {
+            if(_instance == null) 
+            {
+                var obj = FindObjectOfType<GameManager>();
+                if(obj != null) 
+                {
+                    _instance = obj;
+                }
+                else 
+                {
+                    GameObject newSingleton = new GameObject ( "GameManager");
+                    _instance = newSingleton.AddComponent<GameManager>(); 
 
-    // Update is called once per frame
-    void Update()
+                }
+            }
+            return _instance; 
+        }
+        
+    }
+    [SerializeField] [Range(0, 6)] private float timeStep = 1;
+    // Start is called before the first frame update
+
+
+   public void changeSpeed (float speed)
     {
         Time.timeScale = timeStep;
 
