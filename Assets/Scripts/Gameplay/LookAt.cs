@@ -1,18 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Mathematics;
 using UnityEngine;
 
 public class LookAt : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Camera cameraToFollow;
     void Start()
     {
-        
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        transform.rotation=Quaternion.LookRotation( transform.position - cameraToFollow.transform.position);
     }
 }

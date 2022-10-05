@@ -1946,6 +1946,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1859802652}
   - component: {fileID: 1859802653}
+  - component: {fileID: 1859802654}
   m_Layer: 5
   m_Name: SliderPlayer
   m_TagString: Untagged
@@ -2027,6 +2028,19 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1859802654
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1859802651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7f4f684fa605b24e86687ca3b5cb6e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToFollow: {fileID: 732433385}
 --- !u!1 &1966617471
 GameObject:
   m_ObjectHideFlags: 0
