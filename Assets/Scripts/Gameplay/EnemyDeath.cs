@@ -1,18 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class EnemyDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public void Die()
     {
-        
+        EventDispatcher.Dispatch(new DespawnObject(gameObject));
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
