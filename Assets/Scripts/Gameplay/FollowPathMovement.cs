@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -14,7 +15,8 @@ public class FollowPathMovement : MonoBehaviour
         _wayPoints.Clear();
         _currentWayPoint = 0;
     }
-    void InitEnemy(string pathName)
+
+    public void InitEnemy(string pathName)
     {
         var waypointParent = GameObject.Find(pathName);
         for (int i = 0; i < waypointParent.transform.childCount; i++)

@@ -1,10 +1,42 @@
 {
+  "scopedRegistries": [
+    {
+      "name": "Unity NuGet",
+      "url": "https://unitynuget-registry.azurewebsites.net",
+      "scopes": [
+        "org.nuget"
+      ]
+    },
+    {
+      "name": "jilleJr",
+      "url": "https://npm.cloudsmith.io/jillejr/newtonsoft-json-for-unity",
+      "scopes": [
+        "jillejr.newtonsoft.json-for-unity"
+      ]
+    },
+    {
+      "name": "JetBrains",
+      "url": "https://npm.pkg.jetbrains.space/public/p/jetbrains-gamedev/jetbrains-gamedev/",
+      "scopes": [
+        "com.jetbrains"
+      ]
+    }
+  ],
   "dependencies": {
-    "com.unity.collab-proxy": "1.17.2",
+    "com.alkimeegames.taglayertypegenerator": "https://github.com/AlkimeeGames/TagLayerTypeGenerator.git#main",
+    "com.cysharp.unitask": "https://github.com/Cysharp/UniTask.git?path=src/UniTask/Assets/Plugins/UniTask",
+    "com.jetbrains.riderflow": "2022.1.2-205",
+    "com.marijnzwemmer.unity-toolbar-extender": "https://github.com/marijnz/unity-toolbar-extender.git",
+    "com.neuecc.unirx": "https://github.com/neuecc/UniRx.git?path=Assets/Plugins/UniRx/Scripts",
+    "com.svermeulen.extenject": "https://github.com/Mathijs-Bakker/Extenject.git?path=UnityProject/Assets/Plugins/Zenject/Source",
+    "com.unity.addressables": "1.20.5",
+    "com.unity.cinemachine": "2.8.6",
     "com.unity.feature.development": "1.0.1",
     "com.unity.ide.rider": "3.0.15",
     "com.unity.ide.visualstudio": "2.0.16",
     "com.unity.ide.vscode": "1.2.5",
+    "com.unity.inputsystem": "1.4.1",
+    "com.unity.render-pipelines.universal": "13.1.8",
     "com.unity.test-framework": "1.1.33",
     "com.unity.textmeshpro": "3.0.6",
     "com.unity.timeline": "1.7.1",
