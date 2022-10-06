@@ -747,6 +747,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3136307637477103937}
   - component: {fileID: 6575995669690043580}
+  - component: {fileID: 2730942912426625925}
   m_Layer: 5
   m_Name: Sliderbad
   m_TagString: Untagged
@@ -828,3 +829,16 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &2730942912426625925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9050291883153583634}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0653f9a2e62b7f4fa1cdd2ba16ead2c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraToFollow: {fileID: 1068664576121864095, guid: 7c51d8d68aa72e04fa114cf4e3603579, type: 3}
