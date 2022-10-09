@@ -8,8 +8,8 @@ using UnityEngine;
 public class TurretEnemyDetection : MonoBehaviour
 {
     private GameObject _detectedEnemy = null;
-    [SerializedField] private Transform _turretPivot = null;
-    [SerializedField] private float _maxDistance = 1f;
+    [SerializeField] private Transform _turretPivot = null;
+    [SerializeField] private float _maxDistance = 1f;
 
     private void OnTriggerEnter(Collider other)
     {
