@@ -3,23 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using Magas.Utilities;
 
-public class OnTriggerEnterDespawn : MonoBehaviour
+public class ballonDespawn : MonoBehaviour
 {
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            EventDispatcher.Dispatch(new DespawnObject(gameObject)); 
+            EventDispatcher.Dispatch(new DespawnObject(gameObject));
         }
     }
 }
-
-
 //Explicación: 
 
 //OJO para que el codigo funcione debes escribir (using Magas.Utilities;) hasta mero arriba donde se encuentran los using
-//IMPORTANTE para qeu este codigo funcione, al otro objeto "player" en el inspector buscamos donde tenga su Collider y activamos la casilla de "Is trigger"
-//IMPORTANTE 2: para que el objeto pueda despawnear nesesita tener un "Rigbody" esto se puede agregar dentro del objeto, hasta abajo en "add COmponent"
+//IMPORTANTE para qeu este codigo funcione, al objeto que le pongamos el codigo en el inspector buscamos donde tenga su Collider y activamos la casilla de "Is trigger"
 //REQUISITO debe haber otro objeto con una tag de "player" (explicado en el punto 7.2)
 
 // 1.- aquí se creará un evento para que cuando el portador del codigo choque con el collider de otro objeto, el portador del codigo desaparezca
