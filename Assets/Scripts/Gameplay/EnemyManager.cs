@@ -14,7 +14,7 @@ public class EnemyManager : MonoBehaviour
     private int _currentWave = 0;
     private void Start()
     {
-        for (int i = 0; i > _pathNames.Count; i++)
+        for (int i = 0; i < _pathNames.Count; i++)
         {
             var waypointParent = GameObject.Find(_pathNames[i]);
             if (waypointParent != null)

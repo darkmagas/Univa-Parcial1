@@ -14,7 +14,13 @@ public class TurrerEnemyDetection : MonoBehaviour
         var direction = _detectedEnemy.transform.position - _turrerPivot.position;
         var targetRotation = Quaternion.LookRotation(direction, Vector3.up);
         _turrerPivot.rotation = targetRotation;
+        var distance = Vector3.Distance(a: _detectedEnemy.transform.position, b: transform.parent.position);
+        if (Mathf.Abs(distance) > 10f)
+        {
+            _detectedEnemy = null;
+        }
     }
+
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Enemy"))
@@ -26,13 +32,17 @@ public class TurrerEnemyDetection : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("Enemy") && _detectedEnemy == other.gameObject)
-                {
+        {
             _detectedEnemy = null;
         }
-    }
 
+    }
 
 }
 
 
-    
+
+
+
+
+
