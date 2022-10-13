@@ -945,6 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _detectedEnemy: {fileID: 0}
   _turretPivot: {fileID: 2054885392}
+  _maxDistance: 5
 --- !u!1 &661580312
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5630765084878902734, guid: 30de8b152b48ccc4c989a7c4db2866b4, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 5630765084878902734, guid: 30de8b152b48ccc4c989a7c4db2866b4, type: 3}
       propertyPath: m_LocalRotation.w
