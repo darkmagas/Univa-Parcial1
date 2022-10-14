@@ -30,6 +30,8 @@ namespace Smores
         public const int UI = 5;
         public const int Cookie = 6;
         public const int TouchGround = 7;
+        public const int Enemy = 8;
+        public const int DevVisual = 9;
         /// <summary>
         /// Use this type in place of layer or layer mask values in code / scripts.
         /// </summary>
@@ -49,6 +51,8 @@ namespace Smores
             public const int UI = 32;
             public const int Cookie = 64;
             public const int TouchGround = 128;
+            public const int Enemy = 256;
+            public const int DevVisual = 512;
         }
     }
 }
