@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 96828016412c640459f2c304d8f9ca35
+guid: d2f20cfb958a228469b43a6d4c123150
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,7 +81,7 @@ TextureImporter:
     buildTarget: Standalone
     maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: 4
+    textureFormat: 2
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -117,64 +117,148 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Bullets_0
+      name: Ramas_1
       rect:
         serializedVersion: 2
-        x: 278
-        y: 194
-        width: 209
-        height: 178
+        x: 5
+        y: 216
+        width: 296
+        height: 71
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 77e528513fca80f448493fe47497128d
-      internalID: 434854059
+      spriteID: c1ee10b1f7767e142b563885e3c1ef04
+      internalID: -1641227329
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_1
+      name: Ramas_2
       rect:
         serializedVersion: 2
-        x: 6
-        y: 332
-        width: 240
-        height: 154
+        x: 7
+        y: 157
+        width: 353
+        height: 51
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 74d672944535ef648b55450741a0f8b4
-      internalID: -1220595605
+      spriteID: eb3bb9c0f41b0d945b13b394321a4c9f
+      internalID: 1208180291
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Bullets_2
+      name: Ramas_3
       rect:
         serializedVersion: 2
-        x: 45
-        y: 25
-        width: 224
-        height: 178
+        x: 7
+        y: 96
+        width: 286
+        height: 57
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0bb03505e6aafcc499e7cc73a16e96e8
-      internalID: 420939913
+      spriteID: 93f9f6831cfffc24ca70d12bdd2aea92
+      internalID: -1916869819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramas_4
+      rect:
+        serializedVersion: 2
+        x: 9
+        y: 21
+        width: 360
+        height: 70
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02d870f2b30f61841aef6f4831b2662c
+      internalID: -310071563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramas_5
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 288
+        width: 379
+        height: 61
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b3956c91ffc3c04895de2437eae37a5
+      internalID: -472662957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramas_6
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 15
+        width: 54
+        height: 252
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e49260e227cda0c4cadb6db63befad9a
+      internalID: -2096982133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ramas_7
+      rect:
+        serializedVersion: 2
+        x: 433
+        y: 16
+        width: 50
+        height: 245
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 722d9c883b5cbbd46bae2c651f7d6d2c
+      internalID: -919603209
       vertices: []
       indices: 
       edges: []
@@ -182,7 +266,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: ba3f9d8b805259c46afe1744cbb0b8b3
+    spriteID: e7a44115b839ff14fa650222d60acf62
     internalID: 0
     vertices: []
     indices: 
@@ -190,9 +274,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Bullets_0: 434854059
-      Bullets_2: 420939913
-      Bullets_1: -1220595605
+      Ramas_7: -919603209
+      Ramas_4: -310071563
+      Ramas_6: -2096982133
+      Ramas_3: -1916869819
+      Ramas_1: -1641227329
+      Ramas_0: -761090269
+      Ramas_2: 1208180291
+      Ramas_5: -472662957
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
