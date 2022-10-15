@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: f17ffa80273eced47b2534da6113fe77
+guid: 9ea689fe076070147bcad217aec34fda
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -107,169 +107,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Dad_Idle_01
+      name: Alien_Melee_ICON
       rect:
         serializedVersion: 2
-        x: 1473
-        y: 2180
-        width: 551
-        height: 769
-      alignment: 9
-      pivot: {x: 0.34985882, y: 0.112490095}
+        x: 40
+        y: 1556
+        width: 600
+        height: 600
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0f68918b51b8dde43b2fb71e81818305
-      internalID: 800958898
+      spriteID: b89fe4e9e5a42bd40a3ce2478a2e2dae
+      internalID: 2003701937
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dad_Idle_02
+      name: Alien_Melee_Idle_01
       rect:
         serializedVersion: 2
-        x: 2453
-        y: 2180
-        width: 551
+        x: 996
+        y: 1330
+        width: 549
+        height: 805
+      alignment: 9
+      pivot: {x: 0.44035232, y: 0.023775809}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c981dd448385ff04192c3637b07fd530
+      internalID: 1775790554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alien_Melee_Idle_02
+      rect:
+        serializedVersion: 2
+        x: 1602
+        y: 1330
+        width: 549
+        height: 805
+      alignment: 9
+      pivot: {x: 0.43260095, y: 0.024436506}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d0ba39bcfc05dd459e92684e44dfaf5
+      internalID: 661741351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Alien_Melee_Attack_01
+      rect:
+        serializedVersion: 2
+        x: 1680
+        y: 374
+        width: 506
         height: 791
       alignment: 9
-      pivot: {x: 0.350309, y: 0.109980874}
+      pivot: {x: 0.44101736, y: 0.023359682}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c464950eead3d754a9a3cc88190c1f73
-      internalID: -1067403135
+      spriteID: 327c405406d83d5469e0a2c116fc4280
+      internalID: 658887400
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dad_Attak_01
+      name: Alien_Melee_Attack_02
       rect:
         serializedVersion: 2
-        x: 29
-        y: 707
-        width: 895
-        height: 782
+        x: 992
+        y: 374
+        width: 591
+        height: 791
       alignment: 9
-      pivot: {x: 0.59246033, y: 0.10290637}
+      pivot: {x: 0.8015777, y: 0.024275905}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ce6a8ac8d3ef7db48947e4f87f75f474
-      internalID: 2119546278
+      spriteID: 8b5647759f077b54d8faf9ca986f4ea5
+      internalID: -2089679063
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Dad_Attak_02
+      name: Alien_Melee_Attack_03
       rect:
         serializedVersion: 2
-        x: 999
-        y: 1136
-        width: 1075
-        height: 782
+        x: 24
+        y: 376
+        width: 900
+        height: 791
       alignment: 9
-      pivot: {x: 0.66079396, y: 0.103781775}
+      pivot: {x: 0.8718887, y: 0.013025836}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1effba26ac27431469f1c5865d031f76
-      internalID: -2056715940
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dad_Attak_03
-      rect:
-        serializedVersion: 2
-        x: 2381
-        y: 1136
-        width: 743
-        height: 961
-      alignment: 9
-      pivot: {x: 0.5104379, y: 0.08373007}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 05ad102c847f9794894d87f0a04d4be2
-      internalID: -1038527382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dad_Attak_04
-      rect:
-        serializedVersion: 2
-        x: 1150
-        y: 92
-        width: 924
-        height: 763
-      alignment: 9
-      pivot: {x: 0.6061938, y: 0.11104443}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6686b3e8968ddd4428823ad6a221e4b7
-      internalID: 1127770991
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Dad_Attak_05
-      rect:
-        serializedVersion: 2
-        x: 2221
-        y: 85
-        width: 903
-        height: 981
-      alignment: 9
-      pivot: {x: 0.59628874, y: 0.08373001}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 814f9ec54cbf8ff418c1c0a577a4218a
-      internalID: -568256226
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: DAD_ICON
-      rect:
-        serializedVersion: 2
-        x: 344
-        y: 2508
-        width: 450
-        height: 450
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 7f494e575cce7084e9f112746c60d1fd
-      internalID: 1855112718
+      spriteID: fdd075cea19395545b77c929607d0ddc
+      internalID: -346547706
       vertices: []
       indices: 
       edges: []
@@ -277,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d83594214b5d3cb43856225112bdd3df
+    spriteID: 8e9c156d3cb93fd4195528644313f13d
     internalID: 0
     vertices: []
     indices: 
@@ -285,14 +243,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Dad_Attak_03: -1038527382
-      Dad_Idle_02: -1067403135
-      Dad_Attak_04: 1127770991
-      Dad_Attak_05: -568256226
-      Dad_Attak_02: -2056715940
-      Dad_Idle_01: 800958898
-      Dad_Attak_01: 2119546278
-      DAD_ICON: 1855112718
+      Alien_Melee_Attack_02: -2089679063
+      Alien_Melee_Idle_01: 1775790554
+      Alien_Melee_ICON: 2003701937
+      Alien_Melee_Attack_01: 658887400
+      Alien_Melee_Attack_03: -346547706
+      Alien_Melee_Idle_02: 661741351
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
