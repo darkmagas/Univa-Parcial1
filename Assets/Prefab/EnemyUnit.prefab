@@ -17,7 +17,7 @@ GameObject:
   - component: {fileID: 542674585201273156}
   m_Layer: 8
   m_Name: EnemyUnit
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -51,7 +51,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _wayPoints: []
-  path: Path
   stoppingDistance: 0.2
   speed: 5
 --- !u!136 &2216172355999722204
@@ -111,6 +110,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _health: 100
   _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
     m_PersistentCalls:
       m_Calls: []
 --- !u!114 &542674585201273156
