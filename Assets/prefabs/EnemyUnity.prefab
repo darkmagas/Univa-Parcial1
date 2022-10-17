@@ -15,9 +15,10 @@ GameObject:
   - component: {fileID: 379774284634472413}
   - component: {fileID: 8120219089249277628}
   - component: {fileID: 357675059512212492}
+  - component: {fileID: 8040077309689816738}
   m_Layer: 8
   m_Name: EnemyUnity
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -125,10 +126,46 @@ MonoBehaviour:
   _health: 100
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 2317645052696762982}
+        m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
+        m_MethodName: set_value
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 8040077309689816738}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &8040077309689816738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 379774284634472400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 75b3e2c229a64b147a4770270dec307a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &379774285434134989
 GameObject:
   m_ObjectHideFlags: 0
@@ -347,6 +384,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 379774284634472401}
     m_Modifications:
+    - target: {fileID: 814408618507986868, guid: d3473753802d0e94688a473f58301415, type: 3}
+      propertyPath: m_PresetInfoIsWorld
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3270802457195556658, guid: d3473753802d0e94688a473f58301415, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0
@@ -446,6 +487,17 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: d3473753802d0e94688a473f58301415, type: 3}
+--- !u!114 &2317645052696762982 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3460239711960617179, guid: d3473753802d0e94688a473f58301415, type: 3}
+  m_PrefabInstance: {fileID: 1165535420708178621}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!224 &5271593142560246744 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 6414434572800491877, guid: d3473753802d0e94688a473f58301415, type: 3}
