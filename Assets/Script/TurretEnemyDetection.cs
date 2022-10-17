@@ -8,7 +8,7 @@ public class TurretEnemyDetection : MonoBehaviour
     [SerializeField] private Transform _TurretPivot = null;
     [SerializeField] private float _maxDistance = 1f;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy") && _detectedEnemy == null)
         {
