@@ -184,7 +184,7 @@ GameObject:
   - component: {fileID: 63489430}
   - component: {fileID: 63489433}
   - component: {fileID: 63489432}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   - component: {fileID: 151668645}
   - component: {fileID: 151668644}
   - component: {fileID: 151668643}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -485,7 +485,7 @@ GameObject:
   - component: {fileID: 338843933}
   - component: {fileID: 338843936}
   - component: {fileID: 338843935}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (3)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   - component: {fileID: 368066493}
   - component: {fileID: 368066496}
   - component: {fileID: 368066495}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (6)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -802,6 +802,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 814560082}
   - {fileID: 2070125395}
   m_Father: {fileID: 517876598}
   m_RootOrder: -1
@@ -930,7 +931,7 @@ GameObject:
   - component: {fileID: 799635950}
   - component: {fileID: 799635953}
   - component: {fileID: 799635952}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (14)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1002,6 +1003,152 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 799635949}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &814560081
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 814560082}
+  - component: {fileID: 814560084}
+  - component: {fileID: 814560083}
+  m_Layer: 0
+  m_Name: Cannon
+  m_TagString: Untagged
+  m_Icon: {fileID: -5442936267250999957, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &814560082
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814560081}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.21600002, z: 1.15}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 508116802}
+  m_RootOrder: -1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &814560083
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814560081}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 8763f37491b94e34ebb643af4938af55, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!114 &814560084
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 814560081}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d06a5c187d1d2c45b9fd943ad1e0af3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cannon: {fileID: 814560082}
+  _maxRange: 10
+  _damage: 9999
+  _audioSource: {fileID: 814560083}
+  _impactEffect: {fileID: 0}
 --- !u!1 &831208297
 GameObject:
   m_ObjectHideFlags: 0
@@ -1199,7 +1346,7 @@ GameObject:
   - component: {fileID: 1081882830}
   - component: {fileID: 1081882833}
   - component: {fileID: 1081882832}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (13)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1282,7 +1429,7 @@ GameObject:
   - component: {fileID: 1086193334}
   - component: {fileID: 1086193337}
   - component: {fileID: 1086193336}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (12)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1365,7 +1512,7 @@ GameObject:
   - component: {fileID: 1126676431}
   - component: {fileID: 1126676434}
   - component: {fileID: 1126676433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (8)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1448,7 +1595,7 @@ GameObject:
   - component: {fileID: 1130798431}
   - component: {fileID: 1130798434}
   - component: {fileID: 1130798433}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1531,7 +1678,7 @@ GameObject:
   - component: {fileID: 1135089800}
   - component: {fileID: 1135089803}
   - component: {fileID: 1135089802}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2203,7 +2350,7 @@ GameObject:
   - component: {fileID: 1437497210}
   - component: {fileID: 1437497213}
   - component: {fileID: 1437497212}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (10)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,7 +2641,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1646648157}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: path
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2633,7 +2780,7 @@ GameObject:
   - component: {fileID: 1847119378}
   - component: {fileID: 1847119381}
   - component: {fileID: 1847119380}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (11)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2716,7 +2863,7 @@ GameObject:
   - component: {fileID: 1851479162}
   - component: {fileID: 1851479165}
   - component: {fileID: 1851479164}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (9)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2799,7 +2946,7 @@ GameObject:
   - component: {fileID: 1855846794}
   - component: {fileID: 1855846797}
   - component: {fileID: 1855846796}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (7)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2882,7 +3029,7 @@ GameObject:
   - component: {fileID: 1859960754}
   - component: {fileID: 1859960757}
   - component: {fileID: 1859960756}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: wayPoint (4)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
