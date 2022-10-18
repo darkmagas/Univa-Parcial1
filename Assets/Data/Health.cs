@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
     public Slider BarraVida;
 
     // Start is called before the first frame update
-    void onEnable()
+    void OnEnable()
     {
         _currentHealth = _health;
     }
