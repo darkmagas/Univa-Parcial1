@@ -23,7 +23,7 @@ public class EnemyTurrentDetection : MonoBehaviour
         }
     }
 
-    private void OnTriggerEnterStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.CompareTag("Enemy") && _detectedEnemy == null)
         {
