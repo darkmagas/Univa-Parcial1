@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class Health : MonoBehaviour
 {
     [SerializeField]private int _health = 100;
     private int _currentHealth = 100;
-       [SerializeField] private UnityEvent <float> _onHealthChanged = new UnityEvent<float>();
+    [SerializeField] private UnityEvent <float> _onHealthChanged = new UnityEvent<float>();
     [SerializeField]private UnityEvent _onDeath = new();
+    public Text healthText;
     // Start is called before the first frame update
     void OnEnable() //OnEnable se ejecuta cada vez que lo prendemos
     {
@@ -16,10 +18,13 @@ public class Health : MonoBehaviour
         
     }
 
+  
+
     public void RecieveDamage(int damage)
     {
 
         _currentHealth -= damage; //Shortcut para irle restando el Daño
+        healthText.text = "" + _currentHealth + "%";
 
         if (_currentHealth < 0)
         {

@@ -26,7 +26,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858724053131629156}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 1.1600001, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -120,6 +120,8 @@ GameObject:
   - component: {fileID: -3833827456653038646}
   - component: {fileID: 9160635740835414124}
   - component: {fileID: -7617320795870591528}
+  - component: {fileID: 6786866643814221746}
+  - component: {fileID: 5180028319801215230}
   m_Layer: 0
   m_Name: Mid_Enemy
   m_TagString: Untagged
@@ -135,7 +137,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 858724054653930741}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -173,7 +175,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 1.76
   m_Direction: 1
-  m_Center: {x: 0.48, y: -0.16, z: 0}
+  m_Center: {x: 0.34, y: 1.11, z: 0}
 --- !u!54 &5926577877476595878
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -245,7 +247,44 @@ MonoBehaviour:
         m_CallState: 2
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6786866643814221746}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &6786866643814221746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858724054653930741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ccb5b8c122e1f428241cc061b47271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &5180028319801215230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 858724054653930741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad3a34e438f03440adf685a0660621c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeMethod: 0
 --- !u!1001 &858724054466969970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -336,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3398814488866929985, guid: 824bc79393a6af743a252764290d5928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.78
+      value: 2.94
       objectReference: {fileID: 0}
     - target: {fileID: 3398814488866929985, guid: 824bc79393a6af743a252764290d5928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

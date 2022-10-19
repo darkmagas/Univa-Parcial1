@@ -15,6 +15,8 @@ GameObject:
   - component: {fileID: 6547331775685036043}
   - component: {fileID: -4918693527844550692}
   - component: {fileID: -5997062417568206663}
+  - component: {fileID: 4379812091118570789}
+  - component: {fileID: 1979861421269868525}
   m_Layer: 0
   m_Name: Big_Enemy
   m_TagString: Untagged
@@ -68,7 +70,7 @@ CapsuleCollider:
   m_Radius: 0.5
   m_Height: 2
   m_Direction: 1
-  m_Center: {x: 0.4, y: 0.35, z: 0}
+  m_Center: {x: 0.41, y: 1.37, z: 0}
 --- !u!54 &-9096485655677615454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -140,7 +142,44 @@ MonoBehaviour:
         m_CallState: 2
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 4379812091118570789}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4379812091118570789
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703023206536575281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 18ccb5b8c122e1f428241cc061b47271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1979861421269868525
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3703023206536575281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ad3a34e438f03440adf685a0660621c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ChangeMethod: 1
 --- !u!1 &3703023207770989799
 GameObject:
   m_ObjectHideFlags: 0
@@ -167,7 +206,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3703023207770989799}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0.98999983, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -336,7 +375,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3398814488866929985, guid: 824bc79393a6af743a252764290d5928, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2.47
+      value: 3.46
       objectReference: {fileID: 0}
     - target: {fileID: 3398814488866929985, guid: 824bc79393a6af743a252764290d5928, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
