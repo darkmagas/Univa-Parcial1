@@ -1000,9 +1000,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _maxRange: 10
   _cannon: {fileID: 1886247667}
-  _damage: 2
-  _impactEffect: {fileID: 0}
+  _damage: 1000
+  _impactEffect: {fileID: 6180517621923699479, guid: 034c0d4367f45554eb99c544964f9dcb, type: 3}
   _audioSource: {fileID: 1886247669}
+  _shootingCD: 1
 --- !u!82 &1886247669
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1013,7 +1014,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 51a09c9b3b040254ca5f6bb9110257a4, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 8c3cc49a4814c0743accaefc1cdbb78d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
