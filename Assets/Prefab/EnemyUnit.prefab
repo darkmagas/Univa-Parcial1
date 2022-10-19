@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5928144615503567446}
   - component: {fileID: 2026165825472329395}
   - component: {fileID: 3295492487338552644}
+  - component: {fileID: 3635231109568580942}
   m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Enemy
@@ -127,7 +128,31 @@ MonoBehaviour:
       m_Calls: []
   _onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3635231109568580942}
+        m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
+        m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &3635231109568580942
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5928144615503567443}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 83a02154d99c54549aab8ae0ea550bec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5928144617263178447
 GameObject:
   m_ObjectHideFlags: 0
