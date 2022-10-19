@@ -658,7 +658,7 @@ MonoBehaviour:
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1882605270}
+      - m_Target: {fileID: 2034879245}
         m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
         m_MethodName: set_value
         m_Mode: 0
@@ -1640,7 +1640,8 @@ MonoBehaviour:
   _maxRange: 10
   _damage: 10
   _audioSource: {fileID: 1756690405}
-  _impactEffect: {fileID: 0}
+  _impactEffect: {fileID: 1135623573088237173, guid: 16bb5beaa6934374eba717ece9386289, type: 3}
+  _shootingCD: 1
 --- !u!1 &1839675585
 GameObject:
   m_ObjectHideFlags: 0
@@ -1724,17 +1725,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1839675585}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1882605270 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3460239711960617179, guid: d3473753802d0e94688a473f58301415, type: 3}
-  m_PrefabInstance: {fileID: 1020413881}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1993072682
 GameObject:
   m_ObjectHideFlags: 0
@@ -1847,6 +1837,17 @@ Transform:
   m_Father: {fileID: 482916929}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2034879245 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3460239711960617179, guid: d3473753802d0e94688a473f58301415, type: 3}
+  m_PrefabInstance: {fileID: 1020413881}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2046158305
 GameObject:
   m_ObjectHideFlags: 0

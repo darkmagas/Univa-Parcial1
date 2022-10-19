@@ -26,7 +26,7 @@ public class TurretEnemyDetection : MonoBehaviour
     //    }
     //}
 
-    private void update()
+    private void Update()
     {
         if( _detectedEnemy != null)
         {
