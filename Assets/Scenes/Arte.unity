@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1519,17 +1519,6 @@ PrefabInstance:
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 68eef4eff921ae84c8e28e959c112414, type: 3}
---- !u!114 &439771234 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 3041555038036491207, guid: 41dd44b2fb17bda499a1b56ef64f7da8, type: 3}
-  m_PrefabInstance: {fileID: 3041555038948254849}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &447852250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1543,7 +1532,6 @@ GameObject:
   - component: {fileID: 447852252}
   - component: {fileID: 447852251}
   - component: {fileID: 447852255}
-  - component: {fileID: 447852256}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Player
@@ -1638,7 +1626,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 447852250}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c5506a4d338e13f43ba4600ea17aaedc, type: 3}
   m_Name: 
@@ -1710,20 +1698,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &447852256
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 447852250}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 8c6ed8d3f041a304da85526c51950b57, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
   healthText: {fileID: 1185655478}
-  healthbar: {fileID: 439771234}
 --- !u!1 &448338876
 GameObject:
   m_ObjectHideFlags: 0
