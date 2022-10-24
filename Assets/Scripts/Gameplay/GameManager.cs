@@ -22,10 +22,10 @@ public class GameManager : MonoBehaviour
                 }
             }
             return _instance;
-        } 
+        }
     }
-    [SerializeField] [Range(0,6)] private float _gameSpeed = 1f;
-    
+    [SerializeField] [Range(0, 6)] private float _gameSpeed = 1f;
+    private LevelCurrencyManager _LevelCurrencyManager;
 
     // Update is called once per frame
     public void ChangeSpeed(float speed)
@@ -33,4 +33,15 @@ public class GameManager : MonoBehaviour
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
     }
+    public void AddLevelCurrencyManager(LevelCurrencyManager LevelCurrencyManager)
+        {
+        _LevelCurrencyManager = LevelCurrencyManager;
+        }
+    public bool TrySpendCurrency(int amount)
+    {
+        return _LevelCurrencyManager.TrySpendCurrency(amount);
+    }
+
 }
+
+
