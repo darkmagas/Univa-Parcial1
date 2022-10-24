@@ -11,8 +11,8 @@ public class GameManager : MonoBehaviour
         {
             if (_instance == null)
             {
-               var obj = FindObjectOfType<GameManager>();
-                if(obj != null)
+                var obj = FindObjectOfType<GameManager>();
+                if (obj != null)
                 {
                     _instance = obj;
                 }
@@ -25,13 +25,23 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-    [SerializeField] [Range(0,6)] private float _gameSpeed = 1f;
+    [SerializeField][Range(0, 6)] private float _gameSpeed = 1f;
+    private LevelCurrencyManager _levelCurrencyManager;
     // Start is called before the first frame update
 
     // Update is called once per frame
-   public void ChangeSpeed(float speed)
+    public void ChangeSpeed(float speed)
     {
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
+    }
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+    {
+        _levelCurrencyManager = levelCurrencyManager;
+    }
+
+    public bool TrySpendCurrency(int amount)
+    {
+        return _levelCurrencyManager.TrySpendCurrency(amount);
     }
 }
