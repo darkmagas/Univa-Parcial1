@@ -12,7 +12,7 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private int _damage = 10;
     [SerializeField] private AudioSource _audioSource = null;
     [SerializeField] private GameObject _impactEffect = null;
-    [SerializeField] private float _shootingCD = 10f;
+    [SerializeField] private float _shootingCD = 1f;
     private float _currentCD = 0;
    
     private void FixedUpdate()
