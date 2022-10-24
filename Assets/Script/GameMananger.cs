@@ -32,3 +32,18 @@ public class GameManager : MonoBehaviour
         Time.timeScale = _gameSpeed;
     }
 }
+
+[SerializeField] [Range(0, 6)] private float _gameSpeed = 1f;
+
+private LevelCurrencyManager _LevelCurrencyManager;
+
+public void ChangeSpeed(float speed)
+{
+    _gameSpeed = speed;
+    Time.timeScale = _gameSpeed;
+}
+
+public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+{
+    _levelCurrencyManager = levelCurrencyManager;
+}
