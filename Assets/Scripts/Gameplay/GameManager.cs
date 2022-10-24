@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class GameManager : MonoBehaviour
 {
@@ -32,5 +33,18 @@ public class GameManager : MonoBehaviour
     {
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
+    }
+
+    private LevelCurrencyManager _levelCurrencyManager;
+
+   
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+    {
+        _levelCurrencyManager = levelCurrencyManager;
+    }
+
+    public bool TrySpendCurrency (int amount)
+    {
+        return _levelCurrencyManager.TrySpendCurrency (amount);
     }
 }
