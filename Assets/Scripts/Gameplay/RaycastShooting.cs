@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class RaycastShooting : MonoBehaviour
 {
@@ -9,7 +10,7 @@ public class RaycastShooting : MonoBehaviour
     [Header("Shoothing settings")]
     [SerializeField] private int _damage = 10;
     [SerializeField] private AudioSource _audioSource = null;
-    [SerializeField] private GameManager _impactEffect = null;
+    [SerializeField] private GameObject _impactEffect = null;
     [SerializeField] private float _shootingCD = 0.5f;
     private float _currentCD = 0f;
 
@@ -38,7 +39,10 @@ public class RaycastShooting : MonoBehaviour
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
 
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
                     hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+
+                    _currentCD = _shootingCD;
                 }
             }
         }
