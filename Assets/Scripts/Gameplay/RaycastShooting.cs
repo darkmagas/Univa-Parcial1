@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
+using Magas.Utilities;
 
 public class RaycastShooting : MonoBehaviour //fixed Upadate es para fisica, es un frame rate fijo sin importar los fps que corra el juego
 {
@@ -28,7 +29,10 @@ public class RaycastShooting : MonoBehaviour //fixed Upadate es para fisica, es 
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
 
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+
                     hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                    _currentCD = _shootingCD;
                 }
             }
         }
