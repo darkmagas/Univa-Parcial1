@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class RayCastShooting : MonoBehaviour
 {
@@ -22,20 +23,23 @@ public class RayCastShooting : MonoBehaviour
         var ray = new Ray(origin: _cannon.position, direction: _cannon.forward);
         if (Physics.Raycast(ray, out var hit, _maxRange))
         {
-            if(hit.collider.CompareTag("Enemy"))
+            if (hit.collider.CompareTag("Enemy"))
             {
                 if (!_audioSource.isPlaying)
                     _audioSource.Play();
+
+                EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
                 hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
 
                 _currentCD = _shootingCD;
             }
         }
     }
-}
 
-private void Update()
-{
-    if (_currentCD > 0)
-        _currentCD -= Time.deltaTime;
+
+    private void Update()
+    {
+        if (_currentCD > 0)
+            _currentCD -= Time.deltaTime;
+    }
 }

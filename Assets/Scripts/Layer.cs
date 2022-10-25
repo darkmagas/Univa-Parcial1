@@ -32,6 +32,7 @@ namespace Univa
         public const int TouchGround = 7;
         public const int Enemy = 8;
         public const int DepthVisual = 9;
+        public const int Placement = 10;
         /// <summary>
         /// Use this type in place of layer or layer mask values in code / scripts.
         /// </summary>
@@ -53,6 +54,7 @@ namespace Univa
             public const int TouchGround = 128;
             public const int Enemy = 256;
             public const int DepthVisual = 512;
+            public const int Placement = 1024;
         }
     }
 }
