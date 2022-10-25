@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class RayCastShooting : MonoBehaviour
 {
@@ -31,6 +32,8 @@ public class RayCastShooting : MonoBehaviour
                 {
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
+
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
 
                     hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
 

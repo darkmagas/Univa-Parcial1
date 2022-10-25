@@ -34,6 +34,10 @@ public static GameManager Instance {
     }
 
     [SerializeField] [Range(0, 6)] private float _gameSpeed = 1f;
+
+    private LevelCurrencyManager _levelCurrencyManager;
+
+
     // Start is called before the first frame update
 
     // Update is called once per frame
@@ -41,6 +45,15 @@ public static GameManager Instance {
     {
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
+
+    }
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+    {
+        _levelCurrencyManager = levelCurrencyManager;
     }
 
+    public bool TrySpendCurrency(int amount)
+    {
+        return _levelCurrencyManager.TrySpendCurrency(amount);
+    }
 }
