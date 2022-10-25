@@ -27,6 +27,8 @@ public class GameManager : MonoBehaviour
       }
     [SerializeField] [Range(0, 6)] private float   timeStep = 1f;
 
+    private LevelCurrencyManagger _levelCurrencyManagger;
+
     //private void Update()
     public void ChangeSpeed (float speed)
         
@@ -35,4 +37,13 @@ public class GameManager : MonoBehaviour
         Time.timeScale = timeStep;
     }
 
+    public void AddLevelCurrencyManagger(LevelCurrencyManagger levelCurrencyManagger)
+    {
+        _levelCurrencyManagger = levelCurrencyManagger;
+    }
+
+    public bool TrySpendCurrency (int amount)
+    {
+        return _levelCurrencyManagger.TrySpendCurrency(amount);
+    }
 }
