@@ -30,28 +30,29 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
 
-
-
-
     }
    
     
     
     
     [SerializeField] [Range (0,6)] private float _gameSpeed = 1f;
-   
+    private LevelCurrencyManager _levelCurrencyManager;
 
     public void ChangeSpeed(float speed)
     {
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
-
-
-
-
-
     }
 
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+    {
+        _levelCurrencyManager = levelCurrencyManager;
+    }
+
+    public bool TrySpendCurrency(int amount)
+    {
+        return _levelCurrencyManager.TrySpendCurrency(amount);
+    }
     
 
 

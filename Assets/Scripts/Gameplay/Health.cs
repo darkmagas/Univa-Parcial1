@@ -15,7 +15,7 @@ public class Health : MonoBehaviour
     {
 
         _currentHealth = _health;
-
+        _onHealthChanged?.Invoke((float)_currentHealth / _health);
 
     }
 
