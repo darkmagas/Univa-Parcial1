@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using Magas;
 public class RaycastShooting : MonoBehaviour
 {
     [SerializeField] private Transform _cannon = null;
@@ -22,6 +22,8 @@ public class RaycastShooting : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
+                    _audioSource.Play();
+                    
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
                     hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
