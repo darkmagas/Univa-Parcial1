@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class RayCastShoting : MonoBehaviour //fixed update se usa para fisicas. es de un frame rate fijo sin importar los fps que corra el juego
 {
@@ -26,6 +27,9 @@ public class RayCastShoting : MonoBehaviour //fixed update se usa para fisicas. 
                 {
                     if (!_audioSource.isPlaying) //si queremos que se reproduzca de manera infinita comentamos esta linea.
                         _audioSource.Play();
+
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity,
+                        null)); //*para que lance las particulas al disparar
 
                     hit.collider.GetComponent<Health>().ReciveDamage(_damage);
 

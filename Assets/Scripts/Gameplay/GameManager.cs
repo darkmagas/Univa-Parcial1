@@ -27,15 +27,24 @@ public class GameManager : MonoBehaviour
     }
     }
     [SerializeField][Range(0,6)]private float _timeStep = 1f; //para controlar la velocidad del juego y dar pausa.
-                                                             //serialized para modificar desde unity
-                                                             //range para establecer un rango, igual se ve en unity
-                                                             // private void Update()
-                                                             //{ Time.timeScale = timeStep;} *esto lo cambiamos por el de abajo
-
+                                                              //serialized para modificar desde unity
+                                                              //range para establecer un rango, igual se ve en unity
+                                                              // private void Update()
+                                                              //{ Time.timeScale = timeStep;} *esto lo cambiamos por el de abajo
+    private LevelCurrencyManager _levelCurrencyManager; //*Lo añadimos al game manager para no pnerlo en cada script
     public void timeStep(float speed)
     {
         _timeStep = speed;
         Time.timeScale = _timeStep;
     }
     
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager) //*para el puntuacion hasta mrir
+    {
+        _levelCurrencyManager = levelCurrencyManager;
+    }
+
+    public bool TrySpendCurrency(int amount) //*puntuacion hasta morir
+    {
+        return _levelCurrencyManager.TrySpendCurrency(amount);
+    }
 }
