@@ -1,7 +1,9 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class LevelCurrencyManager : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class LevelCurrencyManager : MonoBehaviour
     [SerializeField] private float _tikRate = 2f;
     private int _currency = 0;
     [SerializeField] private UnityEvent<int> _onCurrencyChanged;
+    public Text CurrencyUI;
 
     private void Start()
     {
@@ -31,8 +34,14 @@ public class LevelCurrencyManager : MonoBehaviour
             _currency = amount;
             _onCurrencyChanged?.Invoke(_currency);
             return true;
-        }
+        }  
         return false;
+    }
+
+    public void IncreaseCurrency(int amount)
+    {
+        _currency += amount;
+        CurrencyUI.text = "$" + _currency;
     }
 
 }
