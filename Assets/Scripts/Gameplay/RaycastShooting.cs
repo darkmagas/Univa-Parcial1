@@ -1,3 +1,4 @@
+using Magas.Utilities;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -13,14 +14,10 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private float _shootingCD = 0.5f;
     private float _currentCD = 0f;
 
-    /// <summary>
-    /// p== ------------ E / 0
-    /// <summary>
-
     private void FixedUpdate()
     {
         if (_currentCD <= 0)
-        { 
+        {
             var ray = new Ray(_Cannon.position, _Cannon.forward);
             if (Physics.Raycast(ray, out var hit, _maxRange))
             {
@@ -29,7 +26,11 @@ public class RaycastShooting : MonoBehaviour
                     if (!_audioSource.isPlaying)
                         _audioSource.Play();
 
+
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
+                        , hit.point, Quaternion.identity, null));
                     hit.collider.GetComponent<Health>().ReceiveDamange(_damage);
+                    _currentCD = _shootingCD;
                 }
 
             }
@@ -39,6 +40,8 @@ public class RaycastShooting : MonoBehaviour
     private void Update()
     {
         if (_currentCD > 0)
+        {
             _currentCD -= Time.deltaTime;
+        }
     }
 }
