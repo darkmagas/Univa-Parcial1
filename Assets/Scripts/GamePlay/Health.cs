@@ -11,14 +11,14 @@ public class Health : MonoBehaviour
     [SerializeField] private UnityEvent _onDeath = new ();
 
     // Start is called before the first frame update
-    void OnEneble()
+    void OnEnable()
     {
        _currentHealth =_health; 
 
     }
-    public void ReceiveDamage(int damage)
+    public void ReceiveDamage(int _damage)
     {
-        _currentHealth -= damage;
+        _currentHealth -= _damage;
         if (_currentHealth <0)
 
         {
