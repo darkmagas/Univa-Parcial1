@@ -33,6 +33,7 @@ namespace Smores
         public const int Enemy = 8;
         public const int SceneEditor = 9;
         public const int Placement = 10;
+        public const int BackGround = 11;
         /// <summary>
         /// Use this type in place of layer or layer mask values in code / scripts.
         /// </summary>
@@ -55,6 +56,7 @@ namespace Smores
             public const int Enemy = 256;
             public const int SceneEditor = 512;
             public const int Placement = 1024;
+            public const int BackGround = 2048;
         }
     }
 }
