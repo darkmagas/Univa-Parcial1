@@ -8,9 +8,12 @@ using Magas.Utilities;
 
 public class OnEnemyDeath : MonoBehaviour
 {
+   
    public void Die()
     {
-        EventDispatcher.Dispatch(new DespawnObject(gameObject));
+        
+            EventDispatcher.Dispatch(new DespawnObject(gameObject));
+        
     }
     
 }

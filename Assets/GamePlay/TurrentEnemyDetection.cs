@@ -6,7 +6,9 @@ public class TurrentEnemyDetection : MonoBehaviour
 {
     private GameObject _detectEdenemy = null;
     [SerializeField] private Transform _turretPivot = null;
-    [SerializeField] private float _maxDistance = 5f; 
+    [SerializeField] private float _maxDistance = 5f;
+
+    
 
     private void Update() // dirigir el pivote de la torreta
     {
@@ -30,6 +32,7 @@ public class TurrentEnemyDetection : MonoBehaviour
     {
         if (other.CompareTag("Enemy") && _detectEdenemy ==null) //si mi detected enemy es igual a nulo, agregale un valor. Estamos haciend una comparacion de valores
         {
+            
             _detectEdenemy = other.gameObject;
         }
     }

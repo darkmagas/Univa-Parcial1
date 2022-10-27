@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: ebfdb1ab84d15b84c99d30180da5ca81
+guid: 951c74c313bf8c3499eed217800e908b
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -71,8 +71,8 @@ TextureImporter:
     buildTarget: DefaultTexturePlatform
     maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
+    textureFormat: 3
+    textureCompression: 2
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -81,9 +81,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 2048
     resizeAlgorithm: 0
-    textureFormat: 74
+    textureFormat: 4
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -107,22 +107,22 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: nombre_juego_0
+      name: fondo_p2_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1122
-        height: 631
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bdb80264513869143a81247a3776cf90
-      internalID: -238190626
+      spriteID: 1f4c56a5e4441cc4d88ad4ef23e1d080
+      internalID: 72220320
       vertices: []
       indices: 
       edges: []
@@ -130,7 +130,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: aad7cae354fd12f45880c3710674d0f4
+    spriteID: 7f61b7a54efb92d439257588cc5f44d3
     internalID: 0
     vertices: []
     indices: 
@@ -138,7 +138,7 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      nombre_juego_0: -238190626
+      fondo_p2_0: 72220320
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
