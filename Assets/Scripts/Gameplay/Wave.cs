@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Serialization;
 
-[Serializable]public class Wave 
+[Serializable]public class Wave
 {
-    public int weakEnemy = 0;
-    public int midEnemy = 0;
-    public int strongEnemy = 0;
+   [FormerlySerializedAs("weakEnemyCount")] public int weakEnemy;
+   [FormerlySerializedAs("midEnemyCount")] public int midEnemy;
+   [FormerlySerializedAs("strongEnemyCount")] public int strongEnemy;
 }

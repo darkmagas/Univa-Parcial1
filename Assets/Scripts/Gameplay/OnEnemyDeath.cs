@@ -6,8 +6,6 @@ public class OnEnemyDeath : MonoBehaviour
 {
     public void Die()
     {
-        EventDispatcher.Dispatch(signal: new DespawnObject(gameObject));
+        EventDispatcher.Dispatch(new DespawnObject(gameObject));
     }
-        
-    
 }
