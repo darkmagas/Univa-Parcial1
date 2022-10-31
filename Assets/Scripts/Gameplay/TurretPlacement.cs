@@ -5,29 +5,44 @@ using Magas.Utilities;
 
 public class TurretPlacement : MonoBehaviour
 {
-    [SerializeField] private GameObject turretPrefab;
-    // Update is called once per frame
+    private GameObject _turretPrefab;
+    private int _cost = 0;
+
+
+    public void OnTurretChange((GameObject prefab, int cost) turret)
+    {
+        _cost = turret.cost;
+        _turretPrefab = turret.prefab;
+    }
+
     void Update()
     {
+
+        if (_turretPrefab == null) return;
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.Instance.TrySpendCurrency(10))
+
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
+                LayerMask.GetMask("Placement")))
             {
-
-
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
-                    LayerMask.GetMask("Placement")))
+                var hitTransform = hit.collider.transform;
+                if (hitTransform.GetComponent<TurretSlot>().IsOccupied)
                 {
-                    var hitTransform = hit.collider.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                    if (GameManager.Instance.TrySpendCurrency(10))
+                    {
+                        var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
 
-                    EventDispatcher.Dispatch(
-                        signal: new SpawnObject(turretPrefab, null, positionVector,
-                        Quaternion.identity,
-                        null));
-                }
-            }
+                        EventDispatcher.Dispatch(
+                            signal: new SpawnObject(_turretPrefab, null, positionVector,
+                            Quaternion.identity,
+                            null));
+
+                        hitTransform.GetComponent<TurretSlot>().SetStatus(true);
+                    }    
+                }       
+            } 
         }
     }
 }

@@ -14,14 +14,22 @@ public class FollowPathMovement : MonoBehaviour
 
     private int _currentWayPoint = 0;
 
+    private Vector3 _originalPosition;
+
 
 
 
 
     private void OnEnable()
     {
+        _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
+    }
+
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
     }
 
     public void InitEnemy(string pathName)
