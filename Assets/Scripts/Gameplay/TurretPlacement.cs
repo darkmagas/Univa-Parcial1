@@ -12,14 +12,22 @@ public class TurretPlacement : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0)) // si se quiere cambiar a touch es  if(Input.GetTouch(0).phase == TouchPhase.Began)
         {
-            if (GameManager.Instance.TrySpendCurrency(10)) 
-            { 
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
+            {   
+                var hitTransform = hit.collider.transform;
+                if (!hitTransform.GetComponent<TurretSlot>().IsOcupied)
                 {
-                    var hitTransform = hit.collider.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
-                    EventDispatcher.Dispatch(new SpawnObject(turretPrefab, null, positionVector, Quaternion.identity, null));
+
+
+                    if (GameManager.Instance.TrySpendCurrency(10))
+                    {
+
+
+                        var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                        EventDispatcher.Dispatch(new SpawnObject(turretPrefab, null, positionVector, Quaternion.identity, null));
+                        hitTransform.GetComponent<TurretSlot>().SetStatus(true);
+                    }
                 }
             }
         }
