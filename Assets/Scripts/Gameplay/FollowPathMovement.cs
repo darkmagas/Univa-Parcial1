@@ -9,7 +9,8 @@ public class FollowPathMovement : MonoBehaviour
     public float stoppingDistance = 0.2f;
     public float speed = 5f;
 
-    private int _currentWayPoint = 0;
+    private int _currentWayPoint;
+    private Vector3 _originalPosition;
 
     //public
 
@@ -19,9 +20,14 @@ public class FollowPathMovement : MonoBehaviour
     // Start is called before the first frame update
     private void OnEnable()
     {
+        _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
 
+    }
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
     }
     public void InitEnemy(string pathName)
     {

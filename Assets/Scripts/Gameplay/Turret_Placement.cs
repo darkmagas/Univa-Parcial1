@@ -5,21 +5,38 @@ using Magas.Utilities;
 
 public class Turret_Placement : MonoBehaviour
 {
-    [SerializeField] private GameObject turretPrefab;
-    // Start is called before the first frame update
+     private GameObject _turretPrefab;
+     private int _cost = 0;
+
+
+    public void OnTurretChange((GameObject prefab, int cost) turret)
+    {
+        _cost = turret.cost;
+        _turretPrefab = turret.prefab;
+    }
  
     void Update()
     {
+       //if (_turretPrefab ==) null) return;
        if(Input.GetMouseButtonDown(0)) //para el touch if(Input.GetTouch(0).phase == Touchphase.Began)
-        {
-            if(GameManager.Instance.TrySpendCurrency(10))
-            { 
-            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
+        {  
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition); 
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
+            {
+                var hitTransform = hit.collider.transform;
+                if (!hitTransform.GetComponent<TurretSlot>().IsOcupied)
                 {
-                    var hitTransform = hit.collider.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
-                    EventDispatcher.Dispatch(new SpawnObject(turretPrefab, null, hitTransform.position, Quaternion.identity, null));
+
+
+                    
+                    if (GameManager.Instance.TrySpendCurrency(_cost))
+                    {
+
+
+                        var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                        EventDispatcher.Dispatch(new SpawnObject(_turretPrefab, null, hitTransform.position, Quaternion.identity, null));
+                        hitTransform.GetComponent<TurretSlot>().SetStatus(true);
+                    }
                 }
 
             }
