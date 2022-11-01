@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class TuurretPlacement : MonoBehaviour
 {
-    private GameObject_turretPrefab = null;
+    private GameObject _turretPrefab = null;
     private int _cost = 0;
 
 
@@ -17,10 +18,10 @@ public class TuurretPlacement : MonoBehaviour
     {
         if (_turretPrefab == null) return;
 
-        if (input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0))
         {
-            var ray = Camera.main.ScreePointToRay(Input.mousePosition);
-            if(Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMasj.GetMask("Placement")))
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if(Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
             {
                 if (GameManager.Instance.TrySpendCurrency(_cost))
                 {
@@ -28,7 +29,7 @@ public class TuurretPlacement : MonoBehaviour
                     var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
                     EventDispatcher.Dispatch(
                         new SpawnObject(_turretPrefab, null, positionVector,
-                        Quaternion.idetity, null));
+                        Quaternion.identity, null));
                     hitTransform.GetComponent<TurretSlot>().setStatus(true);
                 }
             }
