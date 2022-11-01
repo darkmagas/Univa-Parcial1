@@ -1,21 +1,17 @@
-using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.UI;
-
 public class LevelCurrencyManager : MonoBehaviour
 {
     [SerializeField] private int _currencyToAdd = 5;
-    [SerializeField] private float _tikRate = 2f;
+    [SerializeField] private float _tickRate = 2f;
     private int _currency = 0;
     [SerializeField] private UnityEvent<int> _onCurrencyChanged;
-    public Text CurrencyUI;
-
-    private void Start()
+    // Start is called before the first frame update
+    void Start()
     {
-        GameManager.Instance.AddLevelCurrencyManager(this); 
+        GameManager.Instance.AddLevelCurrencyManager(this);
         StartCoroutine(AddCurrency());
     }
 
@@ -23,7 +19,7 @@ public class LevelCurrencyManager : MonoBehaviour
     {
         _currency += _currencyToAdd;
         _onCurrencyChanged?.Invoke(_currency);
-        yield return new WaitForSeconds(_tikRate);
+        yield return new WaitForSeconds(_tickRate);
         StartCoroutine(AddCurrency());
     }
 
@@ -31,12 +27,10 @@ public class LevelCurrencyManager : MonoBehaviour
     {
         if (_currency >= amount)
         {
-            _currency = amount;
+            _currency -= amount;
             _onCurrencyChanged?.Invoke(_currency);
             return true;
-        }  
+        }
         return false;
     }
-
-
 }

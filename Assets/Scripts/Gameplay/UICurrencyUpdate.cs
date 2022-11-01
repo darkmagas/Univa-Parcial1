@@ -2,16 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-using UnityEngine.Events;
-using UnityEngine.UI;
-
 public class UICurrencyUpdate : MonoBehaviour
 {
-    [SerializeField] public TMP_Text CurrencyUI;
-    [SerializeField] public string currencyName = "Doblon";
+    [SerializeField] private TMP_Text _text;
+    [SerializeField] private string _currencyName = "Gil";
 
-    public void IncreaseCurrency(int _currency)
+    public void UpdateCurrency(int currency)
     {
-        CurrencyUI.SetText($"{_currency} {currencyName}");
+        // 20 Gil
+        _text.SetText($"{currency} {_currencyName}");
     }
 }
