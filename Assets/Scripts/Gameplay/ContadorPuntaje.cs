@@ -15,6 +15,6 @@ public class ContadorPuntaje : MonoBehaviour
     }
     private void Update()
     {
-       textMesh.text = GetComponent<LevelCurrencyManager>.AddCurrrency(_currency);
+      // textMesh.text = GetComponent<LevelCurrencyManager>.AddCurrrency(_currency);
     }
 }

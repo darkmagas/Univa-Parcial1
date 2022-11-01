@@ -8,6 +8,7 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistanse = 0.2f;
+    private Vector3 _originalPosition;
     //public string patName = "Path"; al reiniciar el siclo ya no se ejecutta el start. se cambia por los codigos de abajo.
 
     // Start is called before the first frame update
@@ -18,8 +19,13 @@ public class FollowPathMovement : MonoBehaviour
 
     private void OnEnable() //se agrega este
     {
+        _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
+    }
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
     }
     public void InitEnemy(string pathName) //el start se cambia por IntEnemy
     {
