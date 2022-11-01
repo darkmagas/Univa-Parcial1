@@ -5,11 +5,21 @@ using Magas.Utilities;
 
 public class TurretPlacement: MonoBehaviour
 {
-    [SerializeField] private GameObject turretPrefab;
+     private GameObject _turretPrefab = null;
+    private int _cost = 0;
 
-  
+
+public void OnTurrentChange ((GameObject prefab, int cost) turret)
+    {
+        _cost = turret.cost;
+        _turretPrefab = turret.prefab;
+    }
+
+
     void Update()
     {
+        if (_turretPrefab == null) return;
+
         if (Input.GetMouseButtonDown(0))
         {
             if (GameManager.Instance.TrySpendCurrency(10))
@@ -20,9 +30,17 @@ public class TurretPlacement: MonoBehaviour
                 if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
                 {
                     var hitTransform = hit.collider.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
-                    EventDispatcher.Dispatch(
-                        new SpawnObject(turretPrefab, null, positionVector, Quaternion.identity, null));
+                    if (!hitTransform.GetComponent<TurretSlot>().IsOccupied)
+                    {
+                        if (GameManager.Instance.TrySpendCurrency(_cost))
+                        {
+                            var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                            EventDispatcher.Dispatch(
+                                new SpawnObject(_turretPrefab, null, positionVector, Quaternion.identity, null));
+                            hitTransform.GetComponent<TurretSlot>().SetStatus(true);
+                        }
+                    }
+                    
                 }
             }
         }
