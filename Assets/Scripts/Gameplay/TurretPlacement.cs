@@ -5,26 +5,40 @@ using Magas.Utilities;
 
 public class TurretPlacement : MonoBehaviour
 {
-    [SerializeField] private GameObject turrentPrefab;
+    private GameObject _TurretPrefab = null;
+    private int _cost = 0;
+    public void OnTurretChange((GameObject prefab, int cost) turret)
+    {
+        _cost = turret.cost;
+        _TurretPrefab = turret.prefab;
+    }
+
     void Update()
     {
+
+        if (_TurretPrefab == null) return;
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.Instance.TrySpeedCurrency( 10))
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
+                LayerMask.GetMask("Placement")))
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
-                    LayerMask.GetMask("Placement")))
+                var hitTransform = hit.transform;
+                if (!hitTransform.GetComponent<TurretSlot>().IsOccupied)
                 {
-                    var hitTransform = hit.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0,
-                        hitTransform.position.z);
+                    if (GameManager.Instance.TrySpeedCurrency(10))
+                    {
 
-                    EventDispatcher.Dispatch(
-                        new SpawnObject(turrentPrefab, null, positionVector,
-                        Quaternion.identity,
-                        null));
+                        var positionVector = new Vector3(hitTransform.position.x, 0,
+                       hitTransform.position.z);
 
+                        EventDispatcher.Dispatch(
+                            new SpawnObject(_TurretPrefab, null, positionVector,
+                            Quaternion.identity,
+                            null));
+                        hitTransform.GetComponent<TurretSlot>().SetStatus(true);
+                    }
                 }
             }
         }

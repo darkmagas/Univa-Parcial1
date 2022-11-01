@@ -10,10 +10,12 @@ public class FollowPathMovement : MonoBehaviour
     public float speed = 5f;
     public float minDistance = 0.2f;
     public string pathName = "Path";
+    private Vector3 _originalPosition;
 
 
     private void OnEnable()
     {
+        _originalPosition = transform.position;
         _WayPoints.Clear();
         _currentWayPoint = 0;
     }

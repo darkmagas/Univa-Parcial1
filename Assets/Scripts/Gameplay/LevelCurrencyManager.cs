@@ -38,10 +38,5 @@ public class LevelCurrencyManager : MonoBehaviour
         return false;
     }
 
-    public void IncreaseCurrency(int amount)
-    {
-        _currency += amount;
-        CurrencyUI.text = "$" + _currency;
-    }
 
 }
