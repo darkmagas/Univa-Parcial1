@@ -5,21 +5,39 @@ using Magas.Utilities;
 
 public class TurretPlacemant : MonoBehaviour
 {
-    [SerializeField] private GameObject turretPrefab;
-    private void Update()
+    private GameObject _turretPrefab = null;
+    private int _cost = 0;
+
+    public void OnTurretChange((GameObject prefab, int cost) turret)
     {
+        _cost = turret.cost;
+        _turretPrefab = turret.prefab;
+    }
+
+    void Update()
+    {
+
+        if (_turretPrefab == null) return;
+
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.Instance.TrySpendCurrency(amount: 10))
+            var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
             {
-                var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-                if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
+                var hitTransform = hit.collider.transform;
+                if (!hitTransform.GetComponent<Turretslot>().IsOccupied)
                 {
-                    var hitTransform = hit.collider.transform;
-                    var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
-                    EventDispatcher.Dispatch(new SpawnObject(turretPrefab, null, positionVector, Quaternion.identity, null));
+                    if (GameManager.Instance.TrySpendCurrency(_cost))
+                    {
+                        var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                        EventDispatcher.Dispatch(new SpawnObject(_turretPrefab, null, positionVector, Quaternion.identity, null));
+                        hitTransform.GetComponent<Turretslot>().SetStatus(true);
+                    }
                 }
             }
+        
+           
+            
         }
     }
 }
