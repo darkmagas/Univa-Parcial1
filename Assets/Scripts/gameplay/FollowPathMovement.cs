@@ -9,13 +9,20 @@ public class FollowPathMovement : MonoBehaviour
     public float speed = 5f;
     public float minDistance = 0.2f;
     public string pathName ="path";
+    private Vector3 _originalPosition;
 
     private void OnEnable()
     {
+
+        _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
     }
 
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
+    }
 
     public void InitEnemy(string pathName)
     {
