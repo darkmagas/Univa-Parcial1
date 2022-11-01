@@ -13,13 +13,15 @@ public class FollowPathMovement : MonoBehaviour
     public float minDistance = 0.2f;
 
     // Start is called before the first frame update
-    private void UnEnable()
+    private void OnEnable()
 
     {
         _waypoints.Clear();
         _currentWayPoint = 0;
     }
 
+    
+    
     public void InitEnemy(string pathmain)
     { 
         var waypointParent = GameObject.Find(pathmain);
@@ -35,7 +37,6 @@ public class FollowPathMovement : MonoBehaviour
 
     private IEnumerator MoveToNextWaypoint()
 
-
     {
 
         var distance = Vector3.Distance(transform.position,
@@ -43,8 +44,6 @@ public class FollowPathMovement : MonoBehaviour
 
         while (Mathf.Abs(distance) > mainDistance)
            
-
-
 
         {
             transform.position = Vector3.MoveTowards(transform.position, _waypoints[_currentWayPoint].position, Time.deltaTime * speed);
@@ -54,7 +53,7 @@ public class FollowPathMovement : MonoBehaviour
 
             yield return null;
         }
-        if (_currentWayPoint < _waypoints.Count - 1) ;
+        if (_currentWayPoint < _waypoints.Count - 1) 
         {
             _currentWayPoint++;
 

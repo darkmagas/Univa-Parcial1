@@ -1,18 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
 public class TurretManagement : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [Serializable]
+    public struct TurretConfig
     {
-        
+        public GameObject turret;
+        public int cost;
     }
 
-    // Update is called once per frame
-    void Update()
+    [SerializeField] private List<TurretConfig> _turretConfigs = new ();
+
+        public (GameObject turret, int cost) GetTurrentConfig(int index)
     {
-        
+        return (_turretConfigs[index].turret, _turretConfigs[index].cost);
     }
 }
