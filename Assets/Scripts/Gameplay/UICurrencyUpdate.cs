@@ -7,11 +7,11 @@ using UnityEngine.UI;
 
 public class UICurrencyUpdate : MonoBehaviour
 {
-    public TMP_Text CurrencyUI;
-    public string Name = "Doblon";
+    [SerializeField] public TMP_Text CurrencyUI;
+    [SerializeField] public string currencyName = "Doblon";
 
-    public void IncreaseCurrency(int amount)
+    public void IncreaseCurrency(int _currency)
     {
-        CurrencyUI.SetText($"{amount} {Name}");
+        CurrencyUI.SetText($"{_currency} {currencyName}");
     }
 }
