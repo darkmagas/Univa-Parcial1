@@ -28,6 +28,12 @@ public class LevelCurrencyManager : MonoBehaviour
         
     }
 
+    public void AddCurrency(int val)
+    {
+        _currency += val;
+        _onCurrencyChanged?.Invoke(_currency);
+    }
+
     public bool TrySpendCurrency(int amount)
     {
         if (_currency >= amount)

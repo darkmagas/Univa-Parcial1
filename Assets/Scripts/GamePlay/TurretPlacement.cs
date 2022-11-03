@@ -6,12 +6,12 @@ using Magas.Utilities;
 public class TurretPlacement: MonoBehaviour
 {
      private GameObject _turretPrefab = null;
-    private int _cost = 0;
+    private int _coast = 0;
 
 
-public void OnTurrentChange ((GameObject prefab, int cost) turret)
+public void OnTurrentChange ((GameObject prefab, int coast) turret)
     {
-        _cost = turret.cost;
+        _coast = turret.coast;
         _turretPrefab = turret.prefab;
     }
 
@@ -22,8 +22,7 @@ public void OnTurrentChange ((GameObject prefab, int cost) turret)
 
         if (Input.GetMouseButtonDown(0))
         {
-            if (GameManager.Instance.TrySpendCurrency(10))
-            {
+            
 
 
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -32,7 +31,7 @@ public void OnTurrentChange ((GameObject prefab, int cost) turret)
                     var hitTransform = hit.collider.transform;
                     if (!hitTransform.GetComponent<TurretSlot>().IsOccupied)
                     {
-                        if (GameManager.Instance.TrySpendCurrency(_cost))
+                        if (GameManager.Instance.TrySpendCurrency(_coast))
                         {
                             var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
                             EventDispatcher.Dispatch(
@@ -42,7 +41,7 @@ public void OnTurrentChange ((GameObject prefab, int cost) turret)
                     }
                     
                 }
-            }
+            
         }
     }
 }
