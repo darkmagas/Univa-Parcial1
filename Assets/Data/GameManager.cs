@@ -30,11 +30,18 @@ public class GameManager : MonoBehaviour
     }
 
 
-    [SerializeField][Range(0,6)]private float _gameSpeed= 1;
+    [SerializeField][Range(0,6)]private float _gameSpeed= 1f;
+    private int _enemyCount =0;
+
+    public int EnemyCount => _enemyCount;
 
 
     private LevelCurrencyManager _levelCurrencyManager;
 
+    public void AddEnemy(int add)
+    {
+        _enemyCount += add;
+    }
     public void ChangeSpeed(float speed)
 
     {
@@ -52,4 +59,5 @@ public class GameManager : MonoBehaviour
         return _levelCurrencyManager.TrySpendCurrency(amount);
     }
 
+    public void AddScoreManager(ScoreCurrency)
 }

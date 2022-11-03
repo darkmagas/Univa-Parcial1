@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -25,6 +26,25 @@ public class FollowPathMovement : MonoBehaviour
             _WayPoints.Add(WaypointParent.transform.GetChild(i));
         }
         StartCoroutine(MoveToNextWaypoint());
+    }
+
+    private void OnEnable()
+    {
+        _originalPosition = transform.position;
+        _WayPoints.Clear();
+        _currentWayPoint = 0;
+        GameManager.Instance.AddEnemy(-1);
+    }
+
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
+        GameManager.Instance.AddEnemy(-1);
+    }
+
+    public void InitEnemy(string pathName)
+    {
+        var waypointParent;
     }
 
     private IEnumerator MoveToNextWaypoint()
