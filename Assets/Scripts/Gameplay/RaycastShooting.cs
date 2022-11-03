@@ -14,23 +14,48 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private float _shootingCD = 0.5f;
     private float _currentCD = 0f;
 
+    [Header("ADE settings")]
+    [SerializeField] private bool _isADE = false;
+    [SerializeField] private float _radius = 2f;
+
     private void FixedUpdate()
     {
-        if(_currentCD <= 0f)
-        { 
+        if (_currentCD <= 0f)
+        {
             var ray = new Ray(_cannon.position, _cannon.forward);
-            if(Physics.Raycast(ray, out var hit, _maxRange))
+            if (Physics.Raycast(ray, out var hit, _maxRange))
             {
                 if (hit.collider.CompareTag("Enemy"))
+
                 {
-                   // if (!_audioSource.isPlaying)
+                    if (_isADE)
+                    {
+                        var spherecast = Physics.SphereCastAll(hit.point, _radius, _cannon.forward);
                         _audioSource.Play();
 
-                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+                        for (int i = 0; i < spherecast.Length; i++)
+                        {
+                            var rayHit = spherecast[i];
+                            if (rayHit.collider.CompareTag("enemy"))
+                            {
+                                rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                                EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+                            }
+                        }
+                        _currentCD = _shootingCD;
 
-                    hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                    }
+                    else
+                    {
 
-                    _currentCD = _shootingCD;
+                        _audioSource.Play();
+
+                        EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+                        hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                        _currentCD = _shootingCD;
+
+
+                    }
                 }
             }
         }
