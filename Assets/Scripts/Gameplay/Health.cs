@@ -34,7 +34,7 @@ public class Health : MonoBehaviour
         if (_currentHealth == 0)
             _onDeath?.Invoke();
 
-        BarraVida.value = _currentHealth;
+      //  BarraVida.value = _currentHealth;
     }
 }
   
