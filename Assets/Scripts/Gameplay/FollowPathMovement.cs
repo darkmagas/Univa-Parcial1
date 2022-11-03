@@ -14,11 +14,13 @@ public class FollowPathMovement : MonoBehaviour
     {
         _wayPoints.Clear();
         _currentWayPoint = 0;
+        GameManager.Instance.AddEnemy(1);
     }
 
     private void OnDisable()
     {
         transform.position = _originalPosition;
+        GameManager.Instance.AddEnemy(-1);
     }
 
     public void InitEnemy(string pathName)

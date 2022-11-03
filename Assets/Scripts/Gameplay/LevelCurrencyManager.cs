@@ -22,7 +22,11 @@ public class LevelCurrencyManager : MonoBehaviour
         yield return new WaitForSeconds(_tickRate);
         StartCoroutine(AddCurrency());
     }
-    
+    public void AddCurrency(int val)
+    {
+        _currency -= val;
+        _onCurrencyChanged?.Invoke(_currency);
+    }
     public bool TrySpendCurrency(int amount)
     {
         if (_currency >= amount)

@@ -11,9 +11,12 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private int _damage = 10;
     [SerializeField] private AudioSource _audioSource = null;
     [SerializeField] private GameObject _impactEffect = null;
- /// <summary>
- ///   P== ------------- E 
- /// </summary>
+    [SerializeField] private float _shootingCD = 1f;
+    private float _currentCD = 0;
+
+    /// <summary>
+    ///   P== ------------- E 
+    /// </summary>
     private void FixedUpdate()
     {
         var ray = new Ray(_cannon.position, _cannon.forward);
