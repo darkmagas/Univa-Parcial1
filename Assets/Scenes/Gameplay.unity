@@ -1257,6 +1257,7 @@ MonoBehaviour:
   _weakEnemyPrefab: {fileID: 7796662655996532460, guid: 719ca4eb4a39c8d4593406f4d07d2673, type: 3}
   _midEnemyPrefab: {fileID: 5491256809432384427, guid: 3a2e115496f653a4d91305f8fd46c2bb, type: 3}
   _StrongEnemyPrefab: {fileID: 4405538786358679053, guid: 0e1c47c1a20cc7944a118756afc86280, type: 3}
+  _timeToNextWave: 5
 --- !u!1 &1225549343
 GameObject:
   m_ObjectHideFlags: 0
@@ -1670,6 +1671,65 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 44.087, y: -112.799, z: -10.955}
+--- !u!1 &1664219678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1664219679}
+  - component: {fileID: 1664219680}
+  m_Layer: 0
+  m_Name: ScoreManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1664219679
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664219678}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -14.551973, y: -3.109171, z: 4.3465443}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1664219680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1664219678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 49a21fe9e3767094eaa312cca440c547, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _OnScoreChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 0}
+        m_TargetAssemblyTypeName: 
+        m_MethodName: 
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &1679274110
 GameObject:
   m_ObjectHideFlags: 0
@@ -2015,6 +2075,7 @@ GameObject:
   - component: {fileID: 2098032524}
   - component: {fileID: 2098032523}
   - component: {fileID: 2098032527}
+  - component: {fileID: 2098032528}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -2118,6 +2179,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _gameOverPanel: {fileID: 1943056423}
+--- !u!114 &2098032528
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2098032522}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 99a027fbcdf339b44ab1b4415609d099, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreText: {fileID: 0}
+  _scoreString: 'Puntos: '
 --- !u!1 &2107945768
 GameObject:
   m_ObjectHideFlags: 0

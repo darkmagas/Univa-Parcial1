@@ -15,11 +15,13 @@ public class TrabajoClase2 : MonoBehaviour
         _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
+        GameManager.Instance.AddEnemy(1);
     }
 
     private void OnDisable()
     {
         transform.position = _originalPosition;
+        GameManager.Instance.AddEnemy(-1);
     }
 
 
