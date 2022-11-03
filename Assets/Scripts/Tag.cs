@@ -10,7 +10,7 @@
 
 namespace Univa
 {
-    
+
     /// <summary>
     /// Use these string constants when comparing tags in code / scripts.
     /// </summary>
