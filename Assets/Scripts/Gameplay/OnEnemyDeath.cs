@@ -5,12 +5,14 @@ using Magas.Utilities;
 
 public class OnEnemyDeath : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private int _scoreOnDeath = 5;
+    [SerializeField] private int _moneyOnDeath = 1;
     public void Die()
     {
 
         EventDispatcher.Dispatch(new DespawnObject(gameObject));
-
+        GameManager.Instance.ModifyScore(_scoreOnDeath);
+        GameManager.Instance.AddCurrency(_moneyOnDeath);
     }
 
 }

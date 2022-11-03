@@ -13,6 +13,11 @@ public class RayCastShooting : MonoBehaviour
     [SerializeField] private GameObject _impactEffect = null;
     [SerializeField] private float _shootingCD = 0.5f;
     private float _currentCD = 0.5f;
+
+    [Header("AOE settings")]
+    [SerializeField] private bool _isAOE = false;
+    [SerializeField] private float _radius = 2f;
+    
     private void FixedUpdate()
     {
         if(_currentCD <= 0)
@@ -22,10 +27,30 @@ public class RayCastShooting : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    _audioSource.Play();
-                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
-                    hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
-                    _currentCD = _shootingCD;
+
+                    if (_isAOE)
+                    {
+                        var spherecast = Physics.SphereCastAll(hit.point, _radius, _cannon.forward);
+                        for(int i = 0; i < spherecast.Length; i++)
+                        {
+                            var rayHit = spherecast[i];
+                            if(rayHit.collider.CompareTag("Enemy"))
+                                {
+                                rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                                EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+                                
+                            }
+                        }
+                        _currentCD = _shootingCD;
+                    }
+                    else
+                    {
+                        _audioSource.Play();
+                        EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity, null));
+                        hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                        _currentCD = _shootingCD;
+                    }
+                   
                 }
             }
         }

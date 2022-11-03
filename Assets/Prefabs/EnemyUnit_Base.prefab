@@ -729,7 +729,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eef30494c4dff9469253073f307cccf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 1
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -772,6 +772,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b494445f33f72d4ebfa2d98a5cd471f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
+  _moneyOnDeath: 1
 --- !u!1 &8822731309783074317
 GameObject:
   m_ObjectHideFlags: 0
