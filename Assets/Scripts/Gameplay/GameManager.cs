@@ -31,7 +31,32 @@ public class GameManager : MonoBehaviour
                                                               //range para establecer un rango, igual se ve en unity
                                                               // private void Update()
                                                               //{ Time.timeScale = timeStep;} *esto lo cambiamos por el de abajo
+
+    private int _enemyCount = 0; //*
+
+    public int EnemyCount => _enemyCount; //*
+
     private LevelCurrencyManager _levelCurrencyManager; //*Lo añadimos al game manager para no pnerlo en cada script
+    private ScoreManager _scoreManager; //*
+
+    public void AddScoreManager(ScoreManager scoreManager) //*x2
+    {
+        _scoreManager = scoreManager;
+    }
+
+    public void ModifyScore(int value) //*x2
+    {
+        _scoreManager.ModifyScore(value);
+    }
+
+    public void AddCurrency(int val) //*x3
+    {
+        _levelCurrencyManager.AddCurrency(val);
+    }
+    public void AddEnemy(int add) //*
+    {
+        _enemyCount += add;
+    }
     public void timeStep(float speed)
     {
         _timeStep = speed;

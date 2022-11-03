@@ -15,6 +15,11 @@ public class LevelCurrencyManager : MonoBehaviour
                                                            //currency correspondiente al nivel
         StartCoroutine(AddCurrency());
     }
+    public void AddCurrency(int val)//*x2
+    {
+        _curency += val;
+        _onCurrencychanged?.Invoke(_curency);
+    }
 
    private IEnumerator AddCurrency()
     {

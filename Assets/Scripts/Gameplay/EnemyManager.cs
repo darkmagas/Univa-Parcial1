@@ -12,6 +12,7 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
     private int _currentWave = 0; //para el indice de waves
+    [SerializeField] private float _timeToNextWave = 5f; //*
 
     private void Start()
     {
@@ -39,7 +40,13 @@ public class EnemyManager : MonoBehaviour
         yield return StartCoroutine(SpawnEnemies(wave.mediumEnemy, _midEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.strongEnemy, _strongEnemyPrefab));
         _currentWave++;
-        yield return new WaitForSeconds(10f);
+        // yield return new WaitForSeconds(10f); // se reemplaza por el while
+
+        while (GameManager.Instance.EnemyCount > 0)
+        {
+            yield return null;
+        }
+        yield return new WaitForSeconds(_timeToNextWave); //*
         StartCoroutine(CreateWave());
     }
 
