@@ -17,8 +17,15 @@ public class LevelCurrencyManagger : MonoBehaviour
     {
         GameManager.Instance.AddLevelCurrencyManagger(this);
         StartCoroutine(AddCurrency());
+
     }
 
+    public void AddCurrency(int val)
+    {
+        _currency += val;
+        _onCurrencyChanged?.Invoke(_currency);
+    }
+    
     
 
     private IEnumerator AddCurrency()

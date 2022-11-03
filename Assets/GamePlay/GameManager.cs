@@ -5,16 +5,16 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-        public static GameManager Instance
+    public static GameManager Instance
     {
         get
-        { if (_instance ==null)
+        { if (_instance == null)
             {
-                var obj= FindObjectOfType<GameManager>();
-                if(obj != null)
+                var obj = FindObjectOfType<GameManager>();
+                if (obj != null)
                 {
                     _instance = obj;
-                    
+
                 }
                 else
                 {
@@ -23,13 +23,33 @@ public class GameManager : MonoBehaviour
                 }
             }
             return _instance;
-                    }
-      }
-    [SerializeField] [Range(0, 6)] private float   timeStep = 1f;
+        }
+    }
+    [SerializeField] [Range(0, 6)] private float timeStep = 1f;
+
+    private int _enemyCount = 0;
+
+    public int EnemyCount => _enemyCount;
 
     private LevelCurrencyManagger _levelCurrencyManagger;
+    private ScoreManager _scoreManager;
 
-    //private void Update()
+    public void AddscoreManager (ScoreManager scoreManager)
+    {
+        _scoreManager = scoreManager;
+    }
+
+    public void ModifyScore(int value)
+    {
+        _scoreManager.ModifyScore(value);
+    }
+
+    public void AddEnemy(int add)
+    {
+        _enemyCount += add;
+    }
+
+   
     public void ChangeSpeed (float speed)
         
     {
@@ -45,5 +65,10 @@ public class GameManager : MonoBehaviour
     public bool TrySpendCurrency (int amount)
     {
         return _levelCurrencyManagger.TrySpendCurrency(amount);
+    }
+
+    public void AddCurrency(int val)
+    {
+        _levelCurrencyManagger.AddCurrency(val);
     }
 }
