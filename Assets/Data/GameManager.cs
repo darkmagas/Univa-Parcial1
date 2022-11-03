@@ -59,5 +59,8 @@ public class GameManager : MonoBehaviour
         return _levelCurrencyManager.TrySpendCurrency(amount);
     }
 
-    public void AddScoreManager(ScoreCurrency)
+    public void AddCurrency(int val)
+    {
+        _levelCurrencyManager.AddCurrency(val);
+    }
 }
