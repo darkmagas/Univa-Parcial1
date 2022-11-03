@@ -24,33 +24,46 @@ public class RaycastShooting : MonoBehaviour
         if (Physics.Raycast(ray, out var hit, _maxRange))
             if (_currentCD <= 0)
             {
-                if (hit.collider.CompareTag("Enemy"))
-                    var ray = new Ray(_cannon.position, _cannon.forward);
+                if (_isAOE)
+                    var spherecast:RaycastHit[] = Physics.SphereCastAll(origin: hit.point, _radius, direction: _cannon.forward);
+                _audioSource.Play();
 
-                if (Physics.Raycast(ray, out var hit, _maxRange))
+                for (int i = 0; i < SpherecastCommand.Lenght; i++)
+
                 {
-                    if (!_audioSource.isPlaying)
-                        _audioSource.Play();
-                    hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
-                    if (hit.collider.CompareTag("Enemy"))
+                    var rayHit = spherecast[i];
+                    if (rayHit.collider.CompareTag("Enemy"))
                     {
-                        //if (!_audioSource.isPlaying)
-                        _audioSource.Play();
+                        if (!_audioSource.isPlaying)
+                            _audioSource.Play();
+                        hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                        if (hit.collider.CompareTag("Enemy"))
+                        {
+                            //if (!_audioSource.isPlaying)
+                            _audioSource.Play();
 
-                        EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
+                            rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                            EventDispatcher.Dispath(new SpawnObject(_impactEffect, null, rayHit.point, Quaternion.identity, null));
+                        }
+                    }
+                    _currentCD = _shootingCD;
+
+                }
+                else
+                {
+                    _audioSource.Play():
+
+                }
+                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
                             , hit.point, Quaternion.identity, null));
                         hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
-                        _currentCD = _shootingCD;
-                    }
-                }
+                _currentCD = _shootingCD;
+
             }
     }
+}
 
     private void Update()
     {
-        if (_currentCD > 0)
-        {
-            _currentCD -= Time.deltaTime;
-        }
-    }
+
 }
