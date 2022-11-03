@@ -192,8 +192,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4712907072001783668}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.33, z: 0}
-  m_LocalScale: {x: 0.56763196, y: 0.56763196, z: 0.56763196}
+  m_LocalPosition: {x: 0, y: -0.112, z: 0}
+  m_LocalScale: {x: 1.519721, y: 1.3792391, z: 0.56763196}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4712907073587304038}
@@ -276,7 +276,7 @@ Transform:
   m_GameObject: {fileID: 4712907072247105990}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.63, z: 0}
-  m_LocalScale: {x: 0.30616045, y: 0.39834538, z: 0.30616045}
+  m_LocalScale: {x: 0.30616045, y: 1.5335898, z: 0.30616045}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4712907073587304038}
@@ -490,8 +490,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _cannon: {fileID: 4712907072886001218}
-  _maxRange: 20
-  _damage: 50
+  _maxRange: 10
+  _damage: 25
   _audioSource: {fileID: 4712907072886001219}
   _impactEffect: {fileID: 5735624195267762531, guid: a09c600673886bd48bad45d82e9fa93d, type: 3}
   _currentCD: 0
@@ -510,7 +510,7 @@ AudioSource:
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0

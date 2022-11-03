@@ -247,8 +247,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8abeb507e7156044db7282b270a1df89, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
-  minDistance: 0.2
+  speed: 2
+  minDistance: 1
   pathName: Path
 --- !u!136 &7179017096332287939
 CapsuleCollider:
@@ -330,6 +330,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed1b51f0b5c6dc546957b285019aba59, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
 --- !u!114 &2338095994850847591
 MonoBehaviour:
   m_ObjectHideFlags: 0
