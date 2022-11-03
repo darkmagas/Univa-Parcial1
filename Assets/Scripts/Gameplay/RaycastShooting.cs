@@ -14,6 +14,9 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private float _shootingCD = 0.5f;
     private float _currentCD = 0f;
 
+    [Header("AOE settings")]
+
+
     private void FixedUpdate()
     {
         if (_currentCD <= 0)
