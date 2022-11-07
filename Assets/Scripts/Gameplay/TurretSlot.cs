@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class TurretSlot : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    private bool isUsed = false;
+    public bool IsUsed => isUsed;
 
-    // Update is called once per frame
-    void Update()
+    public void SetStatus(bool z)
     {
-        
+        isUsed = z;
     }
 }

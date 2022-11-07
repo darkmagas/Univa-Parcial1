@@ -10,7 +10,7 @@ public class UITurretSelection : MonoBehaviour
 
     public void SelectTuret(int index)
     {
-        var = _turretManagement.GetTurretConfig(index);
-        _onTurretSelected?.Invoke(();
+        var x = _turretManagement.GetTurretConfig(index);
+        _onTurretSelected?.Invoke(x);
     }
 }

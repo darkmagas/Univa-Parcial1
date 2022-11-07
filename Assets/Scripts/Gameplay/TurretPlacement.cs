@@ -21,7 +21,7 @@ public class TurretPlacement : MonoBehaviour
                     LayerMask.GetMask("Placement")))
             {
                 var hitTransform = hit.collider.transform;
-                if (!hitTransform.GetComponent<TurretSlot>())
+                if (!hitTransform.GetComponent<TurretSlot>().IsUsed)
                 {
 
                     if (GameManager.Instance.TrySpendCurrency(_cost))
