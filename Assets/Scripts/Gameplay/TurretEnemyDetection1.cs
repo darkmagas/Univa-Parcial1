@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class TurretEnemyDetection1 : MonoBehaviour
 {
@@ -9,8 +10,32 @@ public class TurretEnemyDetection1 : MonoBehaviour
     [SerializeField] private Transform _turretPivot = null;
     [SerializeField] private float _maxDistance = 1f;
 
-    
+    private void Start()
+    {
+        //Memory Leak si no hay un On Disable.
+        EventDispatcher.Subscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
 
+
+    private void OnDisable()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+
+    private void OnDestroy()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+    private void OnEnemyDeath (ISignal signal)
+    {
+        if(signal is EnemyDeathSignal enemyDeathSignal)
+        {
+            if(enemyDeathSignal.go == _detectedEnemy)
+            {
+                _detectedEnemy = null;
+            }
+        }
+    }
     private void Update()
     {
         if (_detectedEnemy != null) return;

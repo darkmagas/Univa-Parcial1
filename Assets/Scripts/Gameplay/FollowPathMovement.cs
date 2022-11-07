@@ -12,9 +12,12 @@ public class FollowPathMovement : MonoBehaviour
     public float stoppingDistance = 0.2f;
     public float speed = 5f;
     private Vector3 _originalPosition;
+    private bool _isDeath;
 
     private void OnEnable()
+
     {
+        _isDeath = false;
         _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
@@ -23,6 +26,12 @@ public class FollowPathMovement : MonoBehaviour
     private void OnDisable()
     {
         transform.position = _originalPosition;
+    }
+
+    public void OnDeath()
+    {   //sirve para parar el follow path cuando el enemigo muere 
+        _isDeath = true;
+        StopCoroutine(MoveToWayPoints());
     }
     public void InitEnemy(string pathName)
     {
@@ -39,7 +48,7 @@ public class FollowPathMovement : MonoBehaviour
         var distance = Vector3.Distance(transform.position,
             _wayPoints[_currentWayPoint].position);
 
-        while (Mathf.Abs(distance) > 0.2f)
+        while (Mathf.Abs(distance) > 0.2 && !_isDeath)
         {
             transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position,
                 speed * Time.deltaTime);
