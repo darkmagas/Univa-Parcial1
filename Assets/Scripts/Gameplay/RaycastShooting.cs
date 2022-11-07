@@ -13,6 +13,11 @@ public class RaycastShooting : MonoBehaviour
     [SerializeField] private GameObject _impactEffect = null;
     [SerializeField] private float _shootingCD = 1f;
     private float _currentCD = 0;
+
+    [Header("AOE settings")] 
+    [SerializeField] private bool _isAOE = false;
+
+    [SerializeField] private float _radius = 2f;
  /// <summary>
  ///   P== ------------- E 
  /// </summary>
@@ -26,13 +31,35 @@ public class RaycastShooting : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Enemy"))
                 {
-                    //if (!_audioSource.isPlaying)
+                    if (_isAOE)
+                    {
+                        var spherecast = Physics.SphereCastAll(hit.point, _radius,
+                            _cannon.forward);
                         _audioSource.Play();
                         
-                    EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
-                        ,hit.point, Quaternion.identity,null));    
-                    hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
-                    _currentCD = _shootingCD;
+                        for (int i = 0; i < spherecast.Length; i++)
+                        {
+                            var rayHit = spherecast[i];
+                            if (rayHit.collider.CompareTag("Enemy"))
+                            {
+                                rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                                EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
+                                    , rayHit.point, Quaternion.identity, null)); 
+                            }
+                        }
+                        _currentCD = _shootingCD;
+                        
+                    }
+                    else
+                    {
+                        //if (!_audioSource.isPlaying)
+                        _audioSource.Play();
+
+                        EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
+                            , hit.point, Quaternion.identity, null));
+                        hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                        _currentCD = _shootingCD;
+                    }
                 }
             }
         }

@@ -9,11 +9,20 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
+    private Vector3 _originalPosition;
 
     private void OnEnable()
     {
+        _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
+        GameManager.Instance.AddEnemy(1);
+    }
+
+    private void OnDisable()
+    {
+        transform.position = _originalPosition;
+        GameManager.Instance.AddEnemy(-1);
     }
 
     public void InitEnemy(string pathName)
