@@ -68,6 +68,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: EnemyUnit Variant 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8416297689024836621, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}
+      propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416297689024836621, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}
+      propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416297689024836621, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}
+      propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8416297689024836621, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}
+      propertyPath: _onDeath.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: OnEnemyDeath, Assembly-CSharp
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}

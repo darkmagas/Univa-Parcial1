@@ -9,6 +9,9 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
+    private Vector3 _originalPosition;
+    private bool _isDeath = false;
+
 
     private void OnEnable()
     {
@@ -31,7 +34,7 @@ public class FollowPathMovement : MonoBehaviour
     {
         var distance = Vector3.Distance(transform.position,
             _wayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > minDistance)
+        while (Mathf.Abs(distance) > minDistance && !_isDeath)
         {
             transform.position = Vector3.MoveTowards(transform.position,
                 _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
@@ -40,10 +43,11 @@ public class FollowPathMovement : MonoBehaviour
             yield return null;
         }
 
-        if (_currentWayPoint < _wayPoints.Count - 1)
+        if (_currentWayPoint < _wayPoints.Count - 1 && !_isDeath)
         {
             _currentWayPoint++;
             StartCoroutine(MoveToNextWaypoint());
         }
     }
+   
 }
