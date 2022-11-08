@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class TorrentEnemyDetection : MonoBehaviour
 {
@@ -8,6 +9,30 @@ public class TorrentEnemyDetection : MonoBehaviour
     [SerializeField] private Transform _torretPivot = null;
     [SerializeField] private float _maxDistance = 5f; //* para limitar el rango en el que la torreta detecta al enemigo, voltee a ver
 
+    private void Start()
+    {
+        EventDispatcher.Subscribe<EnemyDeathSignat>(OnEnemyDeath);
+    }
+
+    private void OnDisable()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignat>(OnEnemyDeath);
+    }
+    private void OnDestroy()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignat>(OnEnemyDeath);
+    }
+
+    private void OnEnemyDeath(ISignal signal)
+    {
+        if(signal is EnemyDeathSignat enemyDeathSignal)
+        {
+            if(enemyDeathSignal.go  == _detectedEnemy)
+            {
+                _detectedEnemy = null;
+            }
+        }
+    }
     private void Update()
     {
         if (_detectedEnemy == null) return;

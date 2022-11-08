@@ -33,7 +33,7 @@ RectTransform:
   - {fileID: 8376193415687807887}
   - {fileID: 4648986602318964209}
   m_Father: {fileID: 1806905515765239383}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -99,14 +99,13 @@ LookAtConstraint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2267422124107889013}
   m_Enabled: 1
-  serializedVersion: 2
   m_Weight: 1
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_Roll: 0
   m_WorldUpObject: {fileID: 0}
   m_UseUpObject: 1
-  m_Active: 1
+  m_IsContraintActive: 0
   m_IsLocked: 1
   m_Sources: []
 --- !u!1 &3411717115906018936
@@ -140,7 +139,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4537804390634279679}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -215,7 +214,7 @@ RectTransform:
   m_Children:
   - {fileID: 8820747372484887923}
   m_Father: {fileID: 4537804390634279679}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.25}
   m_AnchorMax: {x: 1, y: 0.75}
@@ -255,7 +254,7 @@ Transform:
   m_Children:
   - {fileID: 7421844917447224805}
   m_Father: {fileID: 7421844917117739351}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7421844917021573473
 MeshFilter:
@@ -336,6 +335,8 @@ GameObject:
   - component: {fileID: 8223804372308988357}
   - component: {fileID: 4242851560293588767}
   - component: {fileID: 5814469949665645757}
+  - component: {fileID: 5669944984546728508}
+  - component: {fileID: 7207761688378987465}
   m_Layer: 8
   m_Name: Enemy
   m_TagString: Enemy
@@ -358,7 +359,7 @@ Transform:
   - {fileID: 7421844917021573500}
   - {fileID: 1806905515765239383}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &7421844917117739350
 MonoBehaviour:
@@ -441,6 +442,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4b8cb3735f496d44b9f63b18b3f6981, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _ScoreOnDeath: 5
+  _moneyOnDeath: 1
+  _collider: {fileID: 0}
 --- !u!114 &5814469949665645757
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -457,6 +461,18 @@ MonoBehaviour:
   _onHeatlthChanged:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 5669944984546728508}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4893837921556160530}
         m_TargetAssemblyTypeName: UnityEngine.UI.Slider, UnityEngine.UI
         m_MethodName: set_value
@@ -472,6 +488,30 @@ MonoBehaviour:
   _onDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 7421844917117739350}
+        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 5669944984546728508}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 4242851560293588767}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die
@@ -484,6 +524,39 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &5669944984546728508
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421844917117739348}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 715b1ae6d1900c6448a16bc585e2b328, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
+--- !u!95 &7207761688378987465
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7421844917117739348}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7421844917447224802
 GameObject:
   m_ObjectHideFlags: 0
@@ -515,7 +588,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7421844917021573500}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7421844917447224806
 MeshFilter:
@@ -598,7 +671,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4648986602318964209}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -678,7 +751,7 @@ RectTransform:
   m_Children:
   - {fileID: 4537804390634279679}
   m_Father: {fileID: 7421844917117739351}
-  m_RootOrder: -1
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -703,7 +776,6 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -768,14 +840,13 @@ LookAtConstraint:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8851693662484558310}
   m_Enabled: 1
-  serializedVersion: 2
   m_Weight: 1
   m_RotationAtRest: {x: 0, y: 0, z: 0}
   m_RotationOffset: {x: 0, y: 0, z: 0}
   m_Roll: 0
   m_WorldUpObject: {fileID: 0}
   m_UseUpObject: 1
-  m_Active: 1
+  m_IsContraintActive: 0
   m_IsLocked: 1
   m_Sources:
   - sourceTransform: {fileID: 0}
