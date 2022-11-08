@@ -1537,7 +1537,7 @@ MonoBehaviour:
   _mediumEnemyPrefab: {fileID: 8822731309528405098, guid: c6c90890a30b80146b8a9eeeefca08df, type: 3}
   _strongEnemyPrefab: {fileID: 8822731309528405098, guid: 0fcfd6b80ae4db9458484cc4231f0878, type: 3}
   _bossEnemyPrefab: {fileID: 8822731309528405098, guid: ef0578d3b4fb7f8468e3fe1ce20ce20d, type: 3}
-  _timeToNextWave: 1
+  _timeToNextWave: 5
 --- !u!1 &456842017
 GameObject:
   m_ObjectHideFlags: 0
@@ -1844,7 +1844,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -4.794983, y: 447}
+  m_AnchoredPosition: {x: -4.794983, y: 349}
   m_SizeDelta: {x: 25.60999, y: -869.70013}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &754860517
@@ -1860,7 +1860,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.392}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

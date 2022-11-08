@@ -1,22 +1,21 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class FollowPathMovement : MonoBehaviour
 {
-
-    private List<Transform> _wayPoint = new List<Transform>();
-    private int _currentPoint = 0;
+    private List<Transform> _wayPoints = new List<Transform>();
+    private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
     private Vector3 _originalPosition;
 
-
     private void OnEnable()
     {
         _originalPosition = transform.position;
-        _wayPoint.Clear();
-        _currentPoint = 0;
+        _wayPoints.Clear();
+        _currentWayPoint = 0;
         GameManager.Instance.AddEnemy(1);
     }
 
@@ -25,33 +24,35 @@ public class FollowPathMovement : MonoBehaviour
         transform.position = _originalPosition;
         GameManager.Instance.AddEnemy(-1);
     }
+
     public void InitEnemy(string pathName)
     {
-
-        var wayPointParent = GameObject.Find("Path");
-        for (int i = 0; i < wayPointParent.transform.childCount; i++)
+        var waypointParent = GameObject.Find(pathName);
+        for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
-            _wayPoint.Add(wayPointParent.transform.GetChild(i));
+            _wayPoints.Add(waypointParent.transform.GetChild(i));
         }
 
-        StartCoroutine(MoveToNextPoint());
+        StartCoroutine(MoveToNextWaypoint());
     }
 
-   private IEnumerator MoveToNextPoint()
+    private IEnumerator MoveToNextWaypoint()
     {
-        var distance = Vector3.Distance(transform.position, _wayPoint[_currentPoint].position);
+        var distance = Vector3.Distance(transform.position,
+            _wayPoints[_currentWayPoint].position);
         while (Mathf.Abs(distance) > minDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _wayPoint[_currentPoint].position, Time.deltaTime * speed);
-            distance = Vector3.Distance(transform.position, _wayPoint[_currentPoint].position);
+            transform.position = Vector3.MoveTowards(transform.position,
+                _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
+            distance = Vector3.Distance(transform.position,
+                _wayPoints[_currentWayPoint].position);
             yield return null;
         }
 
-        if (_currentPoint < _wayPoint.Count - 1)
+        if (_currentWayPoint < _wayPoints.Count - 1)
         {
-            _currentPoint++;
-            StartCoroutine(MoveToNextPoint());
+            _currentWayPoint++;
+            StartCoroutine(MoveToNextWaypoint());
         }
     }
-
 }
