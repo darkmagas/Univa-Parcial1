@@ -4,12 +4,11 @@ using UnityEngine;
 
 public class TurretSlot : MonoBehaviour
 {
-    private bool _isOccupied = false;
+   private bool _isOccupied = false;
 
-    public bool IsOccupied => _isOccupied;
-
-    public void SetStatus(bool status)
-    {
-        _isOccupied = status;
-    }
+   public bool IsOccupied => _isOccupied;
+   public void SetStatus(bool status)
+   {
+       _isOccupied = status;
+   }
 }

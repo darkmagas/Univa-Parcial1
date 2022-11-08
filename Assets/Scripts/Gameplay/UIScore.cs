@@ -5,11 +5,12 @@ using TMPro;
 
 public class UIScore : MonoBehaviour
 {
-   [SerializeField] private TMP_Text _scoreText;
-   [SerializeField] private string _scoreString = "Puntos: ";
+    [SerializeField] private TMP_Text _scoreText;
+    [SerializeField] private string _scoreString = "Puntos : ";
 
     public void OnScoreChange(int val)
     {
-        _scoreText.SetText(sourceText: $"{_scoreString} {val:00000}");
+        //Puntos : 00020 
+        _scoreText.SetText($"{_scoreString} {val:00000}");
     }
 }

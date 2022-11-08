@@ -5,14 +5,12 @@ using UnityEngine.Events;
 
 public class UITurretSelection : MonoBehaviour
 {
-    [SerializeField] private TurretManagement _turretManagement;
-    [SerializeField] private UnityEvent<(GameObject go, int cost)> _onTurretSelected = new();
+    [SerializeField]private TurretManagement _turretManagement;
+    [SerializeField]private UnityEvent<(GameObject go, int cost)> _onTurretSelected = new();
 
-    public void SelectTurret (int index)
-     {
-         var turret = _turretManagement.GetTurretConfig(index);
-    _onTurretSelected?.Invoke((turret.turret, turret.cost));
-     }
+    public void SelectTurret(int index)
+    {
+        var turret = _turretManagement.GetTurretConfig(index);
+        _onTurretSelected?.Invoke((turret.turret, turret.cost));
+    }
 }
-
-
