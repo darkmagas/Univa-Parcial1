@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class TurrenEnemyDetection : MonoBehaviour
 {
@@ -9,6 +10,30 @@ public class TurrenEnemyDetection : MonoBehaviour
     private GameObject _detectedEnemy = null;
     [SerializeField] private Transform _turrentPivot = null;
     [SerializeField] private float _maxDistance = 5f;
+
+    private void Start()
+    {
+        EventDispatcher.Subscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+    private void OnDisable()
+    {
+        EventDispatcher.Subscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+    private void OnDestroy()
+    {
+        EventDispatcher.Subscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+
+    private void OnEnemyDeath(ISignal signal)
+    {
+        if (signal is EnemyDeathSignal enemyDeathSignal)
+        {
+            if(enemyDeathSignal.go == _detectedEnemy)
+            {
+                _detectedEnemy = null;
+            }
+        }
+    }
 
     private void Update()
     {

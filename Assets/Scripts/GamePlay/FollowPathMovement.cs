@@ -10,9 +10,11 @@ public class FollowPathMovement : MonoBehaviour
     public float speed = 5f;
     public float mindDistance =  0.2f;
     private Vector3 _originalPosition;
+    private bool _isDeath = false;
 
     private void OnEnable()
     {
+        _isDeath = false;
         _originalPosition = transform.position;
         _WayPoints.Clear();
         _currentWayPoint = 0;
@@ -23,6 +25,12 @@ public class FollowPathMovement : MonoBehaviour
     {
         transform.position = _originalPosition;
         GameManager.Instance.AddEnemy(-1);
+    }
+
+    public void OnDeath()
+    {
+        _isDeath = true;
+        StopCoroutine(MoveTollexWaypoint());
     }
 
     public void InitEnemy(string pathName) 
@@ -42,7 +50,7 @@ public class FollowPathMovement : MonoBehaviour
     {
 
         var distance = Vector3.Distance(a: transform.position, b: _WayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > mindDistance)
+        while (Mathf.Abs(distance) > mindDistance && !_isDeath)
 
         {
             transform.position = Vector3.MoveTowards( transform.position, _WayPoints[_currentWayPoint].position, Time.deltaTime * speed);
@@ -52,7 +60,7 @@ public class FollowPathMovement : MonoBehaviour
         
         }
 
-        if(_currentWayPoint< _WayPoints.Count-1)
+        if(_currentWayPoint< _WayPoints.Count-1 && !_isDeath)
         {
             _currentWayPoint++;
 

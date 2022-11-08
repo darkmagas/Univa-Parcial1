@@ -30,8 +30,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 3136307637477103937}
+  m_Children: []
   m_Father: {fileID: 6021888237799495045}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -58,6 +57,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -343,6 +343,7 @@ GameObject:
   - component: {fileID: 5253378323096252925}
   - component: {fileID: 3144031210685071023}
   - component: {fileID: 1389892242487047604}
+  - component: {fileID: 1368301044625308251}
   m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Enemy
@@ -362,6 +363,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3136307637477103937}
   - {fileID: 6021888237799495045}
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -450,10 +452,46 @@ MonoBehaviour:
   _health: 100
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1368301044625308251}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 6021888237408446540}
+        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1368301044625308251}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 1389892242487047604}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die
@@ -478,6 +516,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 962442873dcc9eb41a8e0a47e4eb9d28, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
+  _moneyOnDeath: 5
+  _collider: {fileID: 6021888237408446542}
+--- !u!114 &1368301044625308251
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6021888237408446530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 14db51649b108e24cab1cdea01a3dae3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1 &6021888237703135457
 GameObject:
   m_ObjectHideFlags: 0
@@ -763,18 +817,18 @@ RectTransform:
   m_GameObject: {fileID: 9050291883153583634}
   m_LocalRotation: {x: -0, y: -0.007948655, z: -0, w: 0.9999684}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.01856552, y: 0.01856552, z: 0.01856552}
+  m_LocalScale: {x: 0.018565523, y: 0.01856552, z: 0.018565523}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2205495328363332883}
   - {fileID: 8023579017304272814}
   - {fileID: 655077712156570397}
-  m_Father: {fileID: 5277756136823284069}
-  m_RootOrder: 0
+  m_Father: {fileID: 6021888237408446541}
+  m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: -0.911, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -416.35, y: -195.848}
+  m_AnchoredPosition: {x: 0.049957275, y: 2.3519897}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6575995669690043580
