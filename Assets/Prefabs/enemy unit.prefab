@@ -100,6 +100,8 @@ GameObject:
   - component: {fileID: -5575123888287379881}
   - component: {fileID: 2625188676876419045}
   - component: {fileID: 414689300447343382}
+  - component: {fileID: -7653095092253170988}
+  - component: {fileID: -7965033168879961225}
   m_Layer: 8
   m_Name: enemy unit
   m_TagString: Enemy
@@ -218,6 +220,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4748b32dea58b8449a2344dc500c7b61, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
+  _moneyOnDeath: 1
+  _collider: {fileID: 0}
 --- !u!114 &414689300447343382
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,10 +238,46 @@ MonoBehaviour:
   _health: 100
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: -7965033168879961225}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnHealthChange
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _onDeath:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 350236356454982091}
+        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: -7965033168879961225}
+        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
+        m_MethodName: OnDeath
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
       - m_Target: {fileID: 2625188676876419045}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die
@@ -249,6 +290,34 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &-7653095092253170988
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350236356454982089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4748b32dea58b8449a2344dc500c7b61, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
+  _moneyOnDeath: 1
+  _collider: {fileID: 0}
+--- !u!114 &-7965033168879961225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 350236356454982089}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e6f275a0ba2470489bb49cc690f7e09, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1 &350236356587725780
 GameObject:
   m_ObjectHideFlags: 0
