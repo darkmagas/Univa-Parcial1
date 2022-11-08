@@ -25,6 +25,8 @@ public class Health : MonoBehaviour
             _currentHealth = 0;
         }
         _onHealthChanged?.Invoke((float)_currentHealth / _health);
+
+        if (_currentHealth == 0) _onDeath?.Invoke();
     }
 
 }

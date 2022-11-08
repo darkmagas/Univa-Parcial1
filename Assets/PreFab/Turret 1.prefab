@@ -494,8 +494,9 @@ MonoBehaviour:
   _damage: 25
   _audioSource: {fileID: 4712907072886001219}
   _impactEffect: {fileID: 5735624195267762531, guid: a09c600673886bd48bad45d82e9fa93d, type: 3}
-  _currentCD: 0
-  _shootingCD: 0.2
+  _shootingCD: 1.5
+  _isAOE: 0
+  _radius: 2
 --- !u!82 &4712907072886001219
 AudioSource:
   m_ObjectHideFlags: 0
