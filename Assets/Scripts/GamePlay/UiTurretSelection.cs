@@ -9,7 +9,8 @@ public class UiTurretSelection : MonoBehaviour
     [SerializeField] private UnityEvent<(GameObject go, int cost)> _onTurretSelected = new ();
  
     public void SelectTurret (int index)
-    {
+    {   
+        Debug.Log("Turret Selected");
         var turret = _turretManagement.GetTurretConfig(index);
         _onTurretSelected?.Invoke((turret.turret, turret.coast));
     }

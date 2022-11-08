@@ -22,9 +22,7 @@ public void OnTurrentChange ((GameObject prefab, int coast) turret)
 
         if (Input.GetMouseButtonDown(0))
         {
-            
-
-
+            Debug.Log("Clicked");
                 var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 if (Physics.Raycast(ray, out var hit, Mathf.Infinity, LayerMask.GetMask("Placement")))
                 {

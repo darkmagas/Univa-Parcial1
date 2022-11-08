@@ -1220,14 +1220,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 474bcb49853aa07438625e644c072ee6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Version: 1
-  m_UsePipelineSettings: 1
-  m_AdditionalLightsShadowResolutionTier: 2
-  m_LightLayerMask: 1
-  m_CustomShadowLayers: 0
-  m_ShadowLayerMask: 1
-  m_LightCookieSize: {x: 1, y: 1}
-  m_LightCookieOffset: {x: 0, y: 0}
 --- !u!108 &203844588
 Light:
   m_ObjectHideFlags: 0
@@ -3965,7 +3957,7 @@ GameObject:
   - component: {fileID: 853880332}
   - component: {fileID: 853880331}
   - component: {fileID: 853880335}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -5852,10 +5844,10 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2063435026}
   - {fileID: 346668821}
   - {fileID: 261698192}
   - {fileID: 188512967}
-  - {fileID: 2063435026}
   m_Father: {fileID: 1414267737}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6350,7 +6342,7 @@ GameObject:
   - component: {fileID: 1774768889}
   - component: {fileID: 1774768888}
   - component: {fileID: 1774768892}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -6904,7 +6896,7 @@ GameObject:
   - component: {fileID: 1913124366}
   - component: {fileID: 1913124365}
   - component: {fileID: 1913124369}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -7903,7 +7895,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1068664576121864095, guid: 7c51d8d68aa72e04fa114cf4e3603579, type: 3}
       propertyPath: m_CullingMask.m_Bits
-      value: 503
+      value: 1527
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
