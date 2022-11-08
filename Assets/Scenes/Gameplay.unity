@@ -927,7 +927,7 @@ GameObject:
   - component: {fileID: 284611853}
   m_Layer: 0
   m_Name: Goal
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -992,7 +992,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284611850}
   m_LocalRotation: {x: 0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 12.8, y: 0.08, z: -18.38}
+  m_LocalPosition: {x: 12.8, y: 0.36, z: -18.38}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1050,7 +1050,7 @@ CapsuleCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 284611850}
   m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_Enabled: 1
   m_Radius: 0.5000001
   m_Height: 2
@@ -1534,9 +1534,8 @@ MonoBehaviour:
   - Path_1
   - Path_2
   _weakEnemyPrefab: {fileID: 8822731309528405098, guid: f7348a13a24830847aecc395fa5d372a, type: 3}
-  _mediumEnemyPrefab: {fileID: 8822731309528405098, guid: c6c90890a30b80146b8a9eeeefca08df, type: 3}
+  _midEnemyPrefab: {fileID: 8822731309528405098, guid: c6c90890a30b80146b8a9eeeefca08df, type: 3}
   _strongEnemyPrefab: {fileID: 8822731309528405098, guid: 0fcfd6b80ae4db9458484cc4231f0878, type: 3}
-  _bossEnemyPrefab: {fileID: 8822731309528405098, guid: ef0578d3b4fb7f8468e3fe1ce20ce20d, type: 3}
   _timeToNextWave: 5
 --- !u!1 &456842017
 GameObject:
