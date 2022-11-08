@@ -693,7 +693,7 @@ GameObject:
   - component: {fileID: 5632432677212545599}
   - component: {fileID: 1756314130101947674}
   - component: {fileID: 3641812927262904251}
-  - component: {fileID: 3937366969391455741}
+  - component: {fileID: 8996871932444837219}
   m_Layer: 8
   m_Name: EnemyUnit_wl
   m_TagString: Enemy
@@ -831,7 +831,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 39cfdbd85e6ca064c88f14042c9e5ab1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &3937366969391455741
+  _scoreOnDeath: 5
+  _moneyOnDeath: 1
+  _collider: {fileID: 0}
+--- !u!114 &8996871932444837219
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -840,9 +843,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 9097395298537643162}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1ab73723a9d5f224ca04d6bd767e3f65, type: 3}
+  m_Script: {fileID: 11500000, guid: ab05b4b089533ed459a4070966146a10, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _animator: {fileID: 0}
 --- !u!1 &9097395298560195944
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 992d5a2f4cacc56458c46aceaee30d6f
+guid: 33c753cbf6fd0e5449b68ab40ae7dadd
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -81,9 +81,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 512
+    maxTextureSize: 1024
     resizeAlgorithm: 0
-    textureFormat: 12
+    textureFormat: 74
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -107,22 +107,127 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: casa02_0
+      name: disparo_0
       rect:
         serializedVersion: 2
-        x: 105
-        y: 75
-        width: 316
-        height: 338
+        x: 39
+        y: 320
+        width: 244
+        height: 262
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82fcd7677ed385a41b3688b2098888a7
-      internalID: -456827782
+      spriteID: 1c762e2e1c819d84b9009996248c3311
+      internalID: 1380109337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparo_1
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 317
+        width: 244
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264b28be7531ac141811bec626908e60
+      internalID: 1314553418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparo_2
+      rect:
+        serializedVersion: 2
+        x: 608
+        y: 319
+        width: 255
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7811f9ff0b8e05f41a653e524d4cd2ed
+      internalID: -263733342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparo_3
+      rect:
+        serializedVersion: 2
+        x: 27
+        y: 18
+        width: 259
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b461b4ca42d9914a85381007a87abbc
+      internalID: -1710864569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparo_4
+      rect:
+        serializedVersion: 2
+        x: 311
+        y: 18
+        width: 252
+        height: 263
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fee0be6f15a12d4ab420cf76bc2d7ef
+      internalID: 343081948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: disparo_5
+      rect:
+        serializedVersion: 2
+        x: 616
+        y: 13
+        width: 242
+        height: 262
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f1bbdc20814a8345afbcd2f0d947892
+      internalID: 506734281
       vertices: []
       indices: 
       edges: []
@@ -130,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: d9d0c64b0e0d58640aa507653c083d9a
+    spriteID: 05ffaa7e06e752947966f75e541d7c04
     internalID: 0
     vertices: []
     indices: 
@@ -138,7 +243,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      casa02_0: -456827782
+      disparo_0: 1380109337
+      disparo_2: -263733342
+      disparo_4: 343081948
+      disparo_3: -1710864569
+      disparo_1: 1314553418
+      disparo_5: 506734281
+      disparo_6: -1641827026
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
