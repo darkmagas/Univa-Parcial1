@@ -151,6 +151,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c2f80d0a0e4f3c24893cd1692d457638, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scoreOnDeath: 5
+  _moneyOnDeath: 1
+  _collider: {fileID: 0}
 --- !u!1 &7796662656233153106
 GameObject:
   m_ObjectHideFlags: 0
@@ -246,6 +249,7 @@ GameObject:
   - component: {fileID: 7796662657420752882}
   - component: {fileID: 7796662657420752883}
   - component: {fileID: 7796662657420752885}
+  - component: {fileID: 3095342750748532142}
   m_Layer: 8
   m_Name: Capsule
   m_TagString: Untagged
@@ -332,3 +336,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotationSpeed: 10
+--- !u!114 &3095342750748532142
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7796662657420752398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a7071e01716ea54589164e4d0571953, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _health: 100
+  _onHealthChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  _onDeath:
+    m_PersistentCalls:
+      m_Calls: []

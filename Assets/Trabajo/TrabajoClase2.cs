@@ -9,9 +9,11 @@ public class TrabajoClase2 : MonoBehaviour
     public float speed = 5f;
     public float minDistance = 0.2f;
     private Vector3 _originalPosition;
+    private bool _isDeath = false;
     
     private void OnEnable()
     {
+        _isDeath = false;
         _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
@@ -22,6 +24,12 @@ public class TrabajoClase2 : MonoBehaviour
     {
         transform.position = _originalPosition;
         GameManager.Instance.AddEnemy(-1);
+    }
+
+    public void OnDeath()
+    {
+        _isDeath = true;
+        StopCoroutine(MoveToNextWaypoint());
     }
 
 
@@ -39,7 +47,7 @@ public class TrabajoClase2 : MonoBehaviour
     private IEnumerator MoveToNextWaypoint()
     {
         var distance  = Vector3.Distance (transform.position, _wayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > minDistance)
+        while (Mathf.Abs(distance) > minDistance && !_isDeath)
         {
             transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
             distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
@@ -48,7 +56,7 @@ public class TrabajoClase2 : MonoBehaviour
           
         }
 
-        if(_currentWayPoint < _wayPoints.Count -1)
+        if(_currentWayPoint < _wayPoints.Count -1 && !_isDeath)
         {
             _currentWayPoint++;
             StartCoroutine(MoveToNextWaypoint());
