@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -41,12 +42,13 @@ public class FollowPathMovement : MonoBehaviour
     }
     public void InitEnemy(string pathName)
     {
-        var path = GameObject.Find(this.path);
-        for (int i = 0; i < path.transform.childCount; i++)
+        var waypointParent = GameObject.Find(pathName);
+        for (int i = 0; i < waypointParent.transform.childCount; i++)
         {
-            _wayPoints.Add(path.transform.GetChild(i));
+            _wayPoints.Add(waypointParent.transform.GetChild(i));
         }
-        StartCoroutine(MoveToNextWaypoints());
+
+        StartCoroutine(MoveToNextWaypoint());
     }
 
     private IEnumerator MoveToNextWaypoint()
@@ -55,17 +57,17 @@ public class FollowPathMovement : MonoBehaviour
             _wayPoints[_currentWayPoint].position);
         while (Mathf.Abs(distance) > stoppingDistance)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position,speed* Time.deltaTime);
-            distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
-            
+            transform.position = Vector3.MoveTowards(transform.position,
+                _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
+            distance = Vector3.Distance(transform.position,
+                _wayPoints[_currentWayPoint].position);
             yield return null;
-
-           
         }
+
         if (_currentWayPoint < _wayPoints.Count - 1)
         {
             _currentWayPoint++;
-            StartCoroutine(MoveToWayPoints());
+            StartCoroutine(MoveToNextWaypoint());
         }
     }
 }
