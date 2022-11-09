@@ -10,6 +10,7 @@ public class UITurretSelection : MonoBehaviour
 
     public void SelectTurret (int index)
     {
+        Debug.Log("Turret Selected");
         var turret = _turretManagement.GetTurretConfig(index);
         _onTurretSelected?.Invoke((turret.turret, turret.cost));
     }

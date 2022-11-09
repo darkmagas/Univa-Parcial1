@@ -38,7 +38,7 @@ public class TurretEnemyDetection1 : MonoBehaviour
     }
     private void Update()
     {
-        if (_detectedEnemy != null) return;
+        if (_detectedEnemy == null) return;
         
         var direction = _detectedEnemy.transform.position - _turretPivot.parent.position;
 
