@@ -49,10 +49,10 @@ MonoBehaviour:
   _maxRange: 10
   _damage: 70
   _audioSource: {fileID: 524433320}
-  _impactEffect: {fileID: 4993353137032296901, guid: f87ea3e54029e5347b55081be8559986, type: 3}
+  _impactEffect: {fileID: 4993353137032296901, guid: b3e0f600f30a0f944957b9e3db245fe2, type: 3}
   _shootingCD: 0.5
   _isAOE: 0
-  _radius: 2
+  _radius: 1
 --- !u!82 &524433320
 AudioSource:
   m_ObjectHideFlags: 0
@@ -499,7 +499,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8091253790374714671}
   m_Layer: 0
-  m_Name: Torreta 2
+  m_Name: Carnivora
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
