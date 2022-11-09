@@ -24,7 +24,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2119709128888602152}
   m_LocalRotation: {x: -0, y: 0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.19, y: 5.24, z: -0.06}
+  m_LocalPosition: {x: 0, y: 5.24, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -140,7 +140,7 @@ Transform:
   m_GameObject: {fileID: 4615712679141386307}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -32.46798, y: 0.038847923, z: -33.869427}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.55806, y: 0.55806, z: 0.55806}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4842964596417381281}
@@ -242,7 +242,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7271337478683376612}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5
@@ -306,9 +306,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2070a23611cd841a2a8cca7d39b1219f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cannon: {fileID: 0}
+  _cannon: {fileID: 2315939096294218357}
   _maxRange: 10
-  _damage: 10
+  _damage: 9999
   _audioSource: {fileID: 0}
   _impactEffect: {fileID: 0}
   _shootingCD: 1
