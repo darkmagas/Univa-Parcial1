@@ -27,8 +27,8 @@ public class RaycastShoting : MonoBehaviour
 					if (!_audioSource.isPlaying)
 					_audioSource.Play();
 
-					hit.collider.GetComponent <Healt().ReceiveDamage (_damage);
-					_currentCD = shootingCD; 
+					hit.collider.GetComponent <Health>().ReceiveDamage (_damage);
+					_currentCD = _shootingCD; 
 				}
 			}
 		}
@@ -36,7 +36,7 @@ public class RaycastShoting : MonoBehaviour
 
 	private void Update()
 	{
-		if (currentCD > 0)
+		if (_currentCD > 0)
 		{
 			_currentCD -= Time.deltaTime; 
 		}
