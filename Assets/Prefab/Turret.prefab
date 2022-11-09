@@ -163,6 +163,8 @@ MonoBehaviour:
   _audioSource: {fileID: 2139221173}
   _impactEffect: {fileID: 6550979634187096126, guid: 453f848bef7d1480c970fe760f49176b, type: 3}
   _shootingCD: 0.2
+  _isAOE: 0
+  _radius: 2
 --- !u!82 &2139221173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -173,9 +175,9 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7edeb1500248e4fbb822add8a1084ea3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 62bc6b55cde241447aa3fa926d625fce, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
