@@ -28,6 +28,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2315939096294218357}
   - {fileID: 5794572258470228935}
   m_Father: {fileID: 5423915695933846265}
   m_RootOrder: -1
@@ -287,11 +288,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8765382034784435567}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2.27, y: 1.31, z: 0.03}
-  m_LocalScale: {x: 0.506432, y: 0.506432, z: 0.506432}
+  m_LocalPosition: {x: -1.8676883, y: 0.7331581, z: 0.08045549}
+  m_LocalScale: {x: 0.34528533, y: 0.34528533, z: 0.34528533}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5794572258470228935}
+  m_Father: {fileID: 484778500828424967}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &8189448567557986641
@@ -309,8 +310,8 @@ MonoBehaviour:
   _cannon: {fileID: 2315939096294218357}
   _maxRange: 10
   _damage: 9999
-  _audioSource: {fileID: 0}
-  _impactEffect: {fileID: 0}
+  _audioSource: {fileID: 7838300338420854788}
+  _impactEffect: {fileID: 6550979634187096126, guid: 453f848bef7d1480c970fe760f49176b, type: 3}
   _shootingCD: 1
 --- !u!82 &7838300338420854788
 AudioSource:
@@ -477,10 +478,7 @@ PrefabInstance:
       value: "Ca\xF1on"
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -8679921383154817045, guid: 60ca3f24d09a7624294073d621e9fafa, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2315939096294218357}
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 60ca3f24d09a7624294073d621e9fafa, type: 3}
 --- !u!4 &5794572258470228935 stripped
 Transform:
