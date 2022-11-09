@@ -29,7 +29,7 @@ public class FollowPathMovement : MonoBehaviour
     private void OnDeath()
     {
         _isDeath = true;
-        StopCoroutine();
+        StopCoroutine(MoveToNextWaypoint());
     }
     public void InitEnemy(string pathName)
     {

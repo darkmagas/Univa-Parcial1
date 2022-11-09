@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 5e428cbf09dbc3d41a27185a27396cc9
+guid: 411b0330942ae78449bec31bad9493cb
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -37,9 +37,9 @@ TextureImporter:
     filterMode: 1
     aniso: 1
     mipBias: 0
-    wrapU: 1
-    wrapV: 1
-    wrapW: 1
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
@@ -81,9 +81,9 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
     buildTarget: Standalone
-    maxTextureSize: 1024
+    maxTextureSize: 512
     resizeAlgorithm: 0
-    textureFormat: 25
+    textureFormat: 29
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -107,33 +107,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Atlas_ConejoBlanco_Reposo_0
-      rect:
-        serializedVersion: 2
-        x: 488
-        y: 0
-        width: 198
-        height: 310
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6eec30890dc96642b7058870c16a5fe
-      internalID: -1169487123
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Atlas_ConejoBlanco_Reposo_1
+      name: Atlas_WhiteRabbit_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 157
+        width: 217
         height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -142,19 +121,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: da9b3d2d7d4894043904af0d884946e8
-      internalID: -1086963303
+      spriteID: f60de37aa80558b49942001114c53981
+      internalID: 2143624029
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Atlas_ConejoBlanco_Reposo_2
+      name: Atlas_WhiteRabbit_1
       rect:
         serializedVersion: 2
-        x: 230
-        y: 0
-        width: 198
+        x: 0
+        y: 311
+        width: 217
         height: 310
       alignment: 0
       pivot: {x: 0, y: 0}
@@ -163,8 +142,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 02b1e6d3c047bd549966cb990c02230a
-      internalID: -2107149919
+      spriteID: 54e572c47dad3ea46877c485971093b7
+      internalID: 75001857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_WhiteRabbit_2
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 311
+        width: 217
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4101540963095ff4594a73c64fe9c952
+      internalID: 21191399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_WhiteRabbit_3
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 311
+        width: 217
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fdfe1be46bf79344aa62d7c5b629d96
+      internalID: -1341261109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_WhiteRabbit_4
+      rect:
+        serializedVersion: 2
+        x: 230
+        y: 0
+        width: 217
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b279b15d6edaa3479acb29f50be2a45
+      internalID: -1368015878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Atlas_WhiteRabbit_5
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 217
+        height: 310
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b32837fb390902449b9b117b82d6bb1e
+      internalID: 1717852969
       vertices: []
       indices: 
       edges: []
@@ -172,7 +235,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 1229ddc8b41a43148908b867cf884378
+    spriteID: 533b1adc4fcc04944b71b3222a511586
     internalID: 0
     vertices: []
     indices: 
@@ -180,9 +243,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Atlas_ConejoBlanco_Reposo_2: -2107149919
-      Atlas_ConejoBlanco_Reposo_0: -1169487123
-      Atlas_ConejoBlanco_Reposo_1: -1086963303
+      Atlas_WhiteRabbit_3: -1341261109
+      Atlas_WhiteRabbit_4: -1368015878
+      Atlas_WhiteRabbit_2: 21191399
+      Atlas_WhiteRabbit_1: 75001857
+      Atlas_WhiteRabbit_5: 1717852969
+      Atlas_WhiteRabbit_0: 2143624029
   spritePackingTag: 
   pSDRemoveMatte: 0
   userData: 
