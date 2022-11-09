@@ -159,7 +159,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cannon: {fileID: 2139221172}
   _maxRange: 10
-  _damage: 1
+  _damage: 9999
   _audioSource: {fileID: 2139221173}
   _impactEffect: {fileID: 6550979634187096126, guid: 453f848bef7d1480c970fe760f49176b, type: 3}
   _shootingCD: 0.2
@@ -605,7 +605,7 @@ Transform:
   - {fileID: 1279966736}
   - {fileID: 5311224614690161989}
   m_Father: {fileID: 0}
-  m_RootOrder: 10
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8532312479190682554
 GameObject:

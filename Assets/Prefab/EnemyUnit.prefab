@@ -252,7 +252,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _scoreOnDeath: 5
   _moneyOnDeath: 1
-  _collider: {fileID: 0}
+  _collider: {fileID: 3409152813022600942}
 --- !u!1 &3409152813547955914
 GameObject:
   m_ObjectHideFlags: 0
@@ -344,6 +344,10 @@ PrefabInstance:
     serializedVersion: 2
     m_TransformParent: {fileID: 3409152812192628932}
     m_Modifications:
+    - target: {fileID: 845492393381454116, guid: 821be234e59102342aacabb4beb0468f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1257273100659562264, guid: 821be234e59102342aacabb4beb0468f, type: 3}
       propertyPath: m_Name
       value: Ninja
@@ -403,6 +407,10 @@ PrefabInstance:
     - target: {fileID: 7854120352729067457, guid: 821be234e59102342aacabb4beb0468f, type: 3}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7854120352729067457, guid: 821be234e59102342aacabb4beb0468f, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 262641367792544777, guid: 821be234e59102342aacabb4beb0468f, type: 3}
