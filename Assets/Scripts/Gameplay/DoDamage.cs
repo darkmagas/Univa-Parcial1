@@ -10,7 +10,7 @@ public class DoDamage : MonoBehaviour
         if (other.GetComponent<Health>() != null)
         {
             var otherHealth = other.GetComponent<Health>();
-            otherHealth.RecieveDamage(damage);
+            otherHealth.ReceiveDamage(damage);
         }
     }
 }

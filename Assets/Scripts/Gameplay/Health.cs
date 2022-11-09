@@ -20,7 +20,7 @@ public class Health : MonoBehaviour
 
   
 
-    public void RecieveDamage(int damage)
+    public void ReceiveDamage(int damage)
     {
 
         _currentHealth -= damage; //Shortcut para irle restando el Daño
