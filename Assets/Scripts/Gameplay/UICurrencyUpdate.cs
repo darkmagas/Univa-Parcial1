@@ -5,7 +5,7 @@ using TMPro;
 public class UICurrencyUpdate : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private string _currencyName = "Gil";
+    [SerializeField] private string _currencyName = "Peso";
     
     public void UpdateCurrency(int currency)
     {

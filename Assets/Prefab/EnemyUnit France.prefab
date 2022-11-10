@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 8923686947412136415}
   - component: {fileID: 6112120125790737181}
   m_Layer: 8
-  m_Name: EnemyUnit
+  m_Name: EnemyUnit France
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e297e42d966483884aa741f5283763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1.5
+  speed: 0.6
   minDistance: 0.2
 --- !u!136 &3409152813022600942
 CapsuleCollider:
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f80279797151408f8d5518f401c7703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 1
+  _health: 5
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
@@ -231,7 +231,7 @@ Transform:
   m_GameObject: {fileID: 6086621620942568181}
   m_LocalRotation: {x: 0.70710677, y: -0, z: -0, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 0.44315, y: 0.44315, z: 0.44315}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3409152813022600941}
@@ -278,7 +278,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1760039542, guid: 347a2cd07f1d3984cb579a73b770afcf, type: 3}
+  m_Sprite: {fileID: -762900156, guid: 347a2cd07f1d3984cb579a73b770afcf, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 1
   m_FlipY: 0
@@ -299,7 +299,7 @@ Animator:
   m_GameObject: {fileID: 6086621620942568181}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 189d15a44617faf458de6d376d26677b, type: 2}
+  m_Controller: {fileID: 9100000, guid: 60636c239e9380c4cbdd3585bb7f6169, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

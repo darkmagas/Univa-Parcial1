@@ -159,10 +159,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cannon: {fileID: 2139221172}
   _maxRange: 10
-  _damage: 30
+  _damage: 100
   _audioSource: {fileID: 2139221173}
   _impactEffect: {fileID: 6550979634187096126, guid: 453f848bef7d1480c970fe760f49176b, type: 3}
   _shootingCD: 0.2
+  _isAOE: 0
+  _radius: 2
 --- !u!82 &2139221173
 AudioSource:
   m_ObjectHideFlags: 0
@@ -173,7 +175,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7edeb1500248e4fbb822add8a1084ea3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: c3e9947fec3ee9d439a68e222b594f4d, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
