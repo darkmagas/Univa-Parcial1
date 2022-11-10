@@ -5,7 +5,7 @@ using Magas.Utilities;
 
 public class TurretPlacement : MonoBehaviour
 {
-    private GameObject _turretPrefab;
+    private GameObject _turretPrefab = null;
     private int _cost = 0;
 
 
@@ -30,13 +30,13 @@ public class TurretPlacement : MonoBehaviour
                 var hitTransform = hit.collider.transform;
                 if (hitTransform.GetComponent<TurretSlot>().IsOccupied)
                 {
-                    if (GameManager.Instance.TrySpendCurrency(10))
+                    if (GameManager.Instance.TrySpendCurrency(_cost))
                     {
                         var positionVector = new Vector3(hitTransform.position.x, 
                             0, hitTransform.position.z);
 
                         EventDispatcher.Dispatch(
-                            signal: new SpawnObject(_turretPrefab, null, positionVector,
+                            new SpawnObject(_turretPrefab, null, positionVector,
                             Quaternion.identity,
                             null));
 

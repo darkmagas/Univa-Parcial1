@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class UITurretSelection : MonoBehaviour
 {
     [SerializeField] private TurretManagement _turretManagement;
-    [SerializeField] private UnityEvent<(GameObject go, int cost)> _onTurretSelected = new();
+    [SerializeField] private UnityEvent<(GameObject go, int cost)> _onTurretSelected = new ();
 
     public void SelectTurret(int index)
     {
