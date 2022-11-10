@@ -3288,7 +3288,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1839184264, guid: 05f5ec9b42b876841a6d878e054480d1, type: 3}
+  m_Sprite: {fileID: -1839184264, guid: 4ff5db52582288a4f92f5bcebcc6495d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6855,6 +6855,7 @@ GameObject:
   - component: {fileID: 1224161985}
   - component: {fileID: 1224161984}
   - component: {fileID: 1224161983}
+  - component: {fileID: 1224161986}
   m_Layer: 5
   m_Name: Abisal fish
   m_TagString: Untagged
@@ -6945,6 +6946,26 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!95 &1224161986
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1224161981}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0742c3778002b1b44a493a6371a41cf6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &1225497321
 PrefabInstance:
   m_ObjectHideFlags: 0
