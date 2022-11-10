@@ -22,6 +22,9 @@ public class OnEnemyDeath : MonoBehaviour
 
     private IEnumerator OnEnemyDie()
     {
-
+        yield return new WaitForSeconds(2.0f);
+        EventDispatcher.Dispatch(new DespawnObject(gameObject));
+        _isDying = false;
+        _collider.enabled = true;
     }
 }
