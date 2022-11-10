@@ -11,10 +11,12 @@ public class FollowPathMovement : MonoBehaviour
     public float stoppingDistance = 0.2f;
    
     public float speed = 5f;
+    public float minDistance = 0.2f;
 
     private int _currentWayPoint = 0;
 
     private Vector3 _originalPosition;
+    private bool _isDeath = false;
 
 
 
@@ -22,14 +24,17 @@ public class FollowPathMovement : MonoBehaviour
 
     private void OnEnable()
     {
+        _isDeath = false;
         _originalPosition = transform.position;
         _wayPoints.Clear();
         _currentWayPoint = 0;
+        GameManager.Instance.AddEnemy(1);
     }
 
     private void OnDisable()
     {
         transform.position = _originalPosition;
+        GameManager.Instance.AddEnemy(-1);
     }
 
     public void InitEnemy(string pathName)
@@ -45,23 +50,26 @@ public class FollowPathMovement : MonoBehaviour
 
     private IEnumerator MoveToWayPoints()
     {
-        var distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
+        var distance = Vector3.Distance(transform.position,
+            _wayPoints[_currentWayPoint].position);
 
-        while (Mathf.Abs(distance) > stoppingDistance)
+        while (Mathf.Abs(distance) > minDistance && !_isDeath)
         {
-            transform.position = Vector3.MoveTowards(transform.position, _wayPoints[_currentWayPoint].position, speed * Time.deltaTime);
-
-            distance = Vector3.Distance(transform.position, _wayPoints[_currentWayPoint].position);
+            transform.position = Vector3.MoveTowards(transform.position,
+                _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
+            distance = Vector3.Distance(transform.position,
+                _wayPoints[_currentWayPoint].position);
+            yield return null;
 
             //Le dice a la maquina que espere un Frame para volver a ejecutar
 
-            yield return null;
+            
         }
 
 
 
 
-        if (_currentWayPoint < _wayPoints.Count - 1)
+        if (_currentWayPoint < _wayPoints.Count - 1 && !_isDeath)
         {
             _currentWayPoint++;
             StartCoroutine(MoveToWayPoints());

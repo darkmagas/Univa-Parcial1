@@ -19,9 +19,11 @@ public class LookDirection : MonoBehaviour
     {
          var direction = transform.position - _lastPosition;
 
-         var targetDirection = Vector3.RotateTowards(transform.forward,direction, 30, Time.deltaTime);
+         var targetDirection = Vector3.RotateTowards(transform.forward,
+             direction, 30, Time.deltaTime);
 
-         transform.rotation = Quaternion.RotateTowards(transform.rotation,Quaternion.LookRotation(targetDirection),Time.deltaTime * _rotationSpeed);
+         transform.rotation = Quaternion.RotateTowards(transform.rotation,
+             Quaternion.LookRotation(targetDirection),Time.deltaTime * _rotationSpeed);
 
          _lastPosition = transform.position;
     }

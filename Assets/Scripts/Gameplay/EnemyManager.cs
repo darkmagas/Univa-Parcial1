@@ -5,76 +5,69 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 using Magas.Utilities;
-
 public class EnemyManager : MonoBehaviour
 {
-
-    [SerializeField] private WaveConfiguration waveConfig;
-    private int _currentWave = 0;
-    [SerializeField] private string[] _pathNames;
-    [SerializeField] private Transform[] _spawnPoints;
-   
+    [SerializeField] private WaveConfiguration _waveConfiguration;
+    [SerializeField] private List<string> _pathNames = new();
+    private List<Transform> _spawnpoints = new();
     [SerializeField] private GameObject _weakEnemyPrefab;
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
-
+    [SerializeField] private float _timeToNextWave = 5f;
+    private int _currentWave = 0;
     private void Start()
     {
-        _spawnPoints = new Transform[_pathNames.Length];
-        for (int i = 0; i < _pathNames.Length; i++)
+        for (int i = 0; i < _pathNames.Count; i++)
         {
-            var wayPointParent = GameObject.Find(_pathNames[i]);
-            var wayPoints = wayPointParent.GetComponentsInChildren<Transform>();
-            _spawnPoints[i] = wayPoints[0];
+            var waypointParent = GameObject.Find(_pathNames[i]);
+            if (waypointParent != null)
+            {
+                var firstChild = waypointParent.transform.GetChild(0);
+                if(firstChild != null)
+                {
+                    _spawnpoints.Add(firstChild);
+                }
+            }
         }
-        StartCoroutine(CreateWave(_currentWave));
+
+        StartCoroutine(CreateWave());
     }
 
-    private IEnumerator CreateWave(int waveID)
+    private IEnumerator CreateWave()
     {
-        if (waveConfig._waves.Count <= waveID) yield break; 
-        var wave = waveConfig._waves[waveID];
-
-        // yield retun espera para que lea la siguiente linea
-        yield return StartCoroutine(SpawnEnemies(wave.weakEnemyCount, _weakEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemies(wave.midEnemyCount, _midEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemies(wave.strongEnemyCount, _strongEnemyPrefab));
+        if(_waveConfiguration._waves.Count <= _currentWave) yield break;
+        var wave = _waveConfiguration._waves[_currentWave];
+        yield return StartCoroutine(SpawnEnemies(wave.weakEnemy, _weakEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemies(wave.midEnemy, _midEnemyPrefab));
+        yield return StartCoroutine(SpawnEnemies(wave.strongEnemy, _strongEnemyPrefab));
         _currentWave++;
-        yield return new WaitForSeconds(10f);
-        StartCoroutine(CreateWave(_currentWave));
 
-
-    }
-
-    private IEnumerator SpawnEnemies(int enemyCount, GameObject prefab)
-    {
-        for (int i = 0; i < enemyCount; i++)
-        {   
-            
-            //randompathID = randomSpawn (random Spawn es nombre del profe)
-
-            var randompathID = UnityEngine.Random.Range(0, _pathNames.Length);
-            EventDispatcher.Dispatch(
-                new SpawnObject(prefab,null, _spawnPoints[randompathID].position, Quaternion.identity, (gameObjectSpawned) => 
-                    {
-                        int rs = randompathID;
-                        string path = _pathNames[rs];
-                        gameObjectSpawned.GetComponent<FollowPathMovement>().InitEnemy(path);
-                    }
-                    
-                ));
-                    
-            //Instantiate(prefab,_spawnPoints[randompathID].position,Quaternion.identity);
-            yield return new WaitForSeconds(1);
-
-
-
+        while (GameManager.Instance.EnemyCount > 0)
+        {
+            yield return null;
         }
-        
 
-
-
+        yield return new WaitForSeconds(_timeToNextWave);
+        StartCoroutine(CreateWave());
     }
 
-
+    private IEnumerator SpawnEnemies(int amount, GameObject prefab)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            var randomSpawn = Random.Range(0, _pathNames.Count);
+            //Instantiate(prefab,_spawnpoints[randomSpawn].position,Quaternion.identity);
+            EventDispatcher.Dispatch(
+                new SpawnObject(prefab,
+                    null,_spawnpoints[randomSpawn].position,
+                    Quaternion.identity,
+                    (gameObjectSpawn) =>
+                    {
+                        int rs = randomSpawn;
+                        string pathName = _pathNames[rs];
+                        gameObjectSpawn.GetComponent<FollowPathMovement>().InitEnemy(pathName);
+                    }));
+            yield return new WaitForSeconds(1);
+        }
+    }
 }

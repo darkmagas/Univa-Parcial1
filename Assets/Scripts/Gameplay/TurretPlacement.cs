@@ -32,7 +32,8 @@ public class TurretPlacement : MonoBehaviour
                 {
                     if (GameManager.Instance.TrySpendCurrency(10))
                     {
-                        var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
+                        var positionVector = new Vector3(hitTransform.position.x, 
+                            0, hitTransform.position.z);
 
                         EventDispatcher.Dispatch(
                             signal: new SpawnObject(_turretPrefab, null, positionVector,

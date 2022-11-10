@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Magas.Utilities;
 
 public class TurretEnemyDetection : MonoBehaviour
 {
@@ -16,7 +18,31 @@ public class TurretEnemyDetection : MonoBehaviour
         }
         
     }
+    private void Start()
+    {
+        EventDispatcher.Subscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
 
+    private void OnDisable()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+
+    private void OnDestroy()
+    {
+        EventDispatcher.Unsubscribe<EnemyDeathSignal>(OnEnemyDeath);
+    }
+
+    private void OnEnemyDeath(ISignal signal)
+    {
+        if (signal is EnemyDeathSignal enemyDeathSignal)
+        {
+            if (enemyDeathSignal.go == _detectedEnemy)
+            {
+                _detectedEnemy = null;
+            }
+        }
+    }
     //private void OnTriggerExit(Collider other)
     //{
     //    if(other.CompareTag("Enemy") && _detectedEnemy == other.gameObject)
@@ -41,5 +67,15 @@ public class TurretEnemyDetection : MonoBehaviour
                 _detectedEnemy = null;
             }
         }
+    }
+
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Enemy") && _detectedEnemy == null)
+        {
+            _detectedEnemy = other.gameObject;
+        }
+
     }
 }
