@@ -6,7 +6,7 @@ using TMPro;
 public class UiScore : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
-    [SerializeField] private string _scoreString = "puntos";
+    [SerializeField] private string _scoreString = "Puntos";
 
     public void onScoreChange(int val)
     {

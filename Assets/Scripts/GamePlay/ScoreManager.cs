@@ -6,7 +6,7 @@ using UnityEngine.Events;
 public class ScoreManager : MonoBehaviour
 {
     private int _Score = 0;
-    private UnityEvent<int> _OnScoreChange = new ();
+    [SerializeField] private UnityEvent<int> _OnScoreChange = new ();
 
     private void Start()
     {

@@ -18,6 +18,7 @@ public class OnEnemyDeath : MonoBehaviour
         _isDying = true;
         _collider.enabled = false;
         EventDispatcher.Dispatch(new EnemyDeathSignal(gameObject));
+        StartCoroutine(OnEnemyDie());
         GameManager.Instance.ModifyScore(_scoreOnDeath);
         GameManager.Instance.AddCurrency(_moneyOnDeath);
     }

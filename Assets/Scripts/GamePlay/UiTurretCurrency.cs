@@ -1,18 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class UiTurretCurrency : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+   [SerializeField] private TMP_Text _text;
+        [SerializeField] private string _currencyName = "Mana";
 
-    // Update is called once per frame
-    void Update()
+        public void UpdateCurrency(int currency)
     {
-        
+        // 20 Gil
+        _text.SetText($"{currency} {_currencyName}");
     }
 }
