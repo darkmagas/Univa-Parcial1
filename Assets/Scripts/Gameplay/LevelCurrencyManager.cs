@@ -18,10 +18,11 @@ public class LevelCurrencyManager : MonoBehaviour
 
     private IEnumerator AddCurrency()
     {
-        _currency = _currencyToAdd;
+        _currency += _currencyToAdd;
         _onCurrencyChanged?.Invoke(_currency);
         yield return new WaitForSeconds(_ticRate);
-        StartCoroutine(routine: AddCurrency());
+       // Debug.Log($"Add Currency : {_currency}");
+        StartCoroutine(AddCurrency());
     }
 
     public void AddCurrency(int val)

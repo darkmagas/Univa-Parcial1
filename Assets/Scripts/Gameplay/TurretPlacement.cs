@@ -15,6 +15,7 @@ public class TurretPlacement : MonoBehaviour
     {
         _cost = turret.cost;
         _turretPrefab = turret.prefab;
+        Debug.Log("change turret");
     }
 
     void Update()
@@ -23,19 +24,21 @@ public class TurretPlacement : MonoBehaviour
 
         if(Input.GetMouseButtonDown(0))
         {
+            Debug.Log("click turret");
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
                 LayerMask.GetMask("Placement")))
                 {
 
-
+                Debug.Log("selected turret slot");
                 var hitTransform = hit.collider.transform;
                 if(!hitTransform.GetComponent<TurretSlot>().IsOccupied)
                 {
 
-                    if (GameManager.Instance.TrySpendCurrency(10))
+                    if (GameManager.Instance.TrySpendCurrency(_cost))
                     {
 
+                        Debug.Log("Turret Placement Success");
                         var positionVector = new Vector3(hitTransform.position.x, 0, hitTransform.position.z);
 
                         EventDispatcher.Dispatch(

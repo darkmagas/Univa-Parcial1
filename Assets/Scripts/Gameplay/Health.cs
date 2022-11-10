@@ -21,8 +21,10 @@ public class Health : MonoBehaviour
 
     public void ReceiveDamage(int damage)
     {
-    
+
+      
         _currentHealth -= damage;
+        Debug.Log($"damage:{_currentHealth}");
         if (_currentHealth < 0)
         {
             _currentHealth = 0;
