@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    public Rendered Background;
     private static GameManager _instance;
     public static GameManager Instance
     {
