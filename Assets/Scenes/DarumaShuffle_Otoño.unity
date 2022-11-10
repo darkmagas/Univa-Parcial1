@@ -206,6 +206,7 @@ GameObject:
   m_Component:
   - component: {fileID: 133628801}
   - component: {fileID: 133628800}
+  - component: {fileID: 133628802}
   m_Layer: 0
   m_Name: Heavy
   m_TagString: Untagged
@@ -280,6 +281,26 @@ Transform:
   m_Father: {fileID: 1215644367}
   m_RootOrder: -1
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
+--- !u!95 &133628802
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 133628799}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0424331a83e00d840a342cb547963d11, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &137594984
 GameObject:
   m_ObjectHideFlags: 0
@@ -6167,6 +6188,31 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1985448250146272197, guid: d7ff8e20ba3b23744b533294fc06442c, type: 3}
   m_PrefabInstance: {fileID: 2684349746961788285}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2684349746961788287 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2555998010651632611, guid: d7ff8e20ba3b23744b533294fc06442c, type: 3}
+  m_PrefabInstance: {fileID: 2684349746961788285}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2684349746961788288
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2684349746961788287}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 4b8135f0b0ecd2e488573bb080ded7cd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &6782657309404186819
 PrefabInstance:
   m_ObjectHideFlags: 0
