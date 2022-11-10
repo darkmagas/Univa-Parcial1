@@ -17,7 +17,9 @@ public class Health : MonoBehaviour
 
     public void ReciveDamage(int damage)
     {
+        
         _currentHealth -= damage; //es un chort cut de "_currentHealth - damage" y asi obtener el restante de vida.
+        Debug.Log($"damage {_currentHealth}");
         if (_currentHealth < 0) // *si la vida lega a menos cero lo igualamos a 0 para que no pasen cosas raras.
         {
             _currentHealth = 0; 

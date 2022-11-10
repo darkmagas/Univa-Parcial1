@@ -10,6 +10,7 @@ public class UiScore : MonoBehaviour
 
     public void OnScoreChange(int val)
         {
+        Debug.Log("Score change");
          _scoreText.SetText($"{_scoreString} {val:00000}");
         }
 }

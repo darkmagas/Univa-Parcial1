@@ -16,7 +16,7 @@ public class OnEnemyDeath : MonoBehaviour
         _isDying = true;
         _collider.enabled = false;
 
-        EventDispatcher.Dispatch(new DespawnObject(gameObject));
+       
         StartCoroutine(OnEnemyDie());
         GameManager.Instance.ModifyScore(_ScoreOnDeath);
         GameManager.Instance.AddCurrency(_moneyOnDeath);//*

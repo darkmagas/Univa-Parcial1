@@ -47,7 +47,7 @@ public class RayCastShoting : MonoBehaviour //fixed update se usa para fisicas. 
                     else
                     { //*(!_audioSource.isPlaying) //si queremos que se reproduzca de manera infinita comentamos esta linea.
                         _audioSource.Play();
-
+                        hit.collider.GetComponent<Health>().ReciveDamage(_damage);
                         EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null, hit.point, Quaternion.identity,
                             null)); //*para que lance las particulas al disparar
                     }

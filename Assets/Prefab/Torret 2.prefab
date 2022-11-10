@@ -51,6 +51,8 @@ MonoBehaviour:
   _audioSource: {fileID: 1189464202}
   _impactEffect: {fileID: 1029308437601307470}
   _shootingCD: 0.5
+  _isAOE: 0
+  _radius: 2
 --- !u!82 &1189464202
 AudioSource:
   m_ObjectHideFlags: 0
@@ -171,7 +173,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1029308437637380811}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.62, y: 0, z: 7.68}
+  m_LocalPosition: {x: 4.62, y: -0.16, z: 7.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -666,6 +668,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 2
     m_TransformParent: {fileID: 1029308438072092557}
     m_Modifications:
     - target: {fileID: 6616370890694040593, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
@@ -678,11 +681,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6616370890694040593, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.39499998
+      value: 0.12
       objectReference: {fileID: 0}
     - target: {fileID: 6616370890694040593, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.17000008
+      value: 0.96
       objectReference: {fileID: 0}
     - target: {fileID: 6616370890694040593, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
       propertyPath: m_LocalRotation.w
@@ -716,35 +719,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Particle System
       objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: looping
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: ShapeModule.type
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: ShapeModule.angle
-      value: 32.3
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: ShapeModule.arc.value
-      value: 300
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: ShapeModule.radius.value
-      value: 0.0001
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: ShapeModule.radiusThickness
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6616370890694040598, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
-      propertyPath: InitialModule.gravityModifier.scalar
-      value: 0.6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 341d24cfca8ad8d4f87a9af576f6c448, type: 3}
 --- !u!4 &1029308437601307467 stripped
 Transform:

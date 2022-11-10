@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoDamage : MonoBehaviour
 {
-    [SerializeField] private int _damage = 10; 
+    [SerializeField] private int _damage = 100; 
     private void OnTriggerEnter(Collider other)
     {
         //untriger stay es muy ineficiente. evitarlo porque actualiza todo el tiempo.
