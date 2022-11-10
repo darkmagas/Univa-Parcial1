@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-
-public class CurrencyUpdate : MonoBehaviour
+public class UICurrencyUpdate : MonoBehaviour
 {
     [SerializeField] private TMP_Text _text;
-    [SerializeField] private string _currencyName = "Pesos";
+    [SerializeField] private string _currencyName = "Gil";
 
     public void UpdateCurrency(int currency)
     {
-        _text.SetText(sourceText: $"{currency}{_currencyName}");
+        // 20 Gil
+        _text.SetText($"{currency} {_currencyName}");
     }
-
 }

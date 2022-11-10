@@ -100,7 +100,6 @@ GameObject:
   - component: {fileID: -5575123888287379881}
   - component: {fileID: 2625188676876419045}
   - component: {fileID: 414689300447343382}
-  - component: {fileID: -7653095092253170988}
   - component: {fileID: -7965033168879961225}
   m_Layer: 8
   m_Name: enemy unit
@@ -290,21 +289,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &-7653095092253170988
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 350236356454982089}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4748b32dea58b8449a2344dc500c7b61, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _scoreOnDeath: 5
-  _moneyOnDeath: 1
-  _collider: {fileID: 0}
 --- !u!114 &-7965033168879961225
 MonoBehaviour:
   m_ObjectHideFlags: 0
