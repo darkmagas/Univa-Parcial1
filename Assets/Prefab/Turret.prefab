@@ -159,10 +159,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _cannon: {fileID: 2139221172}
   _maxRange: 10
-  _damage: 30
+  _damage: 40
   _audioSource: {fileID: 2139221173}
   _impactEffect: {fileID: 6550979634187096126, guid: 453f848bef7d1480c970fe760f49176b, type: 3}
-  _shootingCD: 0.2
+  _shootingCD: 0.8
   _isAOE: 0
   _radius: 2
 --- !u!82 &2139221173
@@ -175,7 +175,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 7edeb1500248e4fbb822add8a1084ea3, type: 3}
+  m_audioClip: {fileID: 8300000, guid: a9d6e833b2f38bc43a4793b83aa95ee3, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -183,7 +183,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -271,6 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6774687148868675303}
   - component: {fileID: 4453883967293148282}
+  - component: {fileID: 5404635260930905702}
   m_Layer: 0
   m_Name: vampire_f_attack_00
   m_TagString: Untagged
@@ -285,14 +286,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6643287721867758438}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.42, y: 0, z: 0.34}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.12278779, y: 0.6963643, z: -0.12278779, w: 0.6963643}
+  m_LocalPosition: {x: 0.07, y: 1.34, z: 0.34}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 8532312478924123166}
   m_RootOrder: -1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 20, y: 90, z: 0}
 --- !u!212 &4453883967293148282
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -345,6 +346,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5404635260930905702
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6643287721867758438}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 2c4d55b3d1d2b4f4f9a3711eec66b3dc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &8532312477613820066
 GameObject:
   m_ObjectHideFlags: 0

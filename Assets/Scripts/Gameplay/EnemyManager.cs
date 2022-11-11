@@ -11,7 +11,6 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private List<string> _pathNames = new();
     private List<Transform> _spawnpoints = new();
     [SerializeField] private GameObject _weakEnemyPrefab;
-    [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
     [SerializeField] private float _timeToNextWave = 5f;
     private int _currentWave = 0;
@@ -38,7 +37,6 @@ public class EnemyManager : MonoBehaviour
         if(_waveConfiguration._waves.Count <= _currentWave) yield break;
         var wave = _waveConfiguration._waves[_currentWave];
         yield return StartCoroutine(SpawnEnemies(wave.weakEnemy, _weakEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemies(wave.midEnemy, _midEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.strongEnemy, _strongEnemyPrefab));
         _currentWave++;
 
