@@ -51,6 +51,7 @@ public class RaycastShooting : MonoBehaviour
                     }
                     else
                     {
+                        
                         //if (!_audioSource.isPlaying)
                         _audioSource.Play();
 

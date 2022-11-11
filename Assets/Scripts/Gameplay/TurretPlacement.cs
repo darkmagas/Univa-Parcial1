@@ -22,13 +22,12 @@ public class TurretPlacement : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-
             var ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             if (Physics.Raycast(ray, out var hit, Mathf.Infinity,
                 LayerMask.GetMask("Placement")))
             {
                 var hitTransform = hit.collider.transform;
-                if (hitTransform.GetComponent<TurretSlot>().IsOccupied)
+                if (!hitTransform.GetComponent<TurretSlot>().IsOccupied)
                 {
                     if (GameManager.Instance.TrySpendCurrency(_cost))
                     {

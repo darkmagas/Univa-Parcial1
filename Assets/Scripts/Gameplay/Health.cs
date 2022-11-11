@@ -20,6 +20,7 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     public void ReceiveDamage(int damage)
     {
+        
         _currentHealth -= damage;
 
         if (_currentHealth < 0)
@@ -30,6 +31,8 @@ public class Health : MonoBehaviour
 
         if (_currentHealth == 0)
             _onDeath?.Invoke();
+
+        Debug.Log(_currentHealth);
     }
 
 
