@@ -8,5 +8,7 @@ using UnityEngine.Serialization;
 {
    [FormerlySerializedAs("weakEnemyCount")] public int weakEnemy;
    [FormerlySerializedAs("midEnemyCount")] public int midEnemy;
+   [FormerlySerializedAs("ultramidEnemyCount")] public int ultramidEnemy;
    [FormerlySerializedAs("strongEnemyCount")] public int strongEnemy;
+   [FormerlySerializedAs("ultrastrongEnemyCount")] public int ultrastrongEnemy;
 }
