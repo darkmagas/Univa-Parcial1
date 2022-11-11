@@ -116,7 +116,7 @@ GameObject:
   - component: {fileID: 8416297689024836621}
   - component: {fileID: 8923686947412136415}
   m_Layer: 8
-  m_Name: EnemyUnit
+  m_Name: EnemyUnit 1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53e297e42d966483884aa741f5283763, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   minDistance: 0.2
 --- !u!136 &3409152813022600942
 CapsuleCollider:
@@ -391,7 +391,7 @@ PrefabInstance:
     - target: {fileID: -6652725513331149018, guid: 10089affffb84654995ac45212ee1070, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: 593eca1e641bfd6488c1803b44d110e8, type: 2}
+      objectReference: {fileID: 2100000, guid: b419c0a61b57d864e887a9df3091981a, type: 2}
     - target: {fileID: 919132149155446097, guid: 10089affffb84654995ac45212ee1070, type: 3}
       propertyPath: m_Name
       value: ninjabien
