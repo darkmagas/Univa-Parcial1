@@ -27,7 +27,7 @@ public class OnEnemyDeath : MonoBehaviour
     {
         yield return new WaitForSeconds(1.0f);
         EventDispatcher.Dispatch(new DespawnObject(gameObject));
-        _isDying=false;
+        _isDying=true;
         _collider.enabled = true;
     }
 
