@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
-    public void LoadScene(string sceneName)
+    public void LoadScene(string MainMenu)
     {
-        SceneManager.LoadScene(sceneName);
+        SceneManager.LoadScene(Kitchen);
     }
     public void QuitGame()
     {
