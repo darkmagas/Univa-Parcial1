@@ -9,13 +9,17 @@ public class FollowPathMovement : MonoBehaviour
     private int _currentWayPoint = 0;
     public float speed = 5f;
     public float minDistance = 0.2f;
-
+    private bool _isDeath=false;
     private void OnEnable()
     {
         _wayPoints.Clear();
         _currentWayPoint = 0;
     }
-
+    public void OnDeath()
+    { 
+    
+    
+    }
     public void InitEnemy(string pathName)
     {
         var waypointParent = GameObject.Find(pathName);
@@ -31,7 +35,7 @@ public class FollowPathMovement : MonoBehaviour
     {
         var distance = Vector3.Distance(transform.position,
             _wayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > minDistance)
+        while (Mathf.Abs(distance) > minDistance && !_isDeath) ;
         {
             transform.position = Vector3.MoveTowards(transform.position,
                 _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
