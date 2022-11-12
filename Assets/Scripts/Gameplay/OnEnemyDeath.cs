@@ -4,7 +4,7 @@ using UnityEngine;
 using Magas.Utilities;
 public class OnEnemyDeath : MonoBehaviour
 {
-    [SerializeField] private int _scoreOnDeath = 5;
+    [SerializeField] private int _ScoreOnDeath = 5;
     [SerializeField] private int _moneyOnDeath = 1;
     [SerializeField]private Collider _collider;
 
@@ -17,7 +17,7 @@ public class OnEnemyDeath : MonoBehaviour
         _collider.enabled = false;
         EventDispatcher.Dispatch(new EnemyDeathSignal(gameObject));
         StartCoroutine(OnEnemyDie());
-        GameManager.Instance.ModifyScore(_scoreOnDeath);
+        GameManager.Instance.ModifyScore(_ScoreOnDeath);
         GameManager.Instance.AddCurrency(_moneyOnDeath);
     }
 

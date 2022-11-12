@@ -159,14 +159,13 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3409152813022600941}
-  - component: {fileID: 3409152813022600940}
   - component: {fileID: 3409152813022600942}
   - component: {fileID: 3409152813022600943}
+  - component: {fileID: 3409152813022600940}
   - component: {fileID: 3409152813022600937}
   - component: {fileID: 4329003469205123576}
   - component: {fileID: 8416297689024836621}
   - component: {fileID: 8923686947412136415}
-  - component: {fileID: 6112120125790737181}
   m_Layer: 8
   m_Name: EnemyUnit
   m_TagString: Enemy
@@ -191,20 +190,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3409152813022600940
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3409152813022600946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 53e297e42d966483884aa741f5283763, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 0.5
-  minDistance: 0.2
 --- !u!136 &3409152813022600942
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -235,6 +220,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &3409152813022600940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3409152813022600946}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 53e297e42d966483884aa741f5283763, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 0.5
+  minDistance: 0.2
 --- !u!114 &3409152813022600937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -276,7 +275,7 @@ MonoBehaviour:
   _onHealthChanged:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6112120125790737181}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
         m_MethodName: OnHealthChange
         m_Mode: 0
@@ -293,18 +292,6 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 3409152813022600940}
         m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 6112120125790737181}
-        m_TargetAssemblyTypeName: AnimationEnemy, Assembly-CSharp
         m_MethodName: OnDeath
         m_Mode: 1
         m_Arguments:
@@ -339,19 +326,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bf0e19fdc32469caa429377fa5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreOnDeath: 5
+  _ScoreOnDeath: 5
   _moneyOnDeath: 5
   _collider: {fileID: 3409152813022600942}
---- !u!114 &6112120125790737181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3409152813022600946}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bebc320477d9d4ab7bd2f12ee6a0bc1e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
