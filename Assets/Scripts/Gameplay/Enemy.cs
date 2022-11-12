@@ -1,28 +1,45 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform player;
-    private float dist;
-    public float speed;
-    public float howclose;
+    private int health;
+    public int speed;
+    public LayerMask layerPlayer;
+    public float cadencia = 1f;
+    float cadAux = 0;
 
-    // Start is called before the first frame update
-    void Start()
+     void Update()
     {
-        player = GameObject.FindGameObjectWithTag("Player").transform;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        dist = Vector3.Distance(player.position, transform.position);
-        if (dist<=howclose)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.left, .5f,
+            layerPlayer);
+        if (hit.collider != null)
         {
-            transform.LookAt(player);
-            GetComponent<Rigidbody>().AddForce(transform.forward * speed);
+            cadAux += Time.deltaTime;
+            if (cadAux >=cadencia)
+            {
+                cadAux = 0;
+            }
+        }
+        else
+        {
+            cadAux = 0;
+            transform.position -= Vector3.right * speed * Time.deltaTime;
+        }
+    }
+    void OnTriggerEnter2D(Collider2D col)
+    {
+        if (col.CompareTag("Player"))
+        {
+            health--;
+            Destroy(col.gameObject);
+
+            if (health <= 0)
+                Destroy(gameObject);
         }
     }
 }
+
+  
