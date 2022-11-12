@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 2077441}
   - component: {fileID: 2077442}
   - component: {fileID: 2077443}
+  - component: {fileID: 2077444}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Player
@@ -279,6 +280,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fef93ea87840445aeaf01d5c9ba26bec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &2077444
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2077436}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a94f01d4e2beb5f43bc4c890abc82202, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!4 &18521616 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490970058520500, guid: d7698c69246c64044ab2a94628bf0291, type: 3}
@@ -6246,7 +6267,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 105a24e6074e440c28857139c255794a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _gameSpeed: 2
+  _gameSpeed: 3.38
 --- !u!4 &899017882 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490970058520500, guid: d7698c69246c64044ab2a94628bf0291, type: 3}
@@ -6698,9 +6719,9 @@ MonoBehaviour:
   - Path
   - Path_2
   _weakEnemyPrefab: {fileID: 3409152813022600946, guid: e9a985a23e9c24fe396a0384e64b8a1d, type: 3}
-  _midEnemyPrefab: {fileID: 2835942107966142084, guid: 85238f3d1ddb540abbe9e7880ed18c3a, type: 3}
-  _strongEnemyPrefab: {fileID: 8213822739172214688, guid: 90710e49765da4c77964e36fcd8b8943, type: 3}
-  _timeToNextWave: 2
+  _midEnemyPrefab: {fileID: 8213822739172214688, guid: 90710e49765da4c77964e36fcd8b8943, type: 3}
+  _strongEnemyPrefab: {fileID: 3409152813022600946, guid: 810e6cadd1029b54aabb8b942f8eaae5, type: 3}
+  _timeToNextWave: 5
 --- !u!4 &931580529 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4490970058520500, guid: d7698c69246c64044ab2a94628bf0291, type: 3}
