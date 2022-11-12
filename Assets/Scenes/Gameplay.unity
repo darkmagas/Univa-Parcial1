@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2058,8 +2058,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1fe4014173ed168479959e4611b9111c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  vida: 100
-  barraVida: {fileID: 1394068299}
 --- !u!1 &1576603359
 GameObject:
   m_ObjectHideFlags: 0
@@ -2325,6 +2323,65 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1675421094}
   m_Mesh: {fileID: 10207, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &1756794607
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 2
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 54.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -5.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 6.45
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 90
+      objectReference: {fileID: 0}
+    - target: {fileID: 6087906788194281431, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6861029886508809581, guid: fa50b0091459a0648ade345d5793847d, type: 3}
+      propertyPath: m_Name
+      value: turret Variant
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_AddedGameObjects: []
+  m_SourcePrefab: {fileID: 100100000, guid: fa50b0091459a0648ade345d5793847d, type: 3}
 --- !u!1 &1806004198
 GameObject:
   m_ObjectHideFlags: 0
