@@ -31,5 +31,6 @@ namespace Univa
         public const string Player = "Player";
         public const string GameController = "GameController";
         public const string Enemy = "Enemy";
+        public const string Enemy2 = "Enemy2";
     }
 }
