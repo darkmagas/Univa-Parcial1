@@ -2,14 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SimpleMovement : MonoBehaviour
-{
+public class MOVIMINTOVAQUERO : MonoBehaviour {
+
+
     float speed = 5f;
-
-
-    // Update is called once per frame
     void Update()
     {
+
         float horizontalInput = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("vertical");
 
@@ -19,4 +18,5 @@ public class SimpleMovement : MonoBehaviour
 
         transform.position = transform.position + movementDirection * speed * Time.deltaTime;
     }
+
 }
