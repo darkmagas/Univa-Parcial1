@@ -39,11 +39,11 @@ public class EnemyManager : MonoBehaviour
     {
         if(_waveConfiguration._waves.Count <= _currentWave) yield break;
         var wave = _waveConfiguration._waves[_currentWave];
-        yield return StartCoroutine(SpawnEnemies(wave.veryweakEnemy, _veryweakEnemyPrefab));
+     
         yield return StartCoroutine(SpawnEnemies(wave.weakEnemy, _weakEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.midEnemy, _midEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.strongEnemy, _strongEnemyPrefab));
-        yield return StartCoroutine(SpawnEnemies(wave.bossEnemy, _bossEnemyPrefab));
+       
         _currentWave++;
 
         while (GameManager.Instance.EnemyCount > 0)
