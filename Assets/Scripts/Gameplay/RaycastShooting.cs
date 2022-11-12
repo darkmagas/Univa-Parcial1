@@ -42,7 +42,7 @@ public class RaycastShooting : MonoBehaviour
                             var rayHit = spherecast[i];
                             if (rayHit.collider.CompareTag("Enemy"))
                             {
-                                rayHit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                                rayHit.collider.GetComponent<Health>().Damage(_damage);
                                 EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
                                     , rayHit.point, Quaternion.identity, null)); 
                             }
@@ -57,7 +57,7 @@ public class RaycastShooting : MonoBehaviour
 
                         EventDispatcher.Dispatch(new SpawnObject(_impactEffect, null
                             , hit.point, Quaternion.identity, null));
-                        hit.collider.GetComponent<Health>().ReceiveDamage(_damage);
+                        hit.collider.GetComponent<Health>().Damage(_damage);
                         _currentCD = _shootingCD;
                     }
                 }

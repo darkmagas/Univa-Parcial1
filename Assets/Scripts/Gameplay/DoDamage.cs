@@ -11,7 +11,7 @@ public class DoDamage : MonoBehaviour
    {
       if (other.GetComponent<Health>() != null)
       {
-         other.GetComponent<Health>().ReceiveDamage(_damage);
+         other.GetComponent<Health>().Damage(_damage);
       }
    }
 }

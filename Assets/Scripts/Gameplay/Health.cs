@@ -16,7 +16,7 @@ public class Health : MonoBehaviour
        _currentHealth = _health;
     }
 
-    public void ReceiveDamage(int damage)
+    public void Damage(int damage)
     {
         //_currentHealth = _currentHealth - damage;
         _currentHealth -= damage;
