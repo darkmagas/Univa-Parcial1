@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1734965937, guid: a66effd70a3bc764aa0b8d0399f31647, type: 3}
+  m_Sprite: {fileID: 576626882, guid: c3fd54e357f28144183716892b0f2d29, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -195,6 +195,10 @@ PrefabInstance:
       propertyPath: stoppingDistance
       value: 0.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3657153509482520252, guid: 5dc7de65cb7ff5d4290e4633d0d1b57e, type: 3}
+      propertyPath: _damage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3657153510612656954, guid: 5dc7de65cb7ff5d4290e4633d0d1b57e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -221,7 +225,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5235176753524165837, guid: 5dc7de65cb7ff5d4290e4633d0d1b57e, type: 3}
       propertyPath: _health
-      value: 100
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 6317981261745712528, guid: 5dc7de65cb7ff5d4290e4633d0d1b57e, type: 3}
       propertyPath: m_IsActive

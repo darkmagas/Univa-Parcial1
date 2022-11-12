@@ -8,4 +8,6 @@ using UnityEngine;
     public int weakEnemyCount;
     public int midEnemyCount;
     public int strongEnemyCount;
+    public int NukeEnemyCount;
+    public int VarEnemyCount;
 }

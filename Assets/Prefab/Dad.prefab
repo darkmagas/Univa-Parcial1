@@ -45,11 +45,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50d41c44997dd64bb6f39ba45d26262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
   _cannon: {fileID: 892350657575263099}
   _maxRange: 10
-  _damage: 20
+  _damage: 2
   _audioSource: {fileID: 9170534493453382620}
-  _impactEffect: {fileID: 5704310757006469953, guid: a0ea4f6b073ebfb4dae8ac0391915c01, type: 3}
+  _impactEffect: {fileID: 4129987363381765129, guid: 0639bffec5abb2441a9b6c3ce3dcdee6, type: 3}
   _shootingCD: 0.2
   _isAOE: 0
   _radius: 2
@@ -848,7 +851,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2592274763374123140}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.87, y: -0.096, z: 0.87}
   m_LocalScale: {x: 0.64645, y: 0.64645, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1087,8 +1090,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64180aa285dd722459ba4cf14178a183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _detectedEnemy: {fileID: 0}
   _turretPivot: {fileID: 1723253498410687314}
   _maxDistance: 3
+  _OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1001 &2533216677090490611
 PrefabInstance:
   m_ObjectHideFlags: 0

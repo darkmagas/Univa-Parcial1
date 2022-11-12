@@ -45,9 +45,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50d41c44997dd64bb6f39ba45d26262, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _OnAttack:
+    m_PersistentCalls:
+      m_Calls: []
   _cannon: {fileID: 892350657575263099}
   _maxRange: 2
-  _damage: 50
+  _damage: 15
   _audioSource: {fileID: 9170534493453382620}
   _impactEffect: {fileID: 4581211146225581606, guid: f13a0d3919ca07e428ae31b4044ac187, type: 3}
   _shootingCD: 0.2
@@ -849,6 +852,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 64180aa285dd722459ba4cf14178a183, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _detectedEnemy: {fileID: 0}
   _turretPivot: {fileID: 1723253498410687314}
   _maxDistance: 2
   _OnAttack:
@@ -901,7 +905,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6649861348440334900}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.6032951, y: 0, z: 0}
+  m_LocalPosition: {x: -0.39, y: 1.77, z: 0.23}
   m_LocalScale: {x: -0.5444967, y: 0.54449683, z: 0.5444967}
   m_ConstrainProportionsScale: 0
   m_Children: []

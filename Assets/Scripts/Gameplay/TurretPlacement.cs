@@ -7,13 +7,14 @@ public class TurretPlacement : MonoBehaviour
 {
     private GameObject _turretPrefab = null;
     private int _cost = 0;
-
-
+   
     public void OnTurretChange((GameObject prefab, int cost) turret)
     {
         _cost = turret.cost;
         _turretPrefab = turret.prefab;
     }
+
+   
     void Update()
     {
         if (_turretPrefab == null) return;
