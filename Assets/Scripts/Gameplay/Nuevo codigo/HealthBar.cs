@@ -18,7 +18,6 @@ public class HealthBar : MonoBehaviour
     }
 
 
-
     public void takeDamage(int amount)
     {
         health -= amount;
