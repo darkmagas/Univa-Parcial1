@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 
-public class UIScore : MonoBehaviour
+public class UIScote : MonoBehaviour
 {
     [SerializeField] private TMP_Text _scoreText;
     [SerializeField] private string _scoreString = "Puntos : ";
