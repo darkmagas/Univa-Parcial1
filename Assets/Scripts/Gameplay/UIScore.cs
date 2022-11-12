@@ -10,7 +10,7 @@ public class UIScore : MonoBehaviour
 
     public void OnScoreChange(int val)
     {
-        //puntos : 00020
+        //Puntos : 00020 
         _scoreText.SetText($"{_scoreString} {val:00}");
     }
 }

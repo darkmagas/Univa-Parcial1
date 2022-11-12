@@ -18,13 +18,11 @@ public class Health : MonoBehaviour
         
     }
 
-  
-
     public void ReceiveDamage(int damage)
     {
 
         _currentHealth -= damage; //Shortcut para irle restando el Daño
-        healthText.text = "" + _currentHealth + "%";
+      healthText.text = "" + _currentHealth + "%";
 
         if (_currentHealth < 0)
         {

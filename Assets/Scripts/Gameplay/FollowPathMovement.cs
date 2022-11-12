@@ -5,14 +5,15 @@ using UnityEngine;
 
 public class FollowPathMovement : MonoBehaviour
 {
-    [SerializeField] private List<Transform> _wayPoints = new List<Transform>();
-    public string path = "";
-    public float stoppingDistance = 0.2f;
+    private List<Transform> _wayPoints = new List<Transform>();
+    private int _currentWayPoint = 0;
     public float speed = 5f;
-
-    private int _currentWayPoint;
+    public float minDistance = 0.2f;
     private Vector3 _originalPosition;
     private bool _isDeath = false;
+
+
+
 
     //public
 
@@ -55,7 +56,7 @@ public class FollowPathMovement : MonoBehaviour
     {
         var distance = Vector3.Distance(transform.position,
             _wayPoints[_currentWayPoint].position);
-        while (Mathf.Abs(distance) > stoppingDistance)
+        while (Mathf.Abs(distance) > minDistance)
         {
             transform.position = Vector3.MoveTowards(transform.position,
                 _wayPoints[_currentWayPoint].position, Time.deltaTime * speed);
@@ -64,7 +65,8 @@ public class FollowPathMovement : MonoBehaviour
             yield return null;
         }
 
-        if (_currentWayPoint < _wayPoints.Count - 1)
+
+        if (_currentWayPoint < _wayPoints.Count - 1 && !_isDeath)
         {
             _currentWayPoint++;
             StartCoroutine(MoveToNextWaypoint());

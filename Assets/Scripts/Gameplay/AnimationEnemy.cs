@@ -5,8 +5,8 @@ using Magas.Utilities;
 
 public class AnimationEnemy : MonoBehaviour
 {
-    [SerializeField] private  Animator _animator;
-        public void OnHealthChange(float hp)
+    [SerializeField] private Animator _animator;
+    public void OnHealthChange(float hp)
     {
         _animator.SetTrigger("Damage");
     }

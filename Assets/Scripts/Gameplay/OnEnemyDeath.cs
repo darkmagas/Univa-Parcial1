@@ -16,14 +16,14 @@ public class OnEnemyDeath : MonoBehaviour
         _collider.enabled = false;
         EventDispatcher.Dispatch(new EnemyDeathSignal(gameObject));
         StartCoroutine(OnEnemyDie());   
-        //GameManager.Instance.ModifyScore(_ScoreOnDeath);
-        //GameManager.Instance.AddCurremcy(_moneyOnDeath);
+        GameManager.Instance.ModifyScore(_ScoreOnDeath);
+        GameManager.Instance.AddCurrency(_moneyOnDeath);
 
     }
 
     private IEnumerator OnEnemyDie()
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
         EventDispatcher.Dispatch(new DespawnObject(gameObject));
         _isDying=false;
         _collider.enabled = true;

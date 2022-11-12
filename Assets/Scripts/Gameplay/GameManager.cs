@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private static GameManager _instance; //static es una variable de la clase y no de un objeto (siempre va a existir, no lo tenemos que llamar(no se necesita un objeto))
+    private static GameManager _instance;
     public static GameManager Instance
     {
         get
@@ -31,6 +31,7 @@ public class GameManager : MonoBehaviour
 
     private LevelCurrencyManager _levelCurrencyManager;
     private ScoreManager _scoreManager;
+
     public void AddScoreManager(ScoreManager scoreManager)
     {
         _scoreManager = scoreManager;

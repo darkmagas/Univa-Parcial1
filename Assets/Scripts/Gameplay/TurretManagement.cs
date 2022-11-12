@@ -5,13 +5,15 @@ using UnityEngine;
 
 public class TurretManagement : MonoBehaviour
 {
-    [Serializable]public struct TurretConfig
+    [Serializable]
+    public struct TurretConfig
     {
         public GameObject turret;
         public int cost;
     }
-    [SerializeField] private List<TurretConfig> _turretConfigs = new List<TurretConfig>();
-    
+
+    [SerializeField] private List<TurretConfig> _turretConfigs = new();
+
     public (GameObject turret, int cost) GetTurretConfig(int index)
     {
         return (_turretConfigs[index].turret, _turretConfigs[index].cost);

@@ -8,7 +8,7 @@ public class ScoreManager : MonoBehaviour
     private int _score = 0;
     [SerializeField] private UnityEvent<int> _OnScoreChange = new();
 
-    public void Start()
+    private void Start()
     {
         GameManager.Instance.AddScoreManager(this);
     }

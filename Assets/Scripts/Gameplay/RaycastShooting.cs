@@ -2,9 +2,12 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine;
+using UnityEngine.Events;
 using Magas.Utilities;
 public class RaycastShooting : MonoBehaviour
 {
+    [SerializeField] private UnityEvent _OnAttack = new();
     [SerializeField] private Transform _cannon = null;
     [SerializeField] private float _maxRange = 10f;
     [Header("Shooting Settings")]
@@ -25,6 +28,7 @@ public class RaycastShooting : MonoBehaviour
     {
         if (_currentCD <= 0)
         {
+            _OnAttack?.Invoke();
             var ray = new Ray(_cannon.position, _cannon.forward);
 
             if (Physics.Raycast(ray, out var hit, _maxRange))
