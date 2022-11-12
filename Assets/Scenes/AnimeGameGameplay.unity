@@ -1278,6 +1278,8 @@ MonoBehaviour:
     coast: 10
   - turret: {fileID: 8749397943361487792, guid: 9fd737b5a5924e546810f114bc06078b, type: 3}
     coast: 50
+  - turret: {fileID: 8749397943361487792, guid: 9fd737b5a5924e546810f114bc06078b, type: 3}
+    coast: 200
 --- !u!4 &494731912
 Transform:
   m_ObjectHideFlags: 0
@@ -1930,6 +1932,7 @@ MonoBehaviour:
   _weakEnemyPrefab: {fileID: 5822174472496863702, guid: 8947a5d00c0975e43bf4a301203e7e86, type: 3}
   _midEnemyPrefab: {fileID: 75783836538265083, guid: 4f622aa2a88232b4bb5c590d117b8a62, type: 3}
   _strongEnemyPrefab: {fileID: 4138734055771191612, guid: cd3b060e13dc6c440b09cd800536d750, type: 3}
+  _powerfullEnemyPrefab: {fileID: 0}
   _timeToNextWave: 5
 --- !u!1 &893932435
 GameObject:

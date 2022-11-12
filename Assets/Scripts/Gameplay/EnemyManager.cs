@@ -13,6 +13,9 @@ public class EnemyManager : MonoBehaviour
     [SerializeField] private GameObject _weakEnemyPrefab;
     [SerializeField] private GameObject _midEnemyPrefab;
     [SerializeField] private GameObject _strongEnemyPrefab;
+    [SerializeField] private GameObject _powerfullEnemyPrefab;
+    [SerializeField] private GameObject _godEnemyPrefab;
+
     [SerializeField] private float _timeToNextWave = 5f;
     private int _currentWave = 0;
 
@@ -44,6 +47,7 @@ public class EnemyManager : MonoBehaviour
         yield return StartCoroutine(SpawnEnemies(wave.weakEnemy, _weakEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.mediumEnemy, _midEnemyPrefab));
         yield return StartCoroutine(SpawnEnemies(wave.strongEnemy, _strongEnemyPrefab));
+
         _currentWave++;
 
         while (GameManager.Instance.EnemyCount > 0)
