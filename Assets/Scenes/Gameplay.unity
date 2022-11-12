@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.43757257, g: 0.48542023, b: 0.56569594, a: 1}
+  m_IndirectSpecularColor: {r: 0.17751575, g: 0.22224212, b: 0.30444828, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -406,7 +406,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 90023180}
   m_LocalRotation: {x: 0.31148902, y: 0.71556556, z: -0.24801902, w: 0.5739574}
-  m_LocalPosition: {x: -0.97, y: 7.47, z: -4.81}
+  m_LocalPosition: {x: -0.97, y: 7.47, z: -5.35}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -832,14 +832,14 @@ Light:
   serializedVersion: 10
   m_Type: 1
   m_Shape: 0
-  m_Color: {r: 0.5518868, g: 0.56488264, b: 0.6132076, a: 1}
+  m_Color: {r: 0.6009256, g: 0.6316839, b: 0.754717, a: 1}
   m_Intensity: 1
-  m_Range: 10
-  m_SpotAngle: 30
+  m_Range: 14.789085
+  m_SpotAngle: 81.93313
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
   m_Shadows:
-    m_Type: 2
+    m_Type: 1
     m_Resolution: -1
     m_CustomResolution: -1
     m_Strength: 1
@@ -865,14 +865,14 @@ Light:
       e33: 1
     m_UseCullingMatrixOverride: 0
   m_Cookie: {fileID: 0}
-  m_DrawHalo: 0
+  m_DrawHalo: 1
   m_Flare: {fileID: 0}
   m_RenderMode: 0
   m_CullingMask:
     serializedVersion: 2
     m_Bits: 4294967295
   m_RenderingLayerMask: 1
-  m_Lightmapping: 4
+  m_Lightmapping: 2
   m_LightShadowCasterMode: 0
   m_AreaSize: {x: 1, y: 1}
   m_BounceIntensity: 1
@@ -890,14 +890,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 379682999}
-  m_LocalRotation: {x: 0.5538179, y: 0.45072627, z: -0.33606088, w: 0.61416173}
-  m_LocalPosition: {x: -1.4, y: 10.8, z: -4.14}
+  m_LocalRotation: {x: 0.6814004, y: 0.5164931, z: -0.22209449, w: 0.46861753}
+  m_LocalPosition: {x: -0.93, y: 19.48, z: -3.44}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 79.486, y: -263.79102, z: -331.721}
+  m_LocalEulerAnglesHint: {x: 60.233, y: -201.431, z: -266.852}
 --- !u!1 &439263809
 GameObject:
   m_ObjectHideFlags: 0
@@ -2969,6 +2969,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: d231f3cdea8048446abe0013df8764d9, type: 3}
       propertyPath: m_Name
       value: "C\xC9U"
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: d231f3cdea8048446abe0013df8764d9, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_AddedGameObjects: []
