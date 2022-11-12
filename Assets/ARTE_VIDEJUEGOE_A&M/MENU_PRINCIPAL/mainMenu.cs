@@ -7,7 +7,7 @@ public class mainMenu : MonoBehaviour
 {
    public void EscenaJuego()
     {
-       // SceneManager.LoadScene("videojuego_VaquerosL");
+       SceneManager.LoadScene("MENU_UI");
     }
 
     public void CargarNivel(string nombreNivel)
