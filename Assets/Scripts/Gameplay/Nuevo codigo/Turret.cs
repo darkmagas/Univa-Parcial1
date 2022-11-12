@@ -14,7 +14,7 @@ public class Turret : MonoBehaviour
 
     private void Start()
     {
-        playerTransform = FindObjectOfType<FollowPathMovement>().transform;
+        playerTransform = FindObjectOfType<Enemy>().transform;
         //could replace this with a public function that sets target
         //On Trigger Enter if there is multiple targets
         currentGun = GetComponentInChildren<Gun>();
