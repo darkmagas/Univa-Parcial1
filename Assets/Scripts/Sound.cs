@@ -4,14 +4,17 @@ using UnityEngine;
 
 public class Sound : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public AudioClip hitsound;
+
+    AudioSource audioSource;
+
+    private void Awake()
     {
-        
+        audioSource = GetComponent<AudioSource>();
+
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnEnable()
     {
         
     }
