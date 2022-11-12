@@ -5,7 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     private static GameManager _instance;
-    public static GameManager Instance {
+    public static GameManager Instance
+    {
         get
         {
             if (_instance == null)
@@ -22,15 +23,39 @@ public class GameManager : MonoBehaviour
                 }
             }
             return _instance;
-        } 
+        }
     }
-    [SerializeField] [Range(0,6)] private float _gameSpeed = 1f;
-    
+    [SerializeField] [Range(0, 6)] private float _gameSpeed = 1f;
+    private int _enemyCount = 0;
+    public int EnemyCount => _enemyCount;
 
-    // Update is called once per frame
+    private LevelCurrencyManager _levelCurrencyManager;
+   
+
+    
+    public void AddEnemy(int add)
+    {
+        _enemyCount += add;
+    }
     public void ChangeSpeed(float speed)
     {
         _gameSpeed = speed;
         Time.timeScale = _gameSpeed;
     }
+
+    public void AddLevelCurrencyManager(LevelCurrencyManager levelCurrencyManager)
+    {
+        _levelCurrencyManager = levelCurrencyManager;
+    }
+
+    public bool TrySpendCurrency(int amount)
+    {
+        return _levelCurrencyManager.TrySpendCurrency(amount);
+    }
+
+    public void AddCurrency(int val)
+    {
+        _levelCurrencyManager.AddCurrency(val);
+    }
+
 }
