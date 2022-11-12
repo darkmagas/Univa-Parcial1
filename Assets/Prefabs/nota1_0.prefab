@@ -12,12 +12,12 @@ GameObject:
   - component: {fileID: 6235369292351074185}
   - component: {fileID: 6235369292351074186}
   - component: {fileID: -6857969524961592197}
-  - component: {fileID: 4363778633431705044}
   - component: {fileID: 6566867851846799235}
   - component: {fileID: 659406934933522867}
   - component: {fileID: 7751489698819322144}
   - component: {fileID: -7845537317681862295}
   - component: {fileID: 809335393198969175}
+  - component: {fileID: 1124741295271453993}
   m_Layer: 8
   m_Name: nota1_0
   m_TagString: Enemy
@@ -126,19 +126,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   minDistance: 0.2
---- !u!65 &4363778633431705044
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6235369292351074187}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.26, y: 2.68, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &6566867851846799235
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,46 +181,10 @@ MonoBehaviour:
   _health: 100
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7845537317681862295}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -6857969524961592197}
-        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -7845537317681862295}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 7751489698819322144}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die
@@ -261,4 +212,18 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 2
+  m_CollisionDetection: 0
+--- !u!136 &1124741295271453993
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6235369292351074187}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 1.13
+  m_Height: 2.68
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}

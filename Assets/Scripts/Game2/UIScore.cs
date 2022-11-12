@@ -11,6 +11,6 @@ public class UIScore : MonoBehaviour
     public void OnScoreChange(int val)
     {
         //Puntos : 00020 
-        _scoreText.SetText($"{_scoreString} {val:00000}");
+        _scoreText.SetText($"{_scoreString} {val:0}");
     }
 }

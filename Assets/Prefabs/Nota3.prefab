@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4191738595800922351}
   - component: {fileID: 4191738595800922348}
+  - component: {fileID: -3938025037197504484}
   - component: {fileID: 4521744832863872380}
   - component: {fileID: 3595116465091497941}
   - component: {fileID: -7872983773174664266}
@@ -32,7 +33,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4191738595800922349}
   m_LocalRotation: {x: 0.12546344, y: -0, z: -0, w: 0.99209833}
-  m_LocalPosition: {x: -20.73, y: 2.65, z: -2.264807}
+  m_LocalPosition: {x: -6, y: 4.88, z: -1.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -91,6 +92,26 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &-3938025037197504484
+Animator:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4191738595800922349}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 33bb56b179f76a8459300bcfeec2168b, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &4521744832863872380
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,7 +138,7 @@ BoxCollider:
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 4.45, y: 2.7103734, z: 0.2}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: -1.03, y: -0.95, z: 0}
 --- !u!114 &-7872983773174664266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -155,9 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bf0e19fdc32469caa429377fa5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreOnDeath: 5
-  _moneyOnDeath: 1
-  _collider: {fileID: 0}
+  _scoreOnDeath: 25
+  _moneyOnDeath: 5
 --- !u!114 &2139351369027494879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -170,49 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f80279797151408f8d5518f401c7703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 300
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 2139351369027494879}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4521744832863872380}
-        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2139351369027494879}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: -1953851928968927980}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die

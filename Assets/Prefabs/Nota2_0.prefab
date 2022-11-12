@@ -176,9 +176,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4bf0e19fdc32469caa429377fa5a324, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _scoreOnDeath: 5
-  _moneyOnDeath: 1
-  _collider: {fileID: 0}
+  _scoreOnDeath: 15
+  _moneyOnDeath: 3
 --- !u!114 &-7823077897377956419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -191,49 +190,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f80279797151408f8d5518f401c7703, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 100
+  _health: 200
   _onHealthChanged:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: -7823077897377956419}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
   _onDeath:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: -5180102259664238134}
-        m_TargetAssemblyTypeName: FollowPathMovement, Assembly-CSharp
-        m_MethodName: OnDeath
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: -7823077897377956419}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 4623796756875184496}
         m_TargetAssemblyTypeName: OnEnemyDeath, Assembly-CSharp
         m_MethodName: Die
