@@ -252,7 +252,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _scoreOnDeath: 5
-  _moneyOnDeath: 10
+  _moneyOnDeath: 1
   _collider: {fileID: 3409152813022600942}
 --- !u!114 &7096678437595067734
 MonoBehaviour:
@@ -266,7 +266,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00a143768dd4041408a66331916b89c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animator: {fileID: 0}
+  _animator: {fileID: 5866666021909216657, guid: 362148012ba7e3344a6146e26a604e6a, type: 3}
 --- !u!1 &3409152813547955914
 GameObject:
   m_ObjectHideFlags: 0
@@ -458,6 +458,10 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.046
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 10089affffb84654995ac45212ee1070, type: 3}
+      propertyPath: m_Avatar
+      value: 
+      objectReference: {fileID: 9000000, guid: 10089affffb84654995ac45212ee1070, type: 3}
     m_RemovedComponents: []
     m_AddedGameObjects: []
   m_SourcePrefab: {fileID: 100100000, guid: 10089affffb84654995ac45212ee1070, type: 3}

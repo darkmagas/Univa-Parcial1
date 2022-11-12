@@ -6,7 +6,7 @@ public class OnEnemyDeath : MonoBehaviour
 {
     [SerializeField] private int _scoreOnDeath;
     [SerializeField] private int _moneyOnDeath;
-    [SerializeField] private Collider _collider;
+    [SerializeField] public Collider _collider;
     private bool _isDying = false;
 
     public void Die()
