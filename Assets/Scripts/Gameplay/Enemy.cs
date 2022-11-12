@@ -1,18 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.AI;
-
 public class Enemy : MonoBehaviour
 {
     private int health;
-    public int speed;
+    public float speed;
     public LayerMask layerPlayer;
     public float cadencia = 1f;
     float cadAux = 0;
 
      void Update()
     {
+        Debug.DrawRay(transform.position, Vector3.left * .5f);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector3.left, .5f,
             layerPlayer);
         if (hit.collider != null)
