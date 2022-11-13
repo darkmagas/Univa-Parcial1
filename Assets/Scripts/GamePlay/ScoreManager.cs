@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class ScoreManager : MonoBehaviour
 {
-    private int _Score = 0;
+    private int _score = 0;
     [SerializeField] private UnityEvent<int> _OnScoreChange = new ();
 
     private void Start()
@@ -16,8 +16,8 @@ public class ScoreManager : MonoBehaviour
 
     public void ModifyScore(int Value)
     {
-        _Score += Value;
-        _OnScoreChange?.Invoke(_Score);
+        _score += Value;
+        _OnScoreChange?.Invoke(_score);
     }
 
 }

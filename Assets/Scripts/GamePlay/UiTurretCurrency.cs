@@ -6,7 +6,7 @@ using TMPro;
 public class UiTurretCurrency : MonoBehaviour
 {
    [SerializeField] private TMP_Text _text;
-        [SerializeField] private string _currencyName = "Mana";
+        [SerializeField] private string _currencyName = "Score";
 
         public void UpdateCurrency(int currency)
     {
