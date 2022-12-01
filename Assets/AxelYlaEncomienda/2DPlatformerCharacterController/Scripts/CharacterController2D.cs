@@ -20,94 +20,145 @@ public class CharacterController2D : MonoBehaviour
     Rigidbody2D r2d;
     CapsuleCollider2D mainCollider;
     Transform t;
+    bool onDie;
+    public float Lifes = 5f;
+    public Transform spawnPoint;
 
-    // Use this for initialization
-    void Start()
+    private Animator animator;
+    public delegate void overAction();
+    public static event overAction GameOver;
+    private void OnCollisionEnter(Collision collision)
     {
-        t = transform;
-        r2d = GetComponent<Rigidbody2D>();
-        mainCollider = GetComponent<CapsuleCollider2D>();
-        r2d.freezeRotation = true;
-        r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
-        r2d.gravityScale = gravityScale;
-        facingRight = t.localScale.x > 0;
-
-        if (mainCamera)
+        //Cuando entra en collision con el objecto de caida, se activa el metodo de killplayer
+        if (collision.gameObject.tag == "Enemy")
         {
-            cameraPos = mainCamera.transform.position;
+            KillPlayer();
+
+        }
+    }
+    private void KillPlayer()
+    { //cuando se activa el bool de morir es positivo y se informa el parametro, si tienes mas de 0 vidas se activa el respawn y si no gameover
+    
+        if (onDie) return;
+
+        onDie = true;
+        animator.SetBool("muerte", onDie);
+        if (Lifes > 0f)
+        {
+            StartCoroutine(SpawnBall());
+            Lifes -= 1;
+
+        }
+        if (Lifes == 0)
+        {
+             if (GameOver != null)
+            GameOver();
+
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        // Movement controls
-        if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
-        {
-            moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
+
+        IEnumerator SpawnBall()
+        {//si se activa se toma unos segundos para el respawn, luego el personaje regresa al spawn point y se le resta una vida, Y el on die se vuelve falso 
+            yield return new WaitForSeconds(2f);
+            transform.position = spawnPoint.transform.position;
+
+            onDie = false;
+            animator.SetBool("OnDie", onDie);
+            //speed = 0f;
         }
-        else
+        // Use this for initialization
+
+
+        void Start()
         {
-            if (isGrounded || r2d.velocity.magnitude < 0.01f)
+            animator = GetComponent<Animator>();
+            t = transform;
+            r2d = GetComponent<Rigidbody2D>();
+            mainCollider = GetComponent<CapsuleCollider2D>();
+            r2d.freezeRotation = true;
+            r2d.collisionDetectionMode = CollisionDetectionMode2D.Continuous;
+            r2d.gravityScale = gravityScale;
+            facingRight = t.localScale.x > 0;
+
+            if (mainCamera)
             {
-                moveDirection = 0;
+                cameraPos = mainCamera.transform.position;
             }
         }
 
-        // Change facing direction
-        if (moveDirection != 0)
+        // Update is called once per frame
+        void Update()
         {
-            if (moveDirection > 0 && !facingRight)
+            // Movement controls
+            if ((Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D)) && (isGrounded || Mathf.Abs(r2d.velocity.x) > 0.01f))
             {
-                facingRight = true;
-                t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                moveDirection = Input.GetKey(KeyCode.A) ? -1 : 1;
             }
-            if (moveDirection < 0 && facingRight)
+            else
             {
-                facingRight = false;
-                t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
-            }
-        }
-
-        // Jumping
-        if (Input.GetKeyDown(KeyCode.W) && isGrounded)
-        {
-            r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
-        }
-
-        // Camera follow
-        //if (mainCamera)
-        //{
-        //    mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
-        //}
-    }
-
-    void FixedUpdate()
-    {
-        Bounds colliderBounds = mainCollider.bounds;
-        float colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
-        Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);
-        // Check if player is grounded
-        Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPos, colliderRadius);
-        //Check if any of the overlapping colliders are not player collider, if so, set isGrounded to true
-        isGrounded = false;
-        if (colliders.Length > 0)
-        {
-            for (int i = 0; i < colliders.Length; i++)
-            {
-                if (colliders[i] != mainCollider)
+                if (isGrounded || r2d.velocity.magnitude < 0.01f)
                 {
-                    isGrounded = true;
-                    break;
+                    moveDirection = 0;
                 }
             }
+
+            // Change facing direction
+            if (moveDirection != 0)
+            {
+                if (moveDirection > 0 && !facingRight)
+                {
+                    facingRight = true;
+                    t.localScale = new Vector3(Mathf.Abs(t.localScale.x), t.localScale.y, transform.localScale.z);
+                }
+                if (moveDirection < 0 && facingRight)
+                {
+                    facingRight = false;
+                    t.localScale = new Vector3(-Mathf.Abs(t.localScale.x), t.localScale.y, t.localScale.z);
+                }
+            }
+
+            // Jumping
+            if (Input.GetKeyDown(KeyCode.W) && isGrounded)
+            {
+                r2d.velocity = new Vector2(r2d.velocity.x, jumpHeight);
+            }
+
+            // Camera follow
+            //if (mainCamera)
+            //{
+            //    mainCamera.transform.position = new Vector3(t.position.x, cameraPos.y, cameraPos.z);
+            //}
         }
 
-        // Apply movement velocity
-        r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+        void FixedUpdate()
+        {
+            Bounds colliderBounds = mainCollider.bounds;
+            float colliderRadius = mainCollider.size.x * 0.4f * Mathf.Abs(transform.localScale.x);
+            Vector3 groundCheckPos = colliderBounds.min + new Vector3(colliderBounds.size.x * 0.5f, colliderRadius * 0.9f, 0);
+            // Check if player is grounded
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(groundCheckPos, colliderRadius);
+            //Check if any of the overlapping colliders are not player collider, if so, set isGrounded to true
+            isGrounded = false;
+            if (colliders.Length > 0)
+            {
+                for (int i = 0; i < colliders.Length; i++)
+                {
+                    if (colliders[i] != mainCollider)
+                    {
+                        isGrounded = true;
+                        break;
+                    }
+                }
+            }
 
-        // Simple debug
-        Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
-        Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
+            // Apply movement velocity
+            r2d.velocity = new Vector2((moveDirection) * maxSpeed, r2d.velocity.y);
+
+            // Simple debug
+            Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(0, colliderRadius, 0), isGrounded ? Color.green : Color.red);
+            Debug.DrawLine(groundCheckPos, groundCheckPos - new Vector3(colliderRadius, 0, 0), isGrounded ? Color.green : Color.red);
+        }
+
+
     }
-}

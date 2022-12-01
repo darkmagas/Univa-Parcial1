@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -64,5 +65,19 @@ public class GameManager : MonoBehaviour
     {
         _levelCurrencyManager.AddCurrency(val);
     }
-    
+
+    public delegate void overAction();
+    public static event overAction GameOver;
+
+    void Start()
+    {
+        CharacterController2D.GameOver += gameOverMetod;
+
+    }
+    public void gameOverMetod()
+    {
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+
+    }
 }

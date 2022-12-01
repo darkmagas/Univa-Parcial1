@@ -21,5 +21,6 @@ public class PUNTAJE : MonoBehaviour
     }
 
     public void SumarPuntos(float puntosEntrada) {
+        puntos += puntosEntrada;
     }
 }
