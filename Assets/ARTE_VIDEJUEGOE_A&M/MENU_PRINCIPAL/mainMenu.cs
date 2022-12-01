@@ -7,7 +7,7 @@ public class mainMenu : MonoBehaviour
 {
    public void EscenaJuego()
     {
-       SceneManager.LoadScene("MENU_UI");
+       SceneManager.LoadScene("UI");
     }
 
     public void CargarNivel(string nombreNivel)
